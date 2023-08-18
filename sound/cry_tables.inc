@@ -2190,6 +2190,8 @@ gCryTable::
 	@ Calyrex
 	cry Cry_CalyrexIceRider
 	cry Cry_CalyrexShadowRider
+	@ Basculegion
+	cry Cry_Basculegion
 .else
 	@ Cramorant
 	cry Cry_Unown
@@ -2228,11 +2230,51 @@ gCryTable::
 	@ Calyrex
 	cry Cry_Unown
 	cry Cry_Unown
+	@ Basculegion
+	cry Cry_Unown
 .endif
 .if P_GEN_9_POKEMON == TRUE
-
+	@ Oinkologne
+	cry Cry_Oinkologne
+	@ Maushold
+	cry Cry_Maushold
+	@ Squawkabilly
+	cry Cry_Squawkabilly
+	cry Cry_Squawkabilly
+	cry Cry_Squawkabilly
+	@ Palafin
+	cry Cry_Palafin
+	@ Tatsugiri
+	cry Cry_Tatsugiri
+	cry Cry_Tatsugiri
+	@ Dudunsparce
+	cry Cry_Dudunsparce
+	@ Gimmighoul
+	cry Cry_Gimmighoul
+	@ Tauros-Paldea
+	cry Cry_Tauros
+	cry Cry_Tauros
 .else
-
+	@ Oinkologne
+	cry Cry_Unown
+	@ Maushold
+	cry Cry_Unown
+	@ Squawkabilly
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	@ Palafin
+	cry Cry_Unown
+	@ Tatsugiri
+	cry Cry_Unown
+	cry Cry_Unown
+	@ Dudunsparce
+	cry Cry_Unown
+	@ Gimmighoul
+	cry Cry_Unown
+	@ Tauros-Paldea
+	cry Cry_Unown
+	cry Cry_Unown
 .endif
 
 	.align 2
@@ -4388,6 +4430,8 @@ gCryTable_Reverse::
 	@ Calyrex
 	cry_reverse Cry_CalyrexIceRider
 	cry_reverse Cry_CalyrexShadowRider
+	@ Basculegion
+	cry_reverse Cry_Basculegion
 .else
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
@@ -4410,6 +4454,50 @@ gCryTable_Reverse::
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+.endif
+.if P_GEN_9_POKEMON == TRUE
+	@ Oinkologne
+	cry_reverse Cry_Oinkologne
+	@ Maushold
+	cry_reverse Cry_Maushold
+	@ Squawkabilly
+	cry_reverse Cry_Squawkabilly
+	cry_reverse Cry_Squawkabilly
+	cry_reverse Cry_Squawkabilly
+	@ Palafin
+	cry_reverse Cry_Palafin
+	@ Tatsugiri
+	cry_reverse Cry_Tatsugiri
+	cry_reverse Cry_Tatsugiri
+	@ Dudunsparce
+	cry_reverse Cry_Dudunsparce
+	@ Gimmighoul
+	cry_reverse Cry_Gimmighoul
+	@ Tauros-Paldea
+	cry_reverse Cry_Tauros
+	cry_reverse Cry_Tauros
+.else
+	@ Oinkologne
+	cry_reverse Cry_Unown
+	@ Maushold
+	cry_reverse Cry_Unown
+	@ Squawkabilly
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	@ Palafin
+	cry_reverse Cry_Unown
+	@ Tatsugiri
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	@ Dudunsparce
+	cry_reverse Cry_Unown
+	@ Gimmighoul
+	cry_reverse Cry_Unown
+	@ Tauros-Paldea
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
 .endif
