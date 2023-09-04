@@ -3467,7 +3467,16 @@ gCryTable_Reverse::
 	cry_reverse Cry_Sneasler
 	cry_reverse Cry_Overqwil
 	cry_reverse Cry_Enamorus
+
+	@ ==[Nox Mons]==
+	@ Snasee
+	cry_reverse Cry_Budew
+	@ Meouchie
+	cry_reverse Cry_Litten
+	@ Nurdibranch
+	cry_reverse Cry_Shellos
 .else
+
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
@@ -4195,3 +4204,4 @@ gCryTable_Reverse::
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
 .endif
+

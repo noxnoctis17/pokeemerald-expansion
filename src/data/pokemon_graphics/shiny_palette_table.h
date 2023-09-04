@@ -917,6 +917,12 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(ENAMORUS, gMonShinyPalette_Enamorus),
 #endif
 
+    //==[Nox Mons]==
+    SPECIES_SHINY_PAL( SNASEE, gMonShinyPalette_Snasee ),
+    SPECIES_SHINY_PAL( MEOUCHIE, gMonShinyPalette_Meouchie ),
+    SPECIES_SHINY_PAL( NURDIBRANCH, gMonShinyPalette_Nurdibranch ),
+
+    //--Forms
     SPECIES_SHINY_PAL(VENUSAUR_MEGA, gMonShinyPalette_VenusaurMega),
     SPECIES_SHINY_PAL(CHARIZARD_MEGA_X, gMonShinyPalette_CharizardMegaX),
     SPECIES_SHINY_PAL(CHARIZARD_MEGA_Y, gMonShinyPalette_CharizardMegaY),
@@ -1332,6 +1338,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(BASCULEGION_FEMALE, gMonShinyPalette_BasculegionFemale),
     SPECIES_SHINY_PAL(ENAMORUS_THERIAN, gMonShinyPalette_EnamorusTherian),
 #endif
+    
     SPECIES_SHINY_PAL(EGG, gMonPalette_Egg),
 };
 
@@ -1358,4 +1365,5 @@ const struct CompressedSpritePalette gMonShinyPaletteTableFemale[] =
 #if P_GEN_6_POKEMON == TRUE
     SPECIES_SHINY_PAL(PYROAR, gMonShinyPalette_Pyroar),
 #endif
+
 };

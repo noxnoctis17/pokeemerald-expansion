@@ -21047,6 +21047,76 @@ const struct SpeciesInfo gSpeciesInfo[] =
     },
 #endif
 
+    //==[Nox Mons]================================================================================
+    [SPECIES_SNASEE]
+    {
+        .baseHP        = 50,
+        .baseAttack    = 70,
+        .baseDefense   = 65,
+        .baseSpeed     = 45,
+        .baseSpAttack  = 15,
+        .baseSpDefense = 45,
+        .types = { TYPE_GRASS, TYPE_GRASS },
+        .catchRate = 190,
+        .expYield = 56,
+        .evYield_Attack  = 1,
+        .genderRatio = PERCENT_FEMALE(75),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS },
+        .abilities = { ABILITY_DEFIANT, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .noFlip = FALSE,
+    },
+
+    [SPECIES_MEOUCHIE] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 65,
+        .baseDefense   = 35,
+        .baseSpeed     = 65,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 30,
+        .types = { TYPE_FIRE, TYPE_FIRE },
+        .catchRate = 190,
+        .expYield = 56,
+        .evYield_Attack  = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
+        .abilities = { ABILITY_MOXIE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .noFlip = FALSE,
+    },
+
+    [SPECIES_NURDIBRANCH] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 30,
+        .baseDefense   = 70,
+        .baseSpeed     = 15,
+        .baseSpAttack  = 45,
+        .baseSpDefense = 60,
+        .types = { TYPE_WATER, TYPE_WATER },
+        .catchRate = 190,
+        .expYield = 56,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3 },
+        .abilities = { ABILITY_MIRROR_ARMOR, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BLUE,
+        .noFlip = FALSE,
+    },
+
+    //=======================================================================================================================
+    //--Forms
+
     [SPECIES_VENUSAUR_MEGA] =
     {
         .baseHP        = 80,
@@ -24732,4 +24802,5 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .flags = SPECIES_FLAG_LEGENDARY,
     },
 #endif
+
 };

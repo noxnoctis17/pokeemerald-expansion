@@ -916,6 +916,13 @@ const struct CompressedSpritePalette gMonPaletteTable[] =
     SPECIES_PAL(OVERQWIL, gMonPalette_Overqwil),
     SPECIES_PAL(ENAMORUS, gMonPalette_Enamorus),
 #endif
+
+    //==[Nox Mons]==
+    SPECIES_PAL( SNASEE, gMonPalette_Snasee ),
+    SPECIES_PAL( MEOUCHIE, gMonPalette_Meouchie ),
+    SPECIES_PAL( NURDIBRANCH, gMonPalette_Nurdibranch ),
+
+    //--Forms
     SPECIES_PAL(VENUSAUR_MEGA, gMonPalette_VenusaurMega),
     SPECIES_PAL(CHARIZARD_MEGA_X, gMonPalette_CharizardMegaX),
     SPECIES_PAL(CHARIZARD_MEGA_Y, gMonPalette_CharizardMegaY),
@@ -1333,6 +1340,7 @@ const struct CompressedSpritePalette gMonPaletteTable[] =
     SPECIES_PAL(ENAMORUS_THERIAN, gMonPalette_EnamorusTherian),
     SPECIES_PAL(BASCULEGION_FEMALE, gMonPalette_BasculegionFemale),
 #endif
+    
     SPECIES_PAL(EGG, gMonPalette_Egg),
 };
 
@@ -1359,4 +1367,5 @@ const struct CompressedSpritePalette gMonPaletteTableFemale[] =
 #if P_GEN_6_POKEMON == TRUE
     SPECIES_PAL(PYROAR, gMonPalette_Pyroar),
 #endif
+
 };

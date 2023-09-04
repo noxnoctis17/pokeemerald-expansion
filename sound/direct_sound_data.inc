@@ -4017,6 +4017,21 @@ Cry_Enamorus::
 
 .endif
 
+	@ ==[Nox Mons]==
+	.align 2
+Cry_Snasee::
+	.incbin "sound/direct_sound_samples/cries/budew.bin"
+
+	.align 2
+Cry_Meouchie::
+	.incbin "sound/direct_sound_samples/cries/litten.bin"
+
+	.align 2
+Cry_Nurdibranch::
+	.incbin "sound/direct_sound_samples/cries/shellos.bin"
+
+	@ ======================================================================================
+
 	.align 2
 Cry_VenusaurMega::
 	.incbin "sound/direct_sound_samples/cries/mega_venusaur.bin"
@@ -4365,6 +4380,7 @@ Cry_CalyrexShadowRider::
 	.incbin "sound/direct_sound_samples/cries/calyrex_shadow_rider.bin"
 
 .endif
+
 
 	.align 2
 DirectSoundWaveData_register_noise::

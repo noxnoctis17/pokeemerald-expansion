@@ -927,6 +927,13 @@ const u32 gMonFrontPic_Sneasler[] = INCBIN_U32("graphics/pokemon/sneasler/front.
 const u32 gMonFrontPic_Overqwil[] = INCBIN_U32("graphics/pokemon/overqwil/front.4bpp.lz");
 const u32 gMonFrontPic_Enamorus[] = INCBIN_U32("graphics/pokemon/enamorus/front.4bpp.lz");
 #endif
+
+//==[Nox Mons]==
+const u32 gMonFrontPic_Snasee[] = INCBIN_U32("graphics/pokemon/snasee/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Meouchie[] = INCBIN_U32("graphics/pokemon/meouchie/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Nurdibranch[] = INCBIN_U32("graphics/pokemon/nurdibranch/front.4bpp.lz");
+
+//--Forms
 const u32 gMonFrontPic_VenusaurMega[] = INCBIN_U32("graphics/pokemon/venusaur/mega/front.4bpp.lz");
 const u32 gMonFrontPic_CharizardMegaX[] = INCBIN_U32("graphics/pokemon/charizard/mega_x/front.4bpp.lz");
 const u32 gMonFrontPic_CharizardMegaY[] = INCBIN_U32("graphics/pokemon/charizard/mega_y/front.4bpp.lz");
@@ -1209,6 +1216,7 @@ const u32 gMonFrontPic_CalyrexShadowRider[] = INCBIN_U32("graphics/pokemon/calyr
 const u32 gMonFrontPic_EnamorusTherian[] = INCBIN_U32("graphics/pokemon/enamorus/therian/front.4bpp.lz");
 const u32 gMonFrontPic_BasculegionFemale[] = INCBIN_U32("graphics/pokemon/basculegion/female/front.4bpp.lz");
 #endif
+
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
 
 const u32 gMonBackPic_CircledQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/circled/back.4bpp.lz");
@@ -2139,6 +2147,13 @@ const u32 gMonBackPic_Sneasler[] = INCBIN_U32("graphics/pokemon/sneasler/back.4b
 const u32 gMonBackPic_Overqwil[] = INCBIN_U32("graphics/pokemon/overqwil/back.4bpp.lz");
 const u32 gMonBackPic_Enamorus[] = INCBIN_U32("graphics/pokemon/enamorus/back.4bpp.lz");
 #endif
+
+//==[Nox Mons]==
+const u32 gMonBackPic_Snasee[] = INCBIN_U32("graphics/pokemon/snasee/back.4bpp.lz");
+const u32 gMonBackPic_Meouchie[] = INCBIN_U32("graphics/pokemon/meouchie/back.4bpp.lz");
+const u32 gMonBackPic_Nurdibranch[] = INCBIN_U32("graphics/pokemon/nurdibranch/back.4bpp.lz");
+
+//--Forms
 const u32 gMonBackPic_VenusaurMega[] = INCBIN_U32("graphics/pokemon/venusaur/mega/back.4bpp.lz");
 const u32 gMonBackPic_CharizardMegaX[] = INCBIN_U32("graphics/pokemon/charizard/mega_x/back.4bpp.lz");
 const u32 gMonBackPic_CharizardMegaY[] = INCBIN_U32("graphics/pokemon/charizard/mega_y/back.4bpp.lz");
@@ -3345,6 +3360,13 @@ const u32 gMonPalette_Sneasler[] = INCBIN_U32("graphics/pokemon/sneasler/normal.
 const u32 gMonPalette_Overqwil[] = INCBIN_U32("graphics/pokemon/overqwil/normal.gbapal.lz");
 const u32 gMonPalette_Enamorus[] = INCBIN_U32("graphics/pokemon/enamorus/normal.gbapal.lz");
 #endif
+
+//==[Nox Mons]==
+const u32 gMonPalette_Snasee[] = INCBIN_U32("graphics/pokemon/snasee/normal.gbapal.lz");
+const u32 gMonPalette_Meouchie[] = INCBIN_U32("graphics/pokemon/meouchie/normal.gbapal.lz");
+const u32 gMonPalette_Nurdibranch[] = INCBIN_U32("graphics/pokemon/nurdibranch/normal.gbapal.lz");
+
+//--Forms
 const u32 gMonPalette_VenusaurMega[] = INCBIN_U32("graphics/pokemon/venusaur/mega/normal.gbapal.lz");
 const u32 gMonPalette_CharizardMegaX[] = INCBIN_U32("graphics/pokemon/charizard/mega_x/normal.gbapal.lz");
 const u32 gMonPalette_CharizardMegaY[] = INCBIN_U32("graphics/pokemon/charizard/mega_y/normal.gbapal.lz");
@@ -3653,6 +3675,7 @@ const u32 gMonPalette_CalyrexShadowRider[] = INCBIN_U32("graphics/pokemon/calyre
 const u32 gMonPalette_EnamorusTherian[] = INCBIN_U32("graphics/pokemon/enamorus/therian/normal.gbapal.lz");
 const u32 gMonPalette_BasculegionFemale[] = INCBIN_U32("graphics/pokemon/basculegion/female/normal.gbapal.lz");
 #endif
+
 const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
 
 const u32 gMonShinyPalette_CircledQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/circled/shiny.gbapal.lz");
@@ -4578,6 +4601,13 @@ const u32 gMonShinyPalette_Sneasler[] = INCBIN_U32("graphics/pokemon/sneasler/sh
 const u32 gMonShinyPalette_Overqwil[] = INCBIN_U32("graphics/pokemon/overqwil/shiny.gbapal.lz");
 const u32 gMonShinyPalette_Enamorus[] = INCBIN_U32("graphics/pokemon/enamorus/shiny.gbapal.lz");
 #endif
+
+//==[Nox Mons]==
+const u32 gMonShinyPalette_Snasee[] = INCBIN_U32("graphics/pokemon/snasee/shiny.gbapal.lz");
+const u32 gMonShinyPalette_Meouchie[] = INCBIN_U32("graphics/pokemon/meouchie/shiny.gbapal.lz");
+const u32 gMonShinyPalette_Nurdibranch[] = INCBIN_U32("graphics/pokemon/nurdibranch/shiny.gbapal.lz");
+
+//--Forms
 const u32 gMonShinyPalette_VenusaurMega[] = INCBIN_U32("graphics/pokemon/venusaur/mega/shiny.gbapal.lz");
 const u32 gMonShinyPalette_CharizardMegaX[] = INCBIN_U32("graphics/pokemon/charizard/mega_x/shiny.gbapal.lz");
 const u32 gMonShinyPalette_CharizardMegaY[] = INCBIN_U32("graphics/pokemon/charizard/mega_y/shiny.gbapal.lz");
@@ -5805,6 +5835,13 @@ const u8 gMonIcon_Sneasler[] = INCBIN_U8("graphics/pokemon/sneasler/icon.4bpp");
 const u8 gMonIcon_Overqwil[] = INCBIN_U8("graphics/pokemon/overqwil/icon.4bpp");
 const u8 gMonIcon_Enamorus[] = INCBIN_U8("graphics/pokemon/enamorus/icon.4bpp");
 #endif
+
+//==[Nox Mons]==
+const u32 gMonIcon_Snasee[] = INCBIN_U8("graphics/pokemon/snasee/icon.4bpp");
+const u32 gMonIcon_Meouchie[] = INCBIN_U8("graphics/pokemon/meouchie/icon.4bpp");
+const u32 gMonIcon_Nurdibranch[] = INCBIN_U8("graphics/pokemon/nurdibranch/icon.4bpp");
+
+//--Forms
 const u8 gMonIcon_VenusaurMega[] = INCBIN_U8("graphics/pokemon/venusaur/mega/icon.4bpp");
 const u8 gMonIcon_CharizardMegaX[] = INCBIN_U8("graphics/pokemon/charizard/mega_x/icon.4bpp");
 const u8 gMonIcon_CharizardMegaY[] = INCBIN_U8("graphics/pokemon/charizard/mega_y/icon.4bpp");
@@ -6100,6 +6137,7 @@ const u8 gMonIcon_CalyrexShadowRider[] = INCBIN_U8("graphics/pokemon/calyrex/sha
 const u8 gMonIcon_EnamorusTherian[] = INCBIN_U8("graphics/pokemon/enamorus/therian/icon.4bpp");
 const u8 gMonIcon_BasculegionFemale[] = INCBIN_U8("graphics/pokemon/basculegion/female/icon.4bpp");
 #endif
+
 const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");
 
 const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mark/footprint.1bpp");
@@ -7018,3 +7056,14 @@ const u8 gMonFootprint_Calyrex[] = INCBIN_U8("graphics/pokemon/calyrex/footprint
 //const u8 gMonFootprint_Overqwil[] = INCBIN_U8("graphics/pokemon/overqwil/footprint.1bpp");
 //const u8 gMonFootprint_Enamorus[] = INCBIN_U8("graphics/pokemon/enamorus/footprint.1bpp");
 #endif
+
+//==[Nox Mons]==
+// const u32 gMonFootprint_Snasee[] = INCBIN_U8("graphics/pokemon/snasee/footprint.1bpp");
+// const u32 gMonFootprint_Rebelinum[] = INCBIN_U8("graphics/pokemon/snasee/footprint.1bpp");
+// const u32 gMonFootprint_Knighinum[] = INCBIN_U8("graphics/pokemon/snasee/footprint.1bpp");
+// const u32 gMonFootprint_Meouchie[] = INCBIN_U8("graphics/pokemon/meouchie/footprint.1bpp");
+// const u32 gMonFootprint_Meomber[] = INCBIN_U8("graphics/pokemon/meomber/footprint.1bpp");
+// const u32 gMonFootprint_Meormor[] = INCBIN_U8("graphics/pokemon/meormor/footprint.1bpp");
+// const u32 gMonFootprint_Nurdibranch[] = INCBIN_U8("graphics/pokemon/nurdibranch/footprint.1bpp");
+// const u32 gMonFootprint_Nurdibranch[] = INCBIN_U8("graphics/pokemon/nurdibranch/footprint.1bpp");
+// const u32 gMonFootprint_Nurdibranch[] = INCBIN_U8("graphics/pokemon/nurdibranch/footprint.1bpp");

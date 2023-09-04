@@ -9513,6 +9513,31 @@ static const union AnimCmd sAnim_Enamorus_1[] =
 };
 #endif
 
+//==[Nox Mons]==========================================================================
+static const union AnimCmd sAnim_Snasee_1[] =
+{
+    ANIMCMD_FRAME( 0, 2 ),
+    ANIMCMD_FRAME( 1, 10 ),
+    ANIMCMD_FRAME( 0, 1 ),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Meouchie_1[] =
+{
+    ANIMCMD_FRAME( 0, 1 ),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Nurdibranch_1[] =
+{
+    ANIMCMD_FRAME( 0, 1 ),
+    ANIMCMD_END,
+};
+
+
+//=====================================================================================
+
+//--Forms
 static const union AnimCmd sAnim_VenusaurMega_1[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -10487,6 +10512,7 @@ static const union AnimCmd sAnim_EnamorusTherian_1[] =
     ANIMCMD_END,
 };
 #endif
+
 
 #define SINGLE_ANIMATION(name)                      \
 static const union AnimCmd *const sAnims_##name[] = \
@@ -11468,6 +11494,13 @@ SINGLE_ANIMATION(Sneasler);
 SINGLE_ANIMATION(Overqwil);
 SINGLE_ANIMATION(Enamorus);
 #endif
+
+//==[Nox Mons]==
+SINGLE_ANIMATION( Snasee );
+SINGLE_ANIMATION( Meouchie );
+SINGLE_ANIMATION( Nurdibranch );
+
+//--Forms
 SINGLE_ANIMATION(VenusaurMega);
 SINGLE_ANIMATION(CHARIZARD_MEGA_X);
 SINGLE_ANIMATION(CHARIZARD_MEGA_Y);
@@ -12555,6 +12588,13 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_OVERQWIL] = sAnims_Overqwil,
     [SPECIES_ENAMORUS] = sAnims_Enamorus,
 #endif
+
+    //==[Nox Mons]==
+    [SPECIES_SNASEE]        = sAnims_Snasee,
+    [SPECIES_MEOUCHIE]      = sAnims_Meouchie,
+    [SPECIES_NURDIBRANCH]   = sAnims_Nurdibranch,
+
+    //--Forms
     [SPECIES_VENUSAUR_MEGA] = sAnims_VenusaurMega,
     [SPECIES_CHARIZARD_MEGA_X] = sAnims_CHARIZARD_MEGA_X,
     [SPECIES_CHARIZARD_MEGA_Y] = sAnims_CHARIZARD_MEGA_Y,
@@ -12908,5 +12948,6 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_ENAMORUS_THERIAN] = sAnims_EnamorusTherian,
     [SPECIES_BASCULEGION_FEMALE] = sAnims_Basculegion,
 #endif
+
     [SPECIES_EGG]         = sAnims_Egg,
 };

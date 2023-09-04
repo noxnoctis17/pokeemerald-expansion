@@ -916,6 +916,12 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_OVERQWIL] = sOverqwilLevelUpLearnset,
     [SPECIES_ENAMORUS] = sEnamorusLevelUpLearnset,
 #endif
+
+    //==[Nox Mons]==
+    [SPECIES_SNASEE] = sSnaseeLevelUpLearnset,
+    [SPECIES_MEOUCHIE] = sMeouchieLevelUpLearnset,
+    [SPECIES_NURDIBRANCH] = sNurdibranchLevelUpLearnset,
+
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurLevelUpLearnset,
     [SPECIES_CHARIZARD_MEGA_X] = sCharizardLevelUpLearnset,
@@ -1336,4 +1342,5 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_ENAMORUS_THERIAN] = sEnamorusLevelUpLearnset,
     [SPECIES_BASCULEGION_FEMALE] = sBasculegionLevelUpLearnset,
 #endif
+
 };

@@ -939,6 +939,16 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_OVERQWIL]                     = { .size = MON_COORDS_SIZE(64, 56), .y_offset =  7 },
     [SPECIES_ENAMORUS]                     = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
 #endif
+
+    //==[Nox Mons]==
+    //--Snasee
+    [SPECIES_SNASEE]                       = { .size = MON_COORDS_SIZE( 64, 64 ), .y_offset = 0 },
+    //--Meouchie
+    [SPECIES_MEOUCHIE]                     = { .size = MON_COORDS_SIZE( 64, 64 ), .y_offset = 0 },
+    //--Nurdibranch
+    [SPECIES_NURDIBRANCH]                  = { .size = MON_COORDS_SIZE( 64, 64 ), .y_offset = 0 },
+
+    //--Forms
     [SPECIES_VENUSAUR_MEGA]                = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  8 },
     [SPECIES_CHARIZARD_MEGA_X]             = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  1 },
     [SPECIES_CHARIZARD_MEGA_Y]             = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  1 },
@@ -1359,5 +1369,6 @@ const struct MonCoords gMonBackPicCoords[] =
     // Basculegion
     [SPECIES_BASCULEGION_FEMALE]           = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
 #endif
+
     [SPECIES_EGG]                          = { .size = MON_COORDS_SIZE(24, 24), .y_offset = 20 },
 };

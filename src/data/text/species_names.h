@@ -916,6 +916,11 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_ENAMORUS] = _("Enamorus"),
 #endif
 
+    //==[Nox Mons]==
+    [SPECIES_SNASEE] = _( "Snasee" ),
+    [SPECIES_MEOUCHIE] = _( "Meouchie" ),
+    [SPECIES_NURDIBRANCH] = _( "Nurdibrnch" ),
+
     // Megas
     [SPECIES_VENUSAUR_MEGA] = _("Venusaur"),
     [SPECIES_CHARIZARD_MEGA_X] = _("Charizard"),
@@ -1338,4 +1343,5 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_CALYREX_SHADOW_RIDER] = _("Calyrex"),
     [SPECIES_BASCULEGION_FEMALE] = _("Bsculegion"),
 #endif
+
 };

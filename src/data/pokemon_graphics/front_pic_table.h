@@ -916,6 +916,13 @@ const struct CompressedSpriteSheet gMonFrontPicTable[] =
     SPECIES_SPRITE(OVERQWIL, gMonFrontPic_Overqwil),
     SPECIES_SPRITE(ENAMORUS, gMonFrontPic_Enamorus),
 #endif
+
+    //==[Nox Mons]==
+    SPECIES_SPRITE(SNASEE, gMonFrontPic_Snasee),
+    SPECIES_SPRITE(MEOUCHIE, gMonFrontPic_Meouchie),
+    SPECIES_SPRITE(NURDIBRANCH, gMonFrontPic_Nurdibranch),
+
+    //--Forms
     SPECIES_SPRITE(VENUSAUR_MEGA, gMonFrontPic_VenusaurMega),
     SPECIES_SPRITE(CHARIZARD_MEGA_X, gMonFrontPic_CharizardMegaX),
     SPECIES_SPRITE(CHARIZARD_MEGA_Y, gMonFrontPic_CharizardMegaY),
@@ -1360,4 +1367,5 @@ const struct CompressedSpriteSheet gMonFrontPicTableFemale[] =
 #if P_GEN_6_POKEMON == TRUE
     SPECIES_SPRITE(PYROAR, gMonFrontPic_PyroarF),
 #endif
+
 };

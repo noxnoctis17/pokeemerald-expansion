@@ -10881,4 +10881,42 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 1,
     },
 #endif
+
+    //==[Nox Mons]==
+
+    [NATIONAL_DEX_SNASEE] =
+    {
+        .categoryName = _( "Happy Seed" ),
+        .height = 2,
+        .weight = 12,
+        .description = gSnaseePokedexText,
+        .pokemonScale = 682,
+        .pokemonOffset = 24,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_MEOUCHIE] =
+    {
+        .categoryName = _("Lost Kitten"),
+        .height = 4,
+        .weight = 43,
+        .description = gMeouchiePokedexText,
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_NURDIBRANCH] =
+    {
+        .categoryName = _( "Smart Blob" ),
+        .height = 2,
+        .weight = 12,
+        .description = gNurdibranchPokedexText,
+        .pokemonScale = 682,
+        .pokemonOffset = 24,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
 };

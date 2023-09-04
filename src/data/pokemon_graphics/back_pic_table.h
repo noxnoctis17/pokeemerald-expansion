@@ -917,6 +917,12 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
     SPECIES_SPRITE(ENAMORUS, gMonBackPic_Enamorus),
 #endif
 
+    //==[Nox Mons]==
+    SPECIES_SPRITE( SNASEE, gMonBackPic_Snasee ),
+    SPECIES_SPRITE( MEOUCHIE, gMonBackPic_Meouchie ),
+    SPECIES_SPRITE( NURDIBRANCH, gMonBackPic_Nurdibranch ),
+
+    //--Forms
     SPECIES_SPRITE(VENUSAUR_MEGA, gMonBackPic_VenusaurMega),
     SPECIES_SPRITE(CHARIZARD_MEGA_X, gMonBackPic_CharizardMegaX),
     SPECIES_SPRITE(CHARIZARD_MEGA_Y, gMonBackPic_CharizardMegaY),
@@ -1335,6 +1341,7 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
 
     SPECIES_SPRITE(BASCULEGION_FEMALE, gMonBackPic_BasculegionFemale),
 #endif
+
     SPECIES_SPRITE(EGG, gMonFrontPic_Egg),
 };
 

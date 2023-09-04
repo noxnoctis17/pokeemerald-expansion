@@ -909,5 +909,11 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_SPECTRIER] = gMonFootprint_Spectrier,
     [SPECIES_CALYREX] = gMonFootprint_Calyrex,
 #endif
+
+    //==[Nox Mons]==
+    [SPECIES_SNASEE] = gMonFootprint_Budew,
+    [SPECIES_MEOUCHIE] = gMonFootprint_Litten,
+    [SPECIES_NURDIBRANCH] = gMonFootprint_Slugma,
+
     [SPECIES_EGG] = gMonFootprint_Bulbasaur,
 };

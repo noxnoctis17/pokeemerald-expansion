@@ -944,6 +944,7 @@ const u16 gEasyChatWordsByLetter_L[] = {
 const u16 gEasyChatWordsByLetter_M[] = {
     EC_MOVE2(MACH_PUNCH),
     DOUBLE_SPECIES_NAME
+    EC_POKEMON_NATIONAL(MEOUCHIE),
     EC_POKEMON(MACHAMP),
     EC_POKEMON_NATIONAL(MACHAMP),
     EC_WORD_MACHINE,
@@ -1081,6 +1082,7 @@ const u16 gEasyChatWordsByLetter_N[] = {
     EC_WORD_NAME,
     EC_WORD_NAP,
     DOUBLE_SPECIES_NAME
+    EC_POKEMON_NATIONAL(NURDIBRANCH),
     EC_POKEMON(NATU),
     EC_POKEMON_NATIONAL(NATU),
     EC_WORD_NATURAL,
@@ -1367,6 +1369,7 @@ const u16 gEasyChatWordsByLetter_R[] = {
 };
 
 const u16 gEasyChatWordsByLetter_S[] = {
+    EC_POKEMON_NATIONAL(SNASEE),
     EC_POKEMON(SABLEYE),
     EC_MOVE(SACRED_FIRE),
     EC_WORD_SAD,

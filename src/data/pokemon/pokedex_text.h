@@ -5399,3 +5399,22 @@ const u8 gEnamorusPokedexText[] = _(
     "Pokémon's love gives rise to the\n"
     "budding of fresh life across the land.");
 #endif
+
+//==[Nox Mons]==
+const u8 gSnaseePokedexText[] = _(
+    "Born with immense joy,\n"
+    "these Pokemon love to be held."
+);
+
+const u8 gMeouchiePokedexText[] = _(
+    "Their coat lets off embers\n"
+    "in the presence of those it does\n"
+    "not trust. It's metal prosthesis\n"
+    "can heat up from it's inner fire."
+);
+
+const u8 gNurdibranchPokedexText[] = _(
+    "This fucker is chillin.\n"
+    "Smoke a bowl and talk about colors\n"
+    "of the ocean with it."
+);

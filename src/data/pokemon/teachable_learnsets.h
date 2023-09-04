@@ -32098,6 +32098,19 @@ static const u16 sEnamorusTeachableLearnset[] = {
 };
 #endif
 
+//==[Nox Mons]==
+static const u16 sSnaseeTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sMeouchieTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sNurdibranchTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sRattataAlolanTeachableLearnset[] = {
     MOVE_BLIZZARD,
     MOVE_CUT,
@@ -33541,3 +33554,4 @@ static const u16 sCalyrexShadowRiderTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif
+

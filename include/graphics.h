@@ -994,6 +994,13 @@ extern const u32 gMonFrontPic_Sneasler[];
 extern const u32 gMonFrontPic_Overqwil[];
 extern const u32 gMonFrontPic_Enamorus[];
 #endif
+
+//==[Nox Mons]==
+extern const u32 gMonFrontPic_Snasee[];
+extern const u32 gMonFrontPic_Meouchie[];
+extern const u32 gMonFrontPic_Nurdibranch[];
+
+//--Forms
 extern const u32 gMonFrontPic_VenusaurMega[];
 extern const u32 gMonFrontPic_CharizardMegaX[];
 extern const u32 gMonFrontPic_CharizardMegaY[];
@@ -1278,6 +1285,7 @@ extern const u32 gMonFrontPic_CalyrexShadowRider[];
 extern const u32 gMonFrontPic_EnamorusTherian[];
 extern const u32 gMonFrontPic_BasculegionFemale[];
 #endif
+
 extern const u32 gMonFrontPic_Egg[];
 
 extern const u32 gMonBackPic_CircledQuestionMark[];
@@ -2208,6 +2216,13 @@ extern const u32 gMonBackPic_Sneasler[];
 extern const u32 gMonBackPic_Overqwil[];
 extern const u32 gMonBackPic_Enamorus[];
 #endif
+
+//==[Nox Mons]==
+extern const u32 gMonBackPic_Snasee[];
+extern const u32 gMonBackPic_Meouchie[];
+extern const u32 gMonBackPic_Nurdibranch[];
+
+//--Forms
 extern const u32 gMonBackPic_VenusaurMega[];
 extern const u32 gMonBackPic_CharizardMegaX[];
 extern const u32 gMonBackPic_CharizardMegaY[];
@@ -3414,6 +3429,13 @@ extern const u32 gMonPalette_Sneasler[];
 extern const u32 gMonPalette_Overqwil[];
 extern const u32 gMonPalette_Enamorus[];
 #endif
+
+//==[Nox Mons]==
+extern const u32 gMonPalette_Snasee[];
+extern const u32 gMonPalette_Meouchie[];
+extern const u32 gMonPalette_Nurdibranch[];
+
+//--Forms
 extern const u32 gMonPalette_VenusaurMega[];
 extern const u32 gMonPalette_CharizardMegaX[];
 extern const u32 gMonPalette_CharizardMegaY[];
@@ -4647,6 +4669,13 @@ extern const u32 gMonShinyPalette_Sneasler[];
 extern const u32 gMonShinyPalette_Overqwil[];
 extern const u32 gMonShinyPalette_Enamorus[];
 #endif
+
+//==[Nox Mons]==
+extern const u32 gMonShinyPalette_Snasee[];
+extern const u32 gMonShinyPalette_Meouchie[];
+extern const u32 gMonShinyPalette_Nurdibranch[];
+
+//--Forms
 extern const u32 gMonShinyPalette_VenusaurMega[];
 extern const u32 gMonShinyPalette_CharizardMegaX[];
 extern const u32 gMonShinyPalette_CharizardMegaY[];
@@ -5874,6 +5903,19 @@ extern const u8 gMonIcon_Sneasler[];
 extern const u8 gMonIcon_Overqwil[];
 extern const u8 gMonIcon_Enamorus[];
 #endif
+
+//==[Nox Mons]==
+extern const u8 gMonIcon_Snasee[];
+// extern const u8 gMonIcon_Rebelinum[];
+// extern const u8 gMonIcon_Knighinum[];
+extern const u8 gMonIcon_Meouchie[];
+// extern const u8 gMonIcon_Meomber[];
+// extern const u8 gMonIcon_Meormor[];
+extern const u8 gMonIcon_Nurdibranch[];
+// extern const u8 gMonIcon_Nurdibranch[];
+// extern const u8 gMonIcon_Nurdibranch[];
+
+//--Forms
 extern const u8 gMonIcon_VenusaurMega[];
 extern const u8 gMonIcon_CharizardMegaX[];
 extern const u8 gMonIcon_CharizardMegaY[];
@@ -7087,6 +7129,17 @@ extern const u8 gMonFootprint_Calyrex[];
 //extern const u8 gMonFootprint_Overqwil[];
 //extern const u8 gMonFootprint_Enamorus[];
 #endif
+
+//==[Nox Mons]==
+//extern const u8 gMonFootprint_Snasee[];
+//extern const u8 gMonFootprint_Rebelinum[];
+//extern const u8 gMonFootprint_Knighinum[];
+//extern const u8 gMonFootprint_Meouchie[];
+//extern const u8 gMonFootprint_Meomber[];
+//extern const u8 gMonFootprint_Meormor[];
+//extern const u8 gMonFootprint_Nurdibranch[];
+//extern const u8 gMonFootprint_Nurdibranch[];
+//extern const u8 gMonFootprint_Nurdibranch[];
 
 // trainer sprites
 extern const u32 gTrainerFrontPic_Hiker[];

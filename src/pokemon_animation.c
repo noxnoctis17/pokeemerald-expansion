@@ -601,6 +601,11 @@ static const u8 sSpeciesToBackAnimSet[NUM_SPECIES] =
     [SPECIES_JIRACHI]                      = BACK_ANIM_CONVEX_DOUBLE_ARC,
     [SPECIES_DEOXYS]                       = BACK_ANIM_SHRINK_GROW_VIBRATE,
     [SPECIES_CHIMECHO]                     = BACK_ANIM_CONVEX_DOUBLE_ARC,
+
+    //==[Nox Mons]==
+    [SPECIES_SNASEE]                       = BACK_ANIM_SHRINK_GROW_VIBRATE,
+    [SPECIES_MEOUCHIE]                     = BACK_ANIM_H_SHAKE,
+    [SPECIES_NURDIBRANCH]                  = BACK_ANIM_GROW_STUTTER,
     
         // Gen 4
     [SPECIES_TURTWIG]                      = BACK_ANIM_H_SLIDE,
