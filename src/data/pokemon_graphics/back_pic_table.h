@@ -919,8 +919,14 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
 
     //==[Nox Mons]==
     SPECIES_SPRITE( SNASEE, gMonBackPic_Snasee ),
+    SPECIES_SPRITE( REBELINUM, gMonBackPic_Snasee ),
+    SPECIES_SPRITE( KNIGHINUM, gMonBackPic_Snasee ),
     SPECIES_SPRITE( MEOUCHIE, gMonBackPic_Meouchie ),
+    SPECIES_SPRITE( MEOMBER, gMonBackPic_Meouchie ),
+    SPECIES_SPRITE( MEORMOR, gMonBackPic_Meouchie ),
     SPECIES_SPRITE( NURDIBRANCH, gMonBackPic_Nurdibranch ),
+    SPECIES_SPRITE( NURDIBRAG, gMonBackPic_Nurdibranch ),
+    SPECIES_SPRITE( NURDIBRAGON, gMonBackPic_Nurdibranch ),
 
     //--Forms
     SPECIES_SPRITE(VENUSAUR_MEGA, gMonBackPic_VenusaurMega),

@@ -912,8 +912,14 @@ const u8 *const gMonFootprintTable[] =
 
     //==[Nox Mons]==
     [SPECIES_SNASEE] = gMonFootprint_Budew,
+    [SPECIES_REBELINUM] = gMonFootprint_Budew,
+    [SPECIES_KNIGHINUM] = gMonFootprint_Budew,
     [SPECIES_MEOUCHIE] = gMonFootprint_Litten,
+    [SPECIES_MEOMBER] = gMonFootprint_Litten,
+    [SPECIES_MEORMOR] = gMonFootprint_Litten,
     [SPECIES_NURDIBRANCH] = gMonFootprint_Slugma,
+    [SPECIES_NURDIBRAG] = gMonFootprint_Slugma,
+    [SPECIES_NURDIBRAGON] = gMonFootprint_Slugma,
 
     [SPECIES_EGG] = gMonFootprint_Bulbasaur,
 };

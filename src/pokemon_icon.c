@@ -945,12 +945,14 @@ const u8 *const gMonIconTable[] =
 
     //==[Nox Mons]==
     [SPECIES_SNASEE] = gMonIcon_Snasee,
-    // [SPECIES_REBELINUM] = gMonIcon_Rebelinum,
-    // [SPECIES_KNIGHINUM] = gMonIcon_Knighinum,
+    [SPECIES_REBELINUM] = gMonIcon_Rebelinum,
+    [SPECIES_KNIGHINUM] = gMonIcon_Knighinum,
     [SPECIES_MEOUCHIE] = gMonIcon_Meouchie,
-    // [SPECIES_MEOMBER] = gMonIcon_Meomber,
-    // [SPECIES_MEORMOR] = gMonIcon_Meormor,
+    [SPECIES_MEOMBER] = gMonIcon_Meomber,
+    [SPECIES_MEORMOR] = gMonIcon_Meormor,
     [SPECIES_NURDIBRANCH] = gMonIcon_Nurdibranch,
+    [SPECIES_NURDIBRAG] = gMonIcon_Nurdibrag,
+    [SPECIES_NURDIBRAGON] = gMonIcon_Nurdibragon,
 
     //--Forms
     [SPECIES_VENUSAUR_MEGA] = gMonIcon_VenusaurMega,
@@ -2251,12 +2253,14 @@ const u8 gMonIconPaletteIndices[] =
 
     //==[Nox Mons]==
     [SPECIES_SNASEE] = 0,
-    // [SPECIES_REBELINUM] = 0,
-    // [SPECIES_KNIGHINUM] = 0,
+    [SPECIES_REBELINUM] = 0,
+    [SPECIES_KNIGHINUM] = 0,
     [SPECIES_MEOUCHIE] = 5,
-    // [SPECIES_MEOMBER] = 5,
-    // [SPECIES_MEORMOR] = 5,
+    [SPECIES_MEOMBER] = 5,
+    [SPECIES_MEORMOR] = 5,
     [SPECIES_NURDIBRANCH] = 2,
+    [SPECIES_NURDIBRAG] = 2,
+    [SPECIES_NURDIBRAGON] = 2,
 
     //--Forms
     [SPECIES_VENUSAUR_MEGA] = 1,

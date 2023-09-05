@@ -918,8 +918,14 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
 
     //==[Nox Mons]==
     [SPECIES_SNASEE] = _( "Snasee" ),
+    [SPECIES_REBELINUM] = _( "Rebelinum" ),
+    [SPECIES_KNIGHINUM] = _( "Knighinum" ),
     [SPECIES_MEOUCHIE] = _( "Meouchie" ),
+    [SPECIES_MEOMBER] = _( "Meomber" ),
+    [SPECIES_MEORMOR] = _( "Meormor" ),
     [SPECIES_NURDIBRANCH] = _( "Nurdibrnch" ),
+    [SPECIES_NURDIBRAG] = _( "Nurdibrag" ),
+    [SPECIES_NURDIBRAGON] = _( "Nurdibrgon" ),
 
     // Megas
     [SPECIES_VENUSAUR_MEGA] = _("Venusaur"),

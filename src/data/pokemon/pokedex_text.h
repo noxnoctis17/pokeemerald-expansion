@@ -5406,6 +5406,19 @@ const u8 gSnaseePokedexText[] = _(
     "these Pokemon love to be held."
 );
 
+const u8 gRebelinumPokedexText[] = _(
+    "These Pokemon are defiant,\n"
+    "rebelious, and prefer the armor\n"
+    "of their later stage species."
+);
+
+const u8 gKnighinumPokedexText[] = _(
+    "These Pokemon have finally\n"
+    "become who they truly want\n"
+    "to be. They will do anything\n"
+    "to protect those who supported it."
+);
+
 const u8 gMeouchiePokedexText[] = _(
     "Their coat lets off embers\n"
     "in the presence of those it does\n"
@@ -5413,8 +5426,33 @@ const u8 gMeouchiePokedexText[] = _(
     "can heat up from it's inner fire."
 );
 
+const u8 gMeomberPokedexText[] = _(
+    "Their prosthetic has grown\n"
+    "with them. In accepting it\n"
+    "for who they are, it now\n"
+    "aids them in life more fully."
+);
+
+const u8 gMeormorPokedexText[] = _(
+    "Having fully come into their\n"
+    "own and accepting who they are,\n"
+    "their once hated prosthesis is now"
+    "a full coat of armor. Beware."
+);
+
 const u8 gNurdibranchPokedexText[] = _(
     "This fucker is chillin.\n"
     "Smoke a bowl and talk about colors\n"
     "of the ocean with it."
+);
+
+const u8 gNurdibragPokedexText[] = _(
+    "This fucker knows what the\n"
+    "fuck is up in life."
+);
+
+const u8 gNurdibragonPokedexText[] = _(
+    "This fucker will kill you\n"
+    "in your sleep while getting\n"
+    "stoned with your wife AND mom."
 );

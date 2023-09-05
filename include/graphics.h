@@ -997,8 +997,14 @@ extern const u32 gMonFrontPic_Enamorus[];
 
 //==[Nox Mons]==
 extern const u32 gMonFrontPic_Snasee[];
+extern const u32 gMonFrontPic_Rebelinum[];
+extern const u32 gMonFrontPic_Knighinum[];
 extern const u32 gMonFrontPic_Meouchie[];
+extern const u32 gMonFrontPic_Meomber[];
+extern const u32 gMonFrontPic_Meormor[];
 extern const u32 gMonFrontPic_Nurdibranch[];
+extern const u32 gMonFrontPic_Nurdibrag[];
+extern const u32 gMonFrontPic_Nurdibragon[];
 
 //--Forms
 extern const u32 gMonFrontPic_VenusaurMega[];
@@ -2219,8 +2225,14 @@ extern const u32 gMonBackPic_Enamorus[];
 
 //==[Nox Mons]==
 extern const u32 gMonBackPic_Snasee[];
+extern const u32 gMonBackPic_Rebelinum[];
+extern const u32 gMonBackPic_Knighinum[];
 extern const u32 gMonBackPic_Meouchie[];
+extern const u32 gMonBackPic_Meomber[];
+extern const u32 gMonBackPic_Meormor[];
 extern const u32 gMonBackPic_Nurdibranch[];
+extern const u32 gMonBackPic_Nurdibrag[];
+extern const u32 gMonBackPic_Nurdibragon[];
 
 //--Forms
 extern const u32 gMonBackPic_VenusaurMega[];
@@ -3432,8 +3444,14 @@ extern const u32 gMonPalette_Enamorus[];
 
 //==[Nox Mons]==
 extern const u32 gMonPalette_Snasee[];
+extern const u32 gMonPalette_Rebelinum[];
+extern const u32 gMonPalette_Knighinum[];
 extern const u32 gMonPalette_Meouchie[];
+extern const u32 gMonPalette_Meomber[];
+extern const u32 gMonPalette_Meormor[];
 extern const u32 gMonPalette_Nurdibranch[];
+extern const u32 gMonPalette_Nurdibrag[];
+extern const u32 gMonPalette_Nurdibragon[];
 
 //--Forms
 extern const u32 gMonPalette_VenusaurMega[];
@@ -4672,8 +4690,14 @@ extern const u32 gMonShinyPalette_Enamorus[];
 
 //==[Nox Mons]==
 extern const u32 gMonShinyPalette_Snasee[];
+extern const u32 gMonShinyPalette_Rebelinum[];
+extern const u32 gMonShinyPalette_Knighinum[];
 extern const u32 gMonShinyPalette_Meouchie[];
+extern const u32 gMonShinyPalette_Meomber[];
+extern const u32 gMonShinyPalette_Meormor[];
 extern const u32 gMonShinyPalette_Nurdibranch[];
+extern const u32 gMonShinyPalette_Nurdibrag[];
+extern const u32 gMonShinyPalette_Nurdibragon[];
 
 //--Forms
 extern const u32 gMonShinyPalette_VenusaurMega[];
@@ -5906,14 +5930,14 @@ extern const u8 gMonIcon_Enamorus[];
 
 //==[Nox Mons]==
 extern const u8 gMonIcon_Snasee[];
-// extern const u8 gMonIcon_Rebelinum[];
-// extern const u8 gMonIcon_Knighinum[];
+extern const u8 gMonIcon_Rebelinum[];
+extern const u8 gMonIcon_Knighinum[];
 extern const u8 gMonIcon_Meouchie[];
-// extern const u8 gMonIcon_Meomber[];
-// extern const u8 gMonIcon_Meormor[];
+extern const u8 gMonIcon_Meomber[];
+extern const u8 gMonIcon_Meormor[];
 extern const u8 gMonIcon_Nurdibranch[];
-// extern const u8 gMonIcon_Nurdibranch[];
-// extern const u8 gMonIcon_Nurdibranch[];
+extern const u8 gMonIcon_Nurdibrag[];
+extern const u8 gMonIcon_Nurdibragon[];
 
 //--Forms
 extern const u8 gMonIcon_VenusaurMega[];
@@ -7138,8 +7162,8 @@ extern const u8 gMonFootprint_Calyrex[];
 //extern const u8 gMonFootprint_Meomber[];
 //extern const u8 gMonFootprint_Meormor[];
 //extern const u8 gMonFootprint_Nurdibranch[];
-//extern const u8 gMonFootprint_Nurdibranch[];
-//extern const u8 gMonFootprint_Nurdibranch[];
+//extern const u8 gMonFootprint_Nurdibrag[];
+//extern const u8 gMonFootprint_Nurdibragon[];
 
 // trainer sprites
 extern const u32 gTrainerFrontPic_Hiker[];

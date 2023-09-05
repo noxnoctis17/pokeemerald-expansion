@@ -941,12 +941,15 @@ const struct MonCoords gMonBackPicCoords[] =
 #endif
 
     //==[Nox Mons]==
-    //--Snasee
     [SPECIES_SNASEE]                       = { .size = MON_COORDS_SIZE( 64, 64 ), .y_offset = 0 },
-    //--Meouchie
+    [SPECIES_REBELINUM]                    = { .size = MON_COORDS_SIZE( 64, 64 ), .y_offset = 0 },
+    [SPECIES_KNIGHINUM]                    = { .size = MON_COORDS_SIZE( 64, 64 ), .y_offset = 0 },
     [SPECIES_MEOUCHIE]                     = { .size = MON_COORDS_SIZE( 64, 64 ), .y_offset = 0 },
-    //--Nurdibranch
+    [SPECIES_MEOMBER]                      = { .size = MON_COORDS_SIZE( 64, 64 ), .y_offset = 0 },
+    [SPECIES_MEORMOR]                      = { .size = MON_COORDS_SIZE( 64, 64 ), .y_offset = 0 },
     [SPECIES_NURDIBRANCH]                  = { .size = MON_COORDS_SIZE( 64, 64 ), .y_offset = 0 },
+    [SPECIES_NURDIBRAG]                    = { .size = MON_COORDS_SIZE( 64, 64 ), .y_offset = 0 },
+    [SPECIES_NURDIBRAGON]                  = { .size = MON_COORDS_SIZE( 64, 64 ), .y_offset = 0 },
 
     //--Forms
     [SPECIES_VENUSAUR_MEGA]                = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  8 },

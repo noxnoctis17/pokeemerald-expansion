@@ -919,8 +919,14 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
 
     //==[Nox Mons]==
     [SPECIES_SNASEE] = sSnaseeLevelUpLearnset,
+    [SPECIES_REBELINUM] = sRebelinumLevelUpLearnset,
+    [SPECIES_KNIGHINUM] = sKnighinumLevelUpLearnset,
     [SPECIES_MEOUCHIE] = sMeouchieLevelUpLearnset,
+    [SPECIES_MEOMBER] = sMeomberLevelUpLearnset,
+    [SPECIES_MEORMOR] = sMeormorLevelUpLearnset,
     [SPECIES_NURDIBRANCH] = sNurdibranchLevelUpLearnset,
+    [SPECIES_NURDIBRAG] = sNurdibragLevelUpLearnset,
+    [SPECIES_NURDIBRAGON] = sNurdibragonLevelUpLearnset,
 
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurLevelUpLearnset,

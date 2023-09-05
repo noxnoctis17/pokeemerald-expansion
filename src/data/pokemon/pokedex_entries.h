@@ -10882,7 +10882,7 @@ const struct PokedexEntry gPokedexEntries[] =
     },
 #endif
 
-    //==[Nox Mons]==
+    //==[Nox Mons]== ONLY 12 CHARACTERS INCLUDING SPACE I ASSUME ALLOWED IN THESE
 
     [NATIONAL_DEX_SNASEE] =
     {
@@ -10890,6 +10890,30 @@ const struct PokedexEntry gPokedexEntries[] =
         .height = 2,
         .weight = 12,
         .description = gSnaseePokedexText,
+        .pokemonScale = 682,
+        .pokemonOffset = 24,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_REBELINUM] =
+    {
+        .categoryName = _( "Rebel Child" ),
+        .height = 3,
+        .weight = 20,
+        .description = gRebelinumPokedexText,
+        .pokemonScale = 682,
+        .pokemonOffset = 24,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_KNIGHINUM] =
+    {
+        .categoryName = _( "Power Petal" ),
+        .height = 5,
+        .weight = 30,
+        .description = gKnighinumPokedexText,
         .pokemonScale = 682,
         .pokemonOffset = 24,
         .trainerScale = 256,
@@ -10908,12 +10932,60 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
+    [NATIONAL_DEX_MEOMBER] =
+    {
+        .categoryName = _("Strong Cat"),
+        .height = 4,
+        .weight = 43,
+        .description = gMeomberPokedexText,
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_MEORMOR] =
+    {
+        .categoryName = _("Flame Beast"),
+        .height = 4,
+        .weight = 43,
+        .description = gMeormorPokedexText,
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
     [NATIONAL_DEX_NURDIBRANCH] =
     {
         .categoryName = _( "Smart Blob" ),
         .height = 2,
         .weight = 12,
         .description = gNurdibranchPokedexText,
+        .pokemonScale = 682,
+        .pokemonOffset = 24,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_NURDIBRAG] =
+    {
+        .categoryName = _( "Sauve Blob" ),
+        .height = 2,
+        .weight = 12,
+        .description = gNurdibragPokedexText,
+        .pokemonScale = 682,
+        .pokemonOffset = 24,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_NURDIBRAGON] =
+    {
+        .categoryName = _( "Potlord Blob" ),
+        .height = 2,
+        .weight = 12,
+        .description = gNurdibragonPokedexText,
         .pokemonScale = 682,
         .pokemonOffset = 24,
         .trainerScale = 256,

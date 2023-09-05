@@ -9522,13 +9522,59 @@ static const union AnimCmd sAnim_Snasee_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_Rebelinum_1[] =
+{
+    ANIMCMD_FRAME( 0, 2 ),
+    ANIMCMD_FRAME( 1, 10 ),
+    ANIMCMD_FRAME( 0, 1 ),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Knighinum_1[] =
+{
+    ANIMCMD_FRAME( 0, 2 ),
+    ANIMCMD_FRAME( 1, 10 ),
+    ANIMCMD_FRAME( 0, 1 ),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_Meouchie_1[] =
 {
+    ANIMCMD_FRAME( 0, 2 ),
+    ANIMCMD_FRAME( 1, 10 ),
+    ANIMCMD_FRAME( 0, 1 ),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Meomber_1[] =
+{
+    ANIMCMD_FRAME( 0, 2 ),
+    ANIMCMD_FRAME( 1, 10 ),
+    ANIMCMD_FRAME( 0, 1 ),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Meormor_1[] =
+{
+    ANIMCMD_FRAME( 0, 2 ),
+    ANIMCMD_FRAME( 1, 10 ),
     ANIMCMD_FRAME( 0, 1 ),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_Nurdibranch_1[] =
+{
+    ANIMCMD_FRAME( 0, 1 ),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Nurdibrag_1[] =
+{
+    ANIMCMD_FRAME( 0, 1 ),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Nurdibragon_1[] =
 {
     ANIMCMD_FRAME( 0, 1 ),
     ANIMCMD_END,
@@ -11497,8 +11543,14 @@ SINGLE_ANIMATION(Enamorus);
 
 //==[Nox Mons]==
 SINGLE_ANIMATION( Snasee );
+SINGLE_ANIMATION( Rebelinum );
+SINGLE_ANIMATION( Knighinum );
 SINGLE_ANIMATION( Meouchie );
+SINGLE_ANIMATION( Meomber );
+SINGLE_ANIMATION( Meormor );
 SINGLE_ANIMATION( Nurdibranch );
+SINGLE_ANIMATION( Nurdibrag );
+SINGLE_ANIMATION( Nurdibragon );
 
 //--Forms
 SINGLE_ANIMATION(VenusaurMega);
@@ -12591,8 +12643,14 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
 
     //==[Nox Mons]==
     [SPECIES_SNASEE]        = sAnims_Snasee,
+    [SPECIES_REBELINUM]     = sAnims_Rebelinum,
+    [SPECIES_KNIGHINUM]     = sAnims_Knighinum,
     [SPECIES_MEOUCHIE]      = sAnims_Meouchie,
+    [SPECIES_MEOMBER]       = sAnims_Meomber,
+    [SPECIES_MEORMOR]       = sAnims_Meormor,
     [SPECIES_NURDIBRANCH]   = sAnims_Nurdibranch,
+    [SPECIES_NURDIBRAG]     = sAnims_Nurdibrag,
+    [SPECIES_NURDIBRAGON]   = sAnims_Nurdibragon,
 
     //--Forms
     [SPECIES_VENUSAUR_MEGA] = sAnims_VenusaurMega,

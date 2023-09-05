@@ -3470,11 +3470,23 @@ gCryTable_Reverse::
 
 	@ ==[Nox Mons]==
 	@ Snasee
-	cry_reverse Cry_Budew
+	@cry_reverse Cry_Budew
+	@ Snasee
+	@cry_reverse Cry_Budew
+	@ Snasee
+	@cry_reverse Cry_Budew
 	@ Meouchie
-	cry_reverse Cry_Litten
+	@cry_reverse Cry_Litten
+	@ Meouchie
+	@cry_reverse Cry_Litten
+	@ Meouchie
+	@cry_reverse Cry_Litten
 	@ Nurdibranch
-	cry_reverse Cry_Shellos
+	@cry_reverse Cry_Shellos
+	@ Nurdibranch
+	@cry_reverse Cry_Shellos
+	@ Nurdibranch
+	@cry_reverse Cry_Shellos
 .else
 
 	cry_reverse Cry_Unown

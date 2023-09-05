@@ -919,8 +919,14 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
 
     //==[Nox Mons]==
     [SPECIES_SNASEE] = sSnaseeTeachableLearnset,
+    [SPECIES_REBELINUM] = sRebelinumTeachableLearnset,
+    [SPECIES_KNIGHINUM] = sKnighinumTeachableLearnset,
     [SPECIES_MEOUCHIE] = sMeouchieTeachableLearnset,
+    [SPECIES_MEOMBER] = sMeomberTeachableLearnset,
+    [SPECIES_MEORMOR] = sMeormorTeachableLearnset,
     [SPECIES_NURDIBRANCH] = sNurdibranchTeachableLearnset,
+    [SPECIES_NURDIBRAG] = sNurdibragTeachableLearnset,
+    [SPECIES_NURDIBRAGON] = sNurdibragonTeachableLearnset,
 
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurTeachableLearnset,

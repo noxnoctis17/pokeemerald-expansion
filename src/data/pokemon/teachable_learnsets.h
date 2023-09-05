@@ -32103,11 +32103,35 @@ static const u16 sSnaseeTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+static const u16 sRebelinumTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sKnighinumTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sMeouchieTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+static const u16 sMeomberTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sMeormorTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sNurdibranchTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sNurdibragTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sNurdibragonTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 

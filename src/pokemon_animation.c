@@ -604,8 +604,14 @@ static const u8 sSpeciesToBackAnimSet[NUM_SPECIES] =
 
     //==[Nox Mons]==
     [SPECIES_SNASEE]                       = BACK_ANIM_SHRINK_GROW_VIBRATE,
+    [SPECIES_REBELINUM]                    = BACK_ANIM_SHRINK_GROW_VIBRATE,
+    [SPECIES_KNIGHINUM]                    = BACK_ANIM_SHRINK_GROW_VIBRATE,
     [SPECIES_MEOUCHIE]                     = BACK_ANIM_H_SHAKE,
+    [SPECIES_MEOMBER]                      = BACK_ANIM_H_SHAKE,
+    [SPECIES_MEORMOR]                      = BACK_ANIM_H_SHAKE,
     [SPECIES_NURDIBRANCH]                  = BACK_ANIM_GROW_STUTTER,
+    [SPECIES_NURDIBRAG]                    = BACK_ANIM_GROW_STUTTER,
+    [SPECIES_NURDIBRAGON]                  = BACK_ANIM_GROW_STUTTER,
     
         // Gen 4
     [SPECIES_TURTWIG]                      = BACK_ANIM_H_SLIDE,

@@ -4021,13 +4021,37 @@ Cry_Enamorus::
 	.align 2
 Cry_Snasee::
 	.incbin "sound/direct_sound_samples/cries/budew.bin"
+	
+	.align 2
+Cry_Rebelinum::
+	.incbin "sound/direct_sound_samples/cries/budew.bin"
+	
+	.align 2
+Cry_Knighinum::
+	.incbin "sound/direct_sound_samples/cries/budew.bin"
 
 	.align 2
 Cry_Meouchie::
 	.incbin "sound/direct_sound_samples/cries/litten.bin"
 
 	.align 2
+Cry_Meomber::
+	.incbin "sound/direct_sound_samples/cries/litten.bin"
+
+	.align 2
+Cry_Meormor::
+	.incbin "sound/direct_sound_samples/cries/litten.bin"
+
+	.align 2
 Cry_Nurdibranch::
+	.incbin "sound/direct_sound_samples/cries/shellos.bin"
+
+	.align 2
+Cry_Nurdibrag::
+	.incbin "sound/direct_sound_samples/cries/shellos.bin"
+
+	.align 2
+Cry_Nurdibragon::
 	.incbin "sound/direct_sound_samples/cries/shellos.bin"
 
 	@ ======================================================================================
