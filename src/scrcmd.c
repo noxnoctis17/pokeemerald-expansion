@@ -49,6 +49,7 @@
 #include "tv.h"
 #include "window.h"
 #include "constants/event_objects.h"
+#include "constants/items.h" //nox hms try putting under text.h if this errors
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(void);
@@ -1721,8 +1722,17 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
         u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
         if (!species)
             break;
-        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], moveId) == TRUE)
+
+        //--If Mon knows HM Move, use from Field Trigger
+        if( !GetMonData( &gPlayerParty[i], MON_DATA_IS_EGG ) && MonKnowsMove( &gPlayerParty[i], moveId ) == TRUE )
         {
+            gSpecialVar_Result = i;
+            gSpecialVar_0x8004 = species;
+            break;
+        }
+
+        //--If Mon can Learn HM Move, use from Field Trigger //--Nox HMs
+        if( !GetMonData( &gPlayerParty[i], MON_DATA_IS_EGG ) && CanLearnTeachableMove( GetMonData( &gPlayerParty[i], MON_DATA_SPECIES, NULL ), moveId ) && CheckBagHasItem( MoveToHM( moveId ), 1 ) ){
             gSpecialVar_Result = i;
             gSpecialVar_0x8004 = species;
             break;

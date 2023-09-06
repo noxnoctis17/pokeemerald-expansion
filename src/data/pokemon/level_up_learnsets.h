@@ -18283,6 +18283,7 @@ static const struct LevelUpMove sMeouchieLevelUpLearnset[] = {
 static const struct LevelUpMove sMeomberLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SCRATCH ),
     LEVEL_UP_MOVE( 1, MOVE_GROWL ),
+    LEVEL_UP_MOVE( 1, MOVE_TEARFUL_LOOK ),
     LEVEL_UP_MOVE( 1, MOVE_EMBER ),
     LEVEL_UP_MOVE( 1, MOVE_HONE_CLAWS ),
     LEVEL_UP_MOVE( 6, MOVE_EMBER ),
@@ -18305,6 +18306,7 @@ static const struct LevelUpMove sMeomberLevelUpLearnset[] = {
 static const struct LevelUpMove sMeormorLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SCRATCH ),
     LEVEL_UP_MOVE( 1, MOVE_GROWL ),
+    LEVEL_UP_MOVE( 1, MOVE_TEARFUL_LOOK ),
     LEVEL_UP_MOVE( 1, MOVE_EMBER ),
     LEVEL_UP_MOVE( 1, MOVE_HONE_CLAWS ),
     LEVEL_UP_MOVE( 6, MOVE_EMBER ),
