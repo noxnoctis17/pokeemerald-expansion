@@ -3757,9 +3757,15 @@ static void CursorCb_FieldMove(u8 taskId)
     {
         // All field moves before WATERFALL are HMs.
         if (fieldMove <= FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE01_GET + fieldMove) != TRUE)
-        {
-            DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
-            gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+        { //--Nox removing fly badge limit
+            if( fieldMove == FIELD_MOVE_FLY && CheckBagHasItem( ITEM_HM02_FLY, 1 ) ){
+                gPartyMenu.exitCallback = CB2_OpenFlyMap;
+                Task_ClosePartyMenu(taskId);
+            }
+            if( fieldMove != FIELD_MOVE_FLY ){
+                DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
+                gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+            }
         }
         else if (sFieldMoveCursorCallbacks[fieldMove].fieldMoveFunc() == TRUE)
         {
@@ -3783,10 +3789,10 @@ static void CursorCb_FieldMove(u8 taskId)
                 DisplayFieldMoveExitAreaMessage(taskId);
                 sPartyMenuInternal->data[0] = fieldMove;
                 break;
-            case FIELD_MOVE_FLY:
-                gPartyMenu.exitCallback = CB2_OpenFlyMap;
-                Task_ClosePartyMenu(taskId);
-                break;
+            // case FIELD_MOVE_FLY:
+            //     gPartyMenu.exitCallback = CB2_OpenFlyMap;
+            //     Task_ClosePartyMenu(taskId);
+            //     break;
             default:
                 gPartyMenu.exitCallback = CB2_ReturnToField;
                 Task_ClosePartyMenu(taskId);
