@@ -844,7 +844,11 @@ static const struct WindowTemplate sPokemonList_WindowTemplate[] =
     DUMMY_WIN_TEMPLATE
 };
 
+#if P_DEX_FOUR_DIGITS_AMOUNT == TRUE
+static const u8 sText_No000[] = _("{NO}0000");
+#else
 static const u8 sText_No000[] = _("{NO}000");
+#endif
 static const u8 sCaughtBall_Gfx[] = INCBIN_U8("graphics/pokedex/caught_ball.4bpp");
 static const u8 sText_TenDashes[] = _("----------");
 
@@ -2420,16 +2424,27 @@ static void CreateMonListEntry(u8 position, u16 b, u16 ignored)
 
 static void CreateMonDexNum(u16 entryNum, u8 left, u8 top, u16 unused)
 {
+#if P_DEX_FOUR_DIGITS_AMOUNT == TRUE
+    u8 text[7];
+#else
     u8 text[6];
+#endif
     u16 dexNum;
 
     memcpy(text, sText_No000, ARRAY_COUNT(text));
     dexNum = sPokedexView->pokedexList[entryNum].dexNum;
     if (sPokedexView->dexMode == DEX_MODE_HOENN)
         dexNum = NationalToHoennOrder(dexNum);
+#if P_DEX_FOUR_DIGITS_AMOUNT == TRUE
+    text[2] = CHAR_0 + dexNum / 1000;
+    text[3] = CHAR_0 + (dexNum % 1000) / 100;
+    text[4] = CHAR_0 + (dexNum % 100) / 10;
+    text[5] = CHAR_0 + (dexNum % 10);
+#else
     text[2] = CHAR_0 + dexNum / 100;
     text[3] = CHAR_0 + (dexNum % 100) / 10;
     text[4] = CHAR_0 + (dexNum % 100) % 10;
+#endif
     PrintMonDexNumAndName(0, FONT_NARROW, text, left, top);
 }
 
@@ -2447,7 +2462,7 @@ static u8 CreateMonName(u16 num, u8 left, u8 top)
 
     num = NationalPokedexNumToSpecies(num);
     if (num)
-        str = gSpeciesNames[num];
+        str = GetSpeciesName(num);
     else
         str = sText_TenDashes;
     PrintMonDexNumAndName(0, FONT_NARROW, str, left, top);
@@ -4108,14 +4123,21 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
         value = NationalToHoennOrder(num);
     else
         value = num;
+#if P_DEX_FOUR_DIGITS_AMOUNT == TRUE
+    ConvertIntToDecimalStringN(StringCopy(str, gText_NumberClear01), value, STR_CONV_MODE_LEADING_ZEROS, 4);
+    PrintInfoScreenText(str, 0x60, 0x19);
+    name = GetSpeciesName(num);
+    PrintInfoScreenText(name, 0x8A, 0x19);
+#else
     ConvertIntToDecimalStringN(StringCopy(str, gText_NumberClear01), value, STR_CONV_MODE_LEADING_ZEROS, 3);
     PrintInfoScreenText(str, 0x60, 0x19);
     natNum = NationalPokedexNumToSpecies(num);
     if (natNum)
-        name = gSpeciesNames[natNum];
+        name = GetSpeciesName(natNum);
     else
         name = sText_TenDashes2;
     PrintInfoScreenText(name, 0x84, 0x19);
+#endif
     if (owned)
     {
         CopyMonCategoryText(num, str2);
@@ -4459,8 +4481,8 @@ static u8 PrintCryScreenSpeciesName(u8 windowId, u16 num, u8 left, u8 top)
     switch (num)
     {
     default:
-        for (i = 0; gSpeciesNames[num][i] != EOS && i < POKEMON_NAME_LENGTH; i++)
-            str[i] = gSpeciesNames[num][i];
+        for (i = 0; GetSpeciesName(num)[i] != EOS && i < POKEMON_NAME_LENGTH; i++)
+            str[i] = GetSpeciesName(num)[i];
         break;
     case 0:
         for (i = 0; i < 5; i++)
@@ -4661,7 +4683,7 @@ static int DoPokedexSearch(u8 dexMode, u8 order, u8 abcGroup, u8 bodyColor, u8 t
             u8 firstLetter;
 
             species = NationalPokedexNumToSpecies(sPokedexView->pokedexList[i].dexNum);
-            firstLetter = gSpeciesNames[species][0];
+            firstLetter = GetSpeciesName(species)[0];
             if (LETTER_IN_RANGE_UPPER(firstLetter, abcGroup) || LETTER_IN_RANGE_LOWER(firstLetter, abcGroup))
             {
                 sPokedexView->pokedexList[resultsCount] = sPokedexView->pokedexList[i];
