@@ -921,17 +921,6 @@ const struct CompressedSpritePalette gMonPaletteTable[NUM_SPECIES + 1] =
     SPECIES_PAL(ENAMORUS, gMonPalette_Enamorus),
 #endif
 
-    //==[Nox Mons]==
-    SPECIES_PAL( SNASEE, gMonPalette_Snasee ),
-    SPECIES_PAL( REBELINUM, gMonPalette_Snasee ),
-    SPECIES_PAL( KNIGHINUM, gMonPalette_Snasee ),
-    SPECIES_PAL( MEOUCHIE, gMonPalette_Meouchie ),
-    SPECIES_PAL( MEOMBER, gMonPalette_Meouchie ),
-    SPECIES_PAL( MEORMOR, gMonPalette_Meouchie ),
-    SPECIES_PAL( NURDIBRANCH, gMonPalette_Nurdibranch ),
-    SPECIES_PAL( NURDIBRAG, gMonPalette_Nurdibranch ),
-    SPECIES_PAL( NURDIBRAGON, gMonPalette_Nurdibranch ),
-
     //--Forms
     SPECIES_PAL(VENUSAUR_MEGA, gMonPalette_VenusaurMega),
     SPECIES_PAL(CHARIZARD_MEGA_X, gMonPalette_CharizardMegaX),

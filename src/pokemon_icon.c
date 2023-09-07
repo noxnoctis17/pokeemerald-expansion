@@ -224,6 +224,7 @@ const u8 *const gMonIconTable[NUM_SPECIES + 1] =
     [SPECIES_SUNFLORA] = gMonIcon_Sunflora,
     [SPECIES_YANMA] = gMonIcon_Yanma,
     [SPECIES_WOOPER] = gMonIcon_Wooper,
+    [SPECIES_WOOPER_PALDEAN] = gMonIcon_Wooper,
     [SPECIES_QUAGSIRE] = gMonIcon_Quagsire,
     [SPECIES_ESPEON] = gMonIcon_Espeon,
     [SPECIES_UMBREON] = gMonIcon_Umbreon,

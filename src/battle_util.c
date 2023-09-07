@@ -10553,7 +10553,7 @@ static u8 GetFlingPowerFromItemId(u16 itemId)
         return ItemId_GetFlingPower(itemId);
 }
 
-bool32 CanFling(u32 battlerId)
+bool32 CanFling(u8 battlerId) //--used to be u32 before gen9 pull
 {
     u16 item = gBattleMons[battlerId].item;
 
