@@ -7425,7 +7425,7 @@ static const struct TrainerMon sParty_BrendanRustboroTreecko[] = {
     {
     .iv = 50,
     .lvl = 13,
-    .species = SPECIES_LOTAD,
+    .species = SPECIES_WATTREL,
     },
     {
     .iv = 75,
@@ -7514,7 +7514,7 @@ static const struct TrainerMon sParty_BrendanRustboroTorchic[] = {
     {
     .iv = 50,
     .lvl = 13,
-    .species = SPECIES_SLUGMA,
+    .species = SPECIES_FLETCHLING,
     },
     {
     .iv = 75,

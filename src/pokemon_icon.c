@@ -2777,9 +2777,9 @@ const u8 gMonIconPaletteIndices[] =
 #endif
 
     //==[Nox Mons]==
-    [SPECIES_SNASEE] = 0,
-    [SPECIES_REBELINUM] = 0,
-    [SPECIES_KNIGHINUM] = 0,
+    [SPECIES_SNASEE] = 1,
+    [SPECIES_REBELINUM] = 1,
+    [SPECIES_KNIGHINUM] = 1,
     [SPECIES_MEOUCHIE] = 5,
     [SPECIES_MEOMBER] = 5,
     [SPECIES_MEORMOR] = 5,

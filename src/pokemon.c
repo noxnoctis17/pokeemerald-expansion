@@ -104,6 +104,16 @@ static const struct CombinedMove sCombinedMoves[2] =
 // Assigns all species to the Hoenn Dex Index (Summary No. for Hoenn Dex)
 static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
 {
+    //==[Nox Mons]==
+    SPECIES_TO_HOENN( SNASEE ),
+    SPECIES_TO_HOENN( REBELINUM ),
+    SPECIES_TO_HOENN( KNIGHINUM ),
+    SPECIES_TO_HOENN( MEOUCHIE ),
+    SPECIES_TO_HOENN( MEOMBER ),
+    SPECIES_TO_HOENN( MEORMOR ),
+    SPECIES_TO_HOENN( NURDIBRANCH ),
+    SPECIES_TO_HOENN( NURDIBRAG ),
+    SPECIES_TO_HOENN( NURDIBRAGON ),
     SPECIES_TO_HOENN(TREECKO),
     SPECIES_TO_HOENN(GROVYLE),
     SPECIES_TO_HOENN(SCEPTILE),

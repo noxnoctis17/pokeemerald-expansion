@@ -37924,16 +37924,19 @@ static const u16 sMeormorTeachableLearnset[] = {
 
 static const u16 sNurdibranchTeachableLearnset[] = {
     MOVE_CUT,
+    MOVE_SURF,
     MOVE_UNAVAILABLE,
 };
 
 static const u16 sNurdibragTeachableLearnset[] = {
     MOVE_CUT,
+    MOVE_SURF,
     MOVE_UNAVAILABLE,
 };
 
 static const u16 sNurdibragonTeachableLearnset[] = {
     MOVE_CUT,
+    MOVE_SURF,
     MOVE_UNAVAILABLE,
 };
 
