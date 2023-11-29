@@ -1460,7 +1460,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[NUM_SPECIES + 1] =
 
 //==[Nox Mons]==
     SPECIES_SPRITE( SNASEE, gMonFrontPic_Snasee ),
-    SPECIES_SPRITE( REBELINUM, gMonFrontPic_Snasee ),
+    SPECIES_SPRITE( REBELINUM, gMonFrontPic_Rebelinum ),
     SPECIES_SPRITE( KNIGHINUM, gMonFrontPic_Snasee ),
     SPECIES_SPRITE( MEOUCHIE, gMonFrontPic_Meouchie ),
     SPECIES_SPRITE( MEOMBER, gMonFrontPic_Meouchie ),

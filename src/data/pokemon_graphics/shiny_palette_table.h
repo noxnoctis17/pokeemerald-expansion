@@ -1457,7 +1457,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[NUM_SPECIES + 1] =
 
 //==[Nox Mons]==
     SPECIES_SHINY_PAL( SNASEE, gMonShinyPalette_Snasee ),
-    SPECIES_SHINY_PAL( REBELINUM, gMonShinyPalette_Snasee ),
+    SPECIES_SHINY_PAL( REBELINUM, gMonShinyPalette_Rebelinum ),
     SPECIES_SHINY_PAL( KNIGHINUM, gMonShinyPalette_Snasee ),
     SPECIES_SHINY_PAL( MEOUCHIE, gMonShinyPalette_Meouchie ),
     SPECIES_SHINY_PAL( MEOMBER, gMonShinyPalette_Meouchie ),
