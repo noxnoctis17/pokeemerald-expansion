@@ -136,7 +136,7 @@ static const struct WindowTemplate sMenuWindowTemplates[] =
         .width = 18,        // width (per 8 pixels)
         .height = 17,        // height (per 8 pixels)
         .paletteNum = 15,   // palette index to use for text
-        .baseBlock = 1 + 23 + 16 + 12 + 9,     // tile start in VRAM
+        .baseBlock = 1 + 69,     // tile start in VRAM
     },
     [WINDOW_3] = 
     {
@@ -146,7 +146,7 @@ static const struct WindowTemplate sMenuWindowTemplates[] =
         .width = 8,        // width (per 8 pixels)
         .height = 9,        // height (per 8 pixels)
         .paletteNum = 15,   // palette index to use for text
-        .baseBlock = 1 + 23 + 16 + 102 + 204 + 12 + 9,     // tile start in VRAM
+        .baseBlock = 1 + 69 + 297,     // tile start in VRAM
     },
 };
 
@@ -519,8 +519,8 @@ static void DestroySelector()
 #define DISTANCE_BETWEEN_STATS_Y 16
 #define SECOND_COLUMN ((8 * 4))
 #define THIRD_COLUMN ((8 * 8))
-#define STARTING_X 12 + 48
-#define STARTING_Y 6 + 20
+#define STARTING_X 60
+#define STARTING_Y 26
 
 struct MonPrintData {
     u16 x;
