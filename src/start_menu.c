@@ -46,7 +46,7 @@
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
-#include "ui_menu.h"
+#include "ui_stat_editor.h"
 
 // Menu actions
 enum
@@ -1447,6 +1447,6 @@ void AppendToList(u8 *list, u8 *pos, u8 newEntry)
 
 static bool8 StartMenuStatEditorCallback(void)
 {
-    CreateTask(Task_OpenMenuFromStartMenu, 0);
+    CreateTask(Task_OpenStatEditorFromStartMenu, 0);
     return TRUE;
 }

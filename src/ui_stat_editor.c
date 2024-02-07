@@ -1,5 +1,5 @@
 #include "global.h"
-#include "ui_menu.h"
+#include "ui_stat_editor.h"
 #include "strings.h"
 #include "bg.h"
 #include "data.h"
@@ -45,7 +45,7 @@
  */
  
 //==========DEFINES==========//
-struct MenuResources
+struct StatEditorResources
 {
     MainCallback savedCallback;     // determines callback to run when we exit. e.g. where do we want to go after closing the menu
     u8 gfxLoadState;
@@ -72,27 +72,29 @@ enum WindowIds
 };
 
 //==========EWRAM==========//
-static EWRAM_DATA struct MenuResources *sMenuDataPtr = NULL;
+static EWRAM_DATA struct StatEditorResources *sStatEditorDataPtr = NULL;
 static EWRAM_DATA u8 *sBg1TilemapBuffer = NULL;
 
 //==========STATIC=DEFINES==========//
-static void Menu_RunSetup(void);
-static bool8 Menu_DoGfxSetup(void);
+static void StatEditor_RunSetup(void);
+static bool8 StatEditor_DoGfxSetup(void);
 static bool8 StatEditor_InitBgs(void);
-static void Menu_FadeAndBail(void);
-static bool8 Menu_LoadGraphics(void);
+static void StatEditor_FadeAndBail(void);
+static bool8 StatEditor_LoadGraphics(void);
 static void StatEditor_InitWindows(void);
 static void PrintTitleToWindowMainState();
-static void Task_MenuWaitFadeIn(u8 taskId);
-static void Task_MenuMain(u8 taskId);
+static void Task_StatEditorWaitFadeIn(u8 taskId);
+static void Task_StatEditorMain(u8 taskId);
 static void Task_MenuEditingStat(u8 taskId);
 static void SampleUi_DrawMonIcon(u16 dexNum);
 static void PrintMonStats(void);
 static void SelectorCallback(struct Sprite *sprite);
 static struct Pokemon *ReturnPartyMon();
+static u8 CreateSelector();
+static void DestroySelector();
 
 //==========CONST=DATA==========//
-static const struct BgTemplate sMenuBgTemplates[] =
+static const struct BgTemplate sStatEditorBgTemplates[] =
 {
     {
         .bg = 0,    // windows, etc
@@ -148,9 +150,9 @@ static const struct WindowTemplate sMenuWindowTemplates[] =
     },
 };
 
-static const u32 sMenuTiles[] = INCBIN_U32("graphics/ui_menu/background_tileset.4bpp.lz");
-static const u32 sMenuTilemap[] = INCBIN_U32("graphics/ui_menu/background_tileset.bin.lz");
-static const u16 sMenuPalette[] = INCBIN_U16("graphics/ui_menu/background_pal.gbapal");
+static const u32 sStatEditorBgTiles[] = INCBIN_U32("graphics/ui_menu/background_tileset.4bpp.lz");
+static const u32 sStatEditorBgTilemap[] = INCBIN_U32("graphics/ui_menu/background_tileset.bin.lz");
+static const u16 sStatEditorBgPalette[] = INCBIN_U16("graphics/ui_menu/background_pal.gbapal");
 
 enum Colors
 {
@@ -244,29 +246,8 @@ static const struct SpriteTemplate sSpriteTemplate_Selector =
     .callback = SelectorCallback
 };
 
-// code
-static u8 CreateSelector()
-{
-    if (sMenuDataPtr->selectorSpriteId == 0xFF)
-        sMenuDataPtr->selectorSpriteId = CreateSprite(&sSpriteTemplate_Selector, 188, 30, 0);
-
-    gSprites[sMenuDataPtr->selectorSpriteId].invisible = FALSE;
-    StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 0);
-    DebugPrintf("Sprite ID: %d", sMenuDataPtr->selectorSpriteId);
-    return sMenuDataPtr->selectorSpriteId;
-}
-
-static void DestroySelector(void)
-{
-    if (sMenuDataPtr->selectorSpriteId != 0xFF)
-        DestroySprite(&gSprites[sMenuDataPtr->selectorSpriteId]);
-    sMenuDataPtr->selectorSpriteId = 0xFF;
-}
-
-
-//==========FUNCTIONS==========//
-// UI loader template
-void Task_OpenMenuFromStartMenu(u8 taskId)
+// Begin Generic UI Initialization Code
+void Task_OpenStatEditorFromStartMenu(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
@@ -279,31 +260,31 @@ void Task_OpenMenuFromStartMenu(u8 taskId)
 // This is our main initialization function if you want to call the menu from elsewhere
 void StatEditor_Init(MainCallback callback)
 {
-    if ((sMenuDataPtr = AllocZeroed(sizeof(struct MenuResources))) == NULL)
+    if ((sStatEditorDataPtr = AllocZeroed(sizeof(struct StatEditorResources))) == NULL)
     {
         SetMainCallback2(callback);
         return;
     }
     
     // initialize stuff
-    sMenuDataPtr->gfxLoadState = 0;
-    sMenuDataPtr->savedCallback = callback;
-    sMenuDataPtr->selectorSpriteId = 0xFF;
-    sMenuDataPtr->partyid = gSpecialVar_0x8004;
+    sStatEditorDataPtr->gfxLoadState = 0;
+    sStatEditorDataPtr->savedCallback = callback;
+    sStatEditorDataPtr->selectorSpriteId = 0xFF;
+    sStatEditorDataPtr->partyid = gSpecialVar_0x8004;
     
-    SetMainCallback2(Menu_RunSetup);
+    SetMainCallback2(StatEditor_RunSetup);
 }
 
-static void Menu_RunSetup(void)
+static void StatEditor_RunSetup(void)
 {
     while (1)
     {
-        if (Menu_DoGfxSetup() == TRUE)
+        if (StatEditor_DoGfxSetup() == TRUE)
             break;
     }
 }
 
-static void Menu_MainCB(void)
+static void StatEditor_MainCB(void)
 {
     RunTasks();
     AnimateSprites();
@@ -312,14 +293,14 @@ static void Menu_MainCB(void)
     UpdatePaletteFade();
 }
 
-static void Menu_VBlankCB(void)
+static void StatEditor_VBlankCB(void)
 {
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
 }
 
-static bool8 Menu_DoGfxSetup(void)
+static bool8 StatEditor_DoGfxSetup(void)
 {
     switch (gMain.state)
     {
@@ -341,26 +322,26 @@ static bool8 Menu_DoGfxSetup(void)
     case 2:
         if (StatEditor_InitBgs())
         {
-            sMenuDataPtr->gfxLoadState = 0;
+            sStatEditorDataPtr->gfxLoadState = 0;
             gMain.state++;
         }
         else
         {
-            Menu_FadeAndBail();
+            StatEditor_FadeAndBail();
             return TRUE;
         }
         break;
     case 3:
-        if (Menu_LoadGraphics() == TRUE)
+        if (StatEditor_LoadGraphics() == TRUE)
             gMain.state++;
         break;
     case 4:
-        sMenuDataPtr->speciesID = GetMonData(ReturnPartyMon(), MON_DATA_SPECIES);
+        sStatEditorDataPtr->speciesID = GetMonData(ReturnPartyMon(), MON_DATA_SPECIES);
         FreeMonIconPalettes();
         LoadMonIconPalettes();
         LoadCompressedSpriteSheet(&sSpriteSheet_Selector);
         LoadSpritePalette(&sSpritePal_Selector);
-        SampleUi_DrawMonIcon(sMenuDataPtr->speciesID);
+        SampleUi_DrawMonIcon(sStatEditorDataPtr->speciesID);
         gMain.state++;
         break;
     case 5:
@@ -371,7 +352,7 @@ static bool8 Menu_DoGfxSetup(void)
         gMain.state++;
         break;
     case 6:
-        CreateTask(Task_MenuWaitFadeIn, 0);
+        CreateTask(Task_StatEditorWaitFadeIn, 0);
         BlendPalettes(0xFFFFFFFF, 16, RGB_BLACK);
         gMain.state++;
         break;
@@ -380,8 +361,8 @@ static bool8 Menu_DoGfxSetup(void)
         gMain.state++;
         break;
     default:
-        SetVBlankCallback(Menu_VBlankCB);
-        SetMainCallback2(Menu_MainCB);
+        SetVBlankCallback(StatEditor_VBlankCB);
+        SetMainCallback2(StatEditor_MainCB);
         return TRUE;
     }
     return FALSE;
@@ -393,32 +374,32 @@ static bool8 Menu_DoGfxSetup(void)
         Free(*ptr__);                  \
 })
 
-static void Menu_FreeResources(void)
+static void StatEditor_FreeResources(void)
 {
     DestroySelector();
-    FreeResourcesAndDestroySprite(&gSprites[sMenuDataPtr->monIconSpriteId], sMenuDataPtr->monIconSpriteId);
-    try_free(sMenuDataPtr);
+    FreeResourcesAndDestroySprite(&gSprites[sStatEditorDataPtr->monIconSpriteId], sStatEditorDataPtr->monIconSpriteId);
+    try_free(sStatEditorDataPtr);
     try_free(sBg1TilemapBuffer);
     FreeAllWindowBuffers();
 }
 
 
-static void Task_MenuWaitFadeAndBail(u8 taskId)
+static void Task_StatEditorWaitFadeAndBail(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
-        SetMainCallback2(sMenuDataPtr->savedCallback);
-        Menu_FreeResources();
+        SetMainCallback2(sStatEditorDataPtr->savedCallback);
+        StatEditor_FreeResources();
         DestroyTask(taskId);
     }
 }
 
-static void Menu_FadeAndBail(void)
+static void StatEditor_FadeAndBail(void)
 {
     BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
-    CreateTask(Task_MenuWaitFadeAndBail, 0);
-    SetVBlankCallback(Menu_VBlankCB);
-    SetMainCallback2(Menu_MainCB);
+    CreateTask(Task_StatEditorWaitFadeAndBail, 0);
+    SetVBlankCallback(StatEditor_VBlankCB);
+    SetMainCallback2(StatEditor_MainCB);
 }
 
 static bool8 StatEditor_InitBgs(void)
@@ -430,7 +411,7 @@ static bool8 StatEditor_InitBgs(void)
     
     memset(sBg1TilemapBuffer, 0, 0x800);
     ResetBgsAndClearDma3BusyFlags(0);
-    InitBgsFromTemplates(0, sMenuBgTemplates, NELEMS(sMenuBgTemplates));
+    InitBgsFromTemplates(0, sStatEditorBgTemplates, NELEMS(sStatEditorBgTemplates));
     SetBgTilemapBuffer(1, sBg1TilemapBuffer);
     ScheduleBgCopyTilemapToVram(1);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
@@ -440,46 +421,31 @@ static bool8 StatEditor_InitBgs(void)
     return TRUE;
 }
 
-static bool8 Menu_LoadGraphics(void)
+static bool8 StatEditor_LoadGraphics(void)
 {
-    switch (sMenuDataPtr->gfxLoadState)
+    switch (sStatEditorDataPtr->gfxLoadState)
     {
     case 0:
         ResetTempTileDataBuffers();
-        DecompressAndCopyTileDataToVram(1, sMenuTiles, 0, 0, 0);
-        sMenuDataPtr->gfxLoadState++;
+        DecompressAndCopyTileDataToVram(1, sStatEditorBgTiles, 0, 0, 0);
+        sStatEditorDataPtr->gfxLoadState++;
         break;
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            LZDecompressWram(sMenuTilemap, sBg1TilemapBuffer);
-            sMenuDataPtr->gfxLoadState++;
+            LZDecompressWram(sStatEditorBgTilemap, sBg1TilemapBuffer);
+            sStatEditorDataPtr->gfxLoadState++;
         }
         break;
     case 2:
-        LoadPalette(sMenuPalette, 0, 32);
-        sMenuDataPtr->gfxLoadState++;
+        LoadPalette(sStatEditorBgPalette, 0, 32);
+        sStatEditorDataPtr->gfxLoadState++;
         break;
     default:
-        sMenuDataPtr->gfxLoadState = 0;
+        sStatEditorDataPtr->gfxLoadState = 0;
         return TRUE;
     }
     return FALSE;
-}
-
-static struct Pokemon *ReturnPartyMon()
-{
-    return &gPlayerParty[sMenuDataPtr->partyid];
-}
-
-#define MON_ICON_X     32 + 8
-#define MON_ICON_Y     32 + 24
-static void SampleUi_DrawMonIcon(u16 dexNum)
-{
-    u16 speciesId = dexNum;
-    sMenuDataPtr->monIconSpriteId = CreateMonPicSprite_Affine(speciesId, 0, 0x8000, TRUE, MON_ICON_X, MON_ICON_Y, 0, TAG_NONE);
-
-    gSprites[sMenuDataPtr->monIconSpriteId].oam.priority = 0;
 }
 
 static void StatEditor_InitWindows(void)
@@ -493,6 +459,61 @@ static void StatEditor_InitWindows(void)
     CopyWindowToVram(WINDOW_1, 3);
     
     ScheduleBgCopyTilemapToVram(2);
+}
+
+static void Task_StatEditorWaitFadeIn(u8 taskId)
+{
+    if (!gPaletteFade.active)
+        gTasks[taskId].func = Task_StatEditorMain;
+}
+
+static void Task_StatEditorTurnOff(u8 taskId)
+{
+    // s16 *data = gTasks[taskId].data;
+
+    if (!gPaletteFade.active)
+    {
+        SetMainCallback2(sStatEditorDataPtr->savedCallback);
+        StatEditor_FreeResources();
+        DestroyTask(taskId);
+    }
+}
+
+//
+//       Stat Editor Code
+//  End of UI setup code, beginning of stat editor specific code
+//
+static struct Pokemon *ReturnPartyMon()
+{
+    return &gPlayerParty[sStatEditorDataPtr->partyid];
+}
+
+#define MON_ICON_X     32 + 8
+#define MON_ICON_Y     32 + 24
+static void SampleUi_DrawMonIcon(u16 dexNum)
+{
+    u16 speciesId = dexNum;
+    sStatEditorDataPtr->monIconSpriteId = CreateMonPicSprite_Affine(speciesId, 0, 0x8000, TRUE, MON_ICON_X, MON_ICON_Y, 0, TAG_NONE);
+
+    gSprites[sStatEditorDataPtr->monIconSpriteId].oam.priority = 0;
+}
+
+static u8 CreateSelector()
+{
+    if (sStatEditorDataPtr->selectorSpriteId == 0xFF)
+        sStatEditorDataPtr->selectorSpriteId = CreateSprite(&sSpriteTemplate_Selector, 188, 30, 0);
+
+    gSprites[sStatEditorDataPtr->selectorSpriteId].invisible = FALSE;
+    StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 0);
+    DebugPrintf("Sprite ID: %d", sStatEditorDataPtr->selectorSpriteId);
+    return sStatEditorDataPtr->selectorSpriteId;
+}
+
+static void DestroySelector()
+{
+    if (sStatEditorDataPtr->selectorSpriteId != 0xFF)
+        DestroySprite(&gSprites[sStatEditorDataPtr->selectorSpriteId]);
+    sStatEditorDataPtr->selectorSpriteId = 0xFF;
 }
 
 #define DISTANCE_BETWEEN_STATS_Y 16
@@ -612,14 +633,14 @@ static void PrintMonStats()
     u8 text[2];
     u16 level = GetMonData(ReturnPartyMon(), MON_DATA_LEVEL);
     u16 personality = GetMonData(ReturnPartyMon(), MON_DATA_PERSONALITY);
-    u16 gender = GetGenderFromSpeciesAndPersonality(sMenuDataPtr->speciesID, personality);
+    u16 gender = GetGenderFromSpeciesAndPersonality(sStatEditorDataPtr->speciesID, personality);
 
     FillWindowPixelBuffer(WINDOW_2, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
     FillWindowPixelBuffer(WINDOW_3, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 
-    sMenuDataPtr->normalTotal = 0;
-    sMenuDataPtr->evTotal = 0;
-    sMenuDataPtr->ivTotal = 0;
+    sStatEditorDataPtr->normalTotal = 0;
+    sStatEditorDataPtr->evTotal = 0;
+    sStatEditorDataPtr->ivTotal = 0;
 
     AddTextPrinterParameterized4(WINDOW_2, FONT_NARROW, 18, 7, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, sText_MenuStat);
     AddTextPrinterParameterized4(WINDOW_2, FONT_NARROW, STARTING_X - 6, 7, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, sText_MenuActual);
@@ -638,7 +659,7 @@ static void PrintMonStats()
     for(i = 0; i < 6; i++)
     {
         currentStat = GetMonData(ReturnPartyMon(), statsToPrintActual[i]);
-        sMenuDataPtr->normalTotal += currentStat;
+        sStatEditorDataPtr->normalTotal += currentStat;
         DebugPrintf("Stat: %d", currentStat);
         ConvertIntToDecimalStringN(gStringVar2, currentStat, STR_CONV_MODE_RIGHT_ALIGN, 3);
         AddTextPrinterParameterized4(WINDOW_2, 1, StatPrintData[statsToPrintActual[i]].x, StatPrintData[statsToPrintActual[i]].y, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
@@ -647,7 +668,7 @@ static void PrintMonStats()
     for(i = 0; i < 6; i++)
     {
         currentStat = GetMonData(ReturnPartyMon(), statsToPrintEVs[i]);
-        sMenuDataPtr->evTotal += currentStat;
+        sStatEditorDataPtr->evTotal += currentStat;
         DebugPrintf("Stat: %d", currentStat);
         ConvertIntToDecimalStringN(gStringVar2, currentStat, STR_CONV_MODE_RIGHT_ALIGN, 3);
         AddTextPrinterParameterized4(WINDOW_2, 1, StatPrintData[statsToPrintEVs[i]].x, StatPrintData[statsToPrintEVs[i]].y, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
@@ -656,29 +677,29 @@ static void PrintMonStats()
     for(i = 0; i < 6; i++)
     {
         currentStat = GetMonData(ReturnPartyMon(), statsToPrintIVs[i]);
-        sMenuDataPtr->ivTotal += currentStat;
+        sStatEditorDataPtr->ivTotal += currentStat;
         DebugPrintf("Stat: %d", currentStat);
         ConvertIntToDecimalStringN(gStringVar2, currentStat, STR_CONV_MODE_RIGHT_ALIGN, 3);
         AddTextPrinterParameterized4(WINDOW_2, 1, StatPrintData[statsToPrintIVs[i]].x, StatPrintData[statsToPrintIVs[i]].y, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
     }
 
     // Calc Totals
-    ConvertIntToDecimalStringN(gStringVar2, sMenuDataPtr->normalTotal, STR_CONV_MODE_RIGHT_ALIGN, 4);
+    ConvertIntToDecimalStringN(gStringVar2, sStatEditorDataPtr->normalTotal, STR_CONV_MODE_RIGHT_ALIGN, 4);
     AddTextPrinterParameterized4(WINDOW_2, 1, STARTING_X - 6, STARTING_Y + (DISTANCE_BETWEEN_STATS_Y * 6), 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
-    ConvertIntToDecimalStringN(gStringVar2, sMenuDataPtr->evTotal, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar2, sStatEditorDataPtr->evTotal, STR_CONV_MODE_RIGHT_ALIGN, 3);
     AddTextPrinterParameterized4(WINDOW_2, 1, STARTING_X + SECOND_COLUMN, STARTING_Y + (DISTANCE_BETWEEN_STATS_Y * 6), 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
-    ConvertIntToDecimalStringN(gStringVar2, sMenuDataPtr->ivTotal, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar2, sStatEditorDataPtr->ivTotal, STR_CONV_MODE_RIGHT_ALIGN, 3);
     AddTextPrinterParameterized4(WINDOW_2, 1, STARTING_X + THIRD_COLUMN, STARTING_Y + (DISTANCE_BETWEEN_STATS_Y * 6), 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
 
     // Print ability / nature / name / level / gender
 
 #ifdef POKEMON_EXPANSION
-    StringCopy(gStringVar2, GetSpeciesName(sMenuDataPtr->speciesID));
+    StringCopy(gStringVar2, GetSpeciesName(sStatEditorDataPtr->speciesID));
 #else
-    StringCopy(gStringVar2, gSpeciesNames[sMenuDataPtr->speciesID]);
+    StringCopy(gStringVar2, gSpeciesNames[sStatEditorDataPtr->speciesID]);
 #endif
 
     AddTextPrinterParameterized4(WINDOW_3, FONT_NARROW, 4, 2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
@@ -701,7 +722,7 @@ static void PrintMonStats()
     StringCopy(gStringVar2, gNatureNamePointers[nature]);
     AddTextPrinterParameterized4(WINDOW_3, FONT_SMALL_NARROW, 4, 50, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
-    StringCopy(gStringVar2, gAbilityNames[gSpeciesInfo[sMenuDataPtr->speciesID].abilities[GetMonData(ReturnPartyMon(), MON_DATA_ABILITY_NUM)]]);
+    StringCopy(gStringVar2, gAbilityNames[gSpeciesInfo[sStatEditorDataPtr->speciesID].abilities[GetMonData(ReturnPartyMon(), MON_DATA_ABILITY_NUM)]]);
     AddTextPrinterParameterized4(WINDOW_3, FONT_SMALL_NARROW, 4, 34, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
     PutWindowTilemap(WINDOW_3);
@@ -718,7 +739,6 @@ struct SpriteCordsStruct {
 
 static void SelectorCallback(struct Sprite *sprite)
 {
-    
     struct SpriteCordsStruct spriteCords[6][2] = {
         {{188, 30 + 20}, {220, 30 + 20}},
         {{188, 46 + 20}, {220, 46 + 20}},
@@ -728,30 +748,12 @@ static void SelectorCallback(struct Sprite *sprite)
         {{188, 110 + 20}, {220, 110 + 20}}, // Thanks Jaizu
     };
 
-    sMenuDataPtr->selectedStat = sMenuDataPtr->selector_x + (sMenuDataPtr->selector_y * 2);
+    sStatEditorDataPtr->selectedStat = sStatEditorDataPtr->selector_x + (sStatEditorDataPtr->selector_y * 2);
 
-    sprite->x = spriteCords[sMenuDataPtr->selector_y][sMenuDataPtr->selector_x].x;
-    sprite->y = spriteCords[sMenuDataPtr->selector_y][sMenuDataPtr->selector_x].y;
+    sprite->x = spriteCords[sStatEditorDataPtr->selector_y][sStatEditorDataPtr->selector_x].x;
+    sprite->y = spriteCords[sStatEditorDataPtr->selector_y][sStatEditorDataPtr->selector_x].y;
 
-    DebugPrintf("%d", sMenuDataPtr->selectedStat);
-}
-
-static void Task_MenuWaitFadeIn(u8 taskId)
-{
-    if (!gPaletteFade.active)
-        gTasks[taskId].func = Task_MenuMain;
-}
-
-static void Task_MenuTurnOff(u8 taskId)
-{
-    // s16 *data = gTasks[taskId].data;
-
-    if (!gPaletteFade.active)
-    {
-        SetMainCallback2(sMenuDataPtr->savedCallback);
-        Menu_FreeResources();
-        DestroyTask(taskId);
-    }
+    DebugPrintf("%d", sStatEditorDataPtr->selectedStat);
 }
 
 static const u16 selectedStatToStatEnum[] = {
@@ -759,13 +761,13 @@ static const u16 selectedStatToStatEnum[] = {
         MON_DATA_SPATK_EV, MON_DATA_SPATK_IV, MON_DATA_SPDEF_EV, MON_DATA_SPDEF_IV, MON_DATA_SPEED_EV, MON_DATA_SPEED_IV,
 };
 
-static void Task_DelayedSpriteLoad(u8 taskId)
+static void Task_DelayedSpriteLoad(u8 taskId) // wait 4 frames after changing the mon you're editing so there are no palette problems
 {   
     if (gTasks[taskId].data[11] >= 4)
     {
-        SampleUi_DrawMonIcon(sMenuDataPtr->speciesID);
+        SampleUi_DrawMonIcon(sStatEditorDataPtr->speciesID);
         PrintMonStats();
-        gTasks[taskId].func = Task_MenuMain;
+        gTasks[taskId].func = Task_StatEditorMain;
         return;
     }
     else
@@ -776,50 +778,49 @@ static void Task_DelayedSpriteLoad(u8 taskId)
 
 static void ReloadNewPokemon(u8 taskId)
 {
-    gSprites[sMenuDataPtr->monIconSpriteId].invisible = TRUE;
-    FreeResourcesAndDestroySprite(&gSprites[sMenuDataPtr->monIconSpriteId], sMenuDataPtr->monIconSpriteId);
-    sMenuDataPtr->speciesID = GetMonData(ReturnPartyMon(), MON_DATA_SPECIES);
+    gSprites[sStatEditorDataPtr->monIconSpriteId].invisible = TRUE;
+    FreeResourcesAndDestroySprite(&gSprites[sStatEditorDataPtr->monIconSpriteId], sStatEditorDataPtr->monIconSpriteId);
+    sStatEditorDataPtr->speciesID = GetMonData(ReturnPartyMon(), MON_DATA_SPECIES);
     gTasks[taskId].func = Task_DelayedSpriteLoad;
     gTasks[taskId].data[11] = 0;
 }
 
-/* This is the meat of the UI. This is where you wait for player inputs and can branch to other tasks accordingly */
-static void Task_MenuMain(u8 taskId)
+static void Task_StatEditorMain(u8 taskId) // input control when first loaded into menu
 {
     if (JOY_NEW(A_BUTTON))
     {
-        sMenuDataPtr->editingStat = GetMonData(ReturnPartyMon(), selectedStatToStatEnum[sMenuDataPtr->selectedStat]);
-        StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 3);
+        sStatEditorDataPtr->editingStat = GetMonData(ReturnPartyMon(), selectedStatToStatEnum[sStatEditorDataPtr->selectedStat]);
+        StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 3);
         PlaySE(SE_SELECT);
         PrintTitleToWindowEditState();
         gTasks[taskId].func = Task_MenuEditingStat;
-        if(sMenuDataPtr->editingStat == 0)
-            StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 1);
-        if((sMenuDataPtr->editingStat == 255 || (sMenuDataPtr->evTotal == 510)) && (sMenuDataPtr->selector_x == 0))
-            StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 2);
-        if((sMenuDataPtr->editingStat == 31) && (sMenuDataPtr->selector_x == 1))
-            StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 2);
+        if(sStatEditorDataPtr->editingStat == 0)
+            StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 1);
+        if((sStatEditorDataPtr->editingStat == 255 || (sStatEditorDataPtr->evTotal == 510)) && (sStatEditorDataPtr->selector_x == 0))
+            StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
+        if((sStatEditorDataPtr->editingStat == 31) && (sStatEditorDataPtr->selector_x == 1))
+            StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
         return;
     }
     if (JOY_NEW(L_BUTTON))
     {
-        u16 partyid = sMenuDataPtr->partyid;
+        u16 partyid = sStatEditorDataPtr->partyid;
         if (partyid == 0)
             partyid = gPlayerPartyCount - 1;
         else
             partyid -= 1;
-        sMenuDataPtr->partyid = partyid;
+        sStatEditorDataPtr->partyid = partyid;
         PlaySE(SE_SELECT);
         ReloadNewPokemon(taskId);
     }
     if (JOY_NEW(R_BUTTON))
     {
-        u16 partyid = sMenuDataPtr->partyid;
+        u16 partyid = sStatEditorDataPtr->partyid;
         if (partyid == gPlayerPartyCount - 1)
             partyid = 0;
         else
             partyid += 1;
-        sMenuDataPtr->partyid = partyid;
+        sStatEditorDataPtr->partyid = partyid;
         PlaySE(SE_SELECT);
         ReloadNewPokemon(taskId);
     }
@@ -827,35 +828,35 @@ static void Task_MenuMain(u8 taskId)
     {
         PlaySE(SE_PC_OFF);
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
-        gTasks[taskId].func = Task_MenuTurnOff;
+        gTasks[taskId].func = Task_StatEditorTurnOff;
     }
     if (JOY_NEW(DPAD_LEFT) || JOY_NEW(DPAD_RIGHT))
     {
-        if(sMenuDataPtr->selector_x == 0)
-            sMenuDataPtr->selector_x = 1;
+        if(sStatEditorDataPtr->selector_x == 0)
+            sStatEditorDataPtr->selector_x = 1;
         else
-            sMenuDataPtr->selector_x = 0; 
+            sStatEditorDataPtr->selector_x = 0; 
     }
     if (JOY_NEW(DPAD_UP))
     {
-        if (sMenuDataPtr->selector_y == 0)
-            sMenuDataPtr->selector_y = 5;
+        if (sStatEditorDataPtr->selector_y == 0)
+            sStatEditorDataPtr->selector_y = 5;
         else
-            sMenuDataPtr->selector_y--;
+            sStatEditorDataPtr->selector_y--;
     }
     if (JOY_NEW(DPAD_DOWN))
     {
-        if (sMenuDataPtr->selector_y == 5)
-            sMenuDataPtr->selector_y = 0;
+        if (sStatEditorDataPtr->selector_y == 5)
+            sStatEditorDataPtr->selector_y = 0;
         else
-            sMenuDataPtr->selector_y++;
+            sStatEditorDataPtr->selector_y++;
     }
 
 }
 
 static void ChangeAndUpdateStat()
 {
-    SetMonData(ReturnPartyMon(), selectedStatToStatEnum[sMenuDataPtr->selectedStat], &(sMenuDataPtr->editingStat));
+    SetMonData(ReturnPartyMon(), selectedStatToStatEnum[sStatEditorDataPtr->selectedStat], &(sStatEditorDataPtr->editingStat));
     CalculateMonStats(ReturnPartyMon());
     PrintMonStats();
 }
@@ -864,43 +865,43 @@ static void Task_MenuEditingStat(u8 taskId) // This function should be refactore
 {
     if (JOY_NEW(B_BUTTON))
     {
-        gTasks[taskId].func = Task_MenuMain;
-        StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 0);
+        gTasks[taskId].func = Task_StatEditorMain;
+        StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 0);
         PlaySE(SE_SELECT);
         PrintTitleToWindowMainState();
         return;
     }
     if (JOY_NEW(DPAD_LEFT))
     {
-        if(sMenuDataPtr->selector_x == 0)
+        if(sStatEditorDataPtr->selector_x == 0)
         {
-            if(sMenuDataPtr->editingStat == 0)
+            if(sStatEditorDataPtr->editingStat == 0)
             {
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 1);
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 1);
                 return;
             }
 
-            sMenuDataPtr->editingStat--;
-            if((sMenuDataPtr->editingStat == 0))
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 1);
+            sStatEditorDataPtr->editingStat--;
+            if((sStatEditorDataPtr->editingStat == 0))
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 1);
             else
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 3);
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 3);
     
             ChangeAndUpdateStat();
         }
         else
         {
-            if((sMenuDataPtr->editingStat == 0))
+            if((sStatEditorDataPtr->editingStat == 0))
             {
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 1);
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 1);
                 return;
             }
 
-            sMenuDataPtr->editingStat--;
-            if((sMenuDataPtr->editingStat == 0))
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 1);
+            sStatEditorDataPtr->editingStat--;
+            if((sStatEditorDataPtr->editingStat == 0))
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 1);
             else
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 3);
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 3);
 
             ChangeAndUpdateStat();
         }
@@ -908,36 +909,36 @@ static void Task_MenuEditingStat(u8 taskId) // This function should be refactore
     }
     if (JOY_NEW(DPAD_RIGHT))
     {
-        if(sMenuDataPtr->selector_x == 0)
+        if(sStatEditorDataPtr->selector_x == 0)
         {
-            if((sMenuDataPtr->editingStat == 255) || (sMenuDataPtr->evTotal == 510))
+            if((sStatEditorDataPtr->editingStat == 255) || (sStatEditorDataPtr->evTotal == 510))
             {
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 2);
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
                 return;
             }
 
-            sMenuDataPtr->editingStat++;
-            if((sMenuDataPtr->editingStat == 255))
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 2);
+            sStatEditorDataPtr->editingStat++;
+            if((sStatEditorDataPtr->editingStat == 255))
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
             else
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 3);
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 3);
     
             ChangeAndUpdateStat();
 
         }
         else
         {
-            if(sMenuDataPtr->editingStat == 31)
+            if(sStatEditorDataPtr->editingStat == 31)
             {
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 2);
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
                 return;
             }
 
-            sMenuDataPtr->editingStat++;
-            if((sMenuDataPtr->editingStat == 31))
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 2);
+            sStatEditorDataPtr->editingStat++;
+            if((sStatEditorDataPtr->editingStat == 31))
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
             else
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 3);
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 3);
     
             ChangeAndUpdateStat();
         }
@@ -946,33 +947,33 @@ static void Task_MenuEditingStat(u8 taskId) // This function should be refactore
 
     if (JOY_NEW(DPAD_UP) || JOY_NEW(R_BUTTON))
     {
-        if(sMenuDataPtr->selector_x == 0)
+        if(sStatEditorDataPtr->selector_x == 0)
         {
-            if((sMenuDataPtr->editingStat == 255) || (sMenuDataPtr->evTotal == 510))
+            if((sStatEditorDataPtr->editingStat == 255) || (sStatEditorDataPtr->evTotal == 510))
             {
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 2);
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
                 return;
             }
 
-            if (510 - sMenuDataPtr->evTotal < 255)
-                sMenuDataPtr->editingStat += 510 - sMenuDataPtr->evTotal;
+            if (510 - sStatEditorDataPtr->evTotal < 255)
+                sStatEditorDataPtr->editingStat += 510 - sStatEditorDataPtr->evTotal;
             else
-                sMenuDataPtr->editingStat = 255;
+                sStatEditorDataPtr->editingStat = 255;
     
-            StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 2);    
+            StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);    
             ChangeAndUpdateStat();
 
         }
         else
         {
-            if(sMenuDataPtr->editingStat == 31)
+            if(sStatEditorDataPtr->editingStat == 31)
             {
-                StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 2);
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
                 return;
             }
 
-            sMenuDataPtr->editingStat = 31;
-            StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 2);    
+            sStatEditorDataPtr->editingStat = 31;
+            StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);    
     
             ChangeAndUpdateStat();
         }
@@ -982,14 +983,14 @@ static void Task_MenuEditingStat(u8 taskId) // This function should be refactore
     if (JOY_NEW(DPAD_DOWN) || JOY_NEW(L_BUTTON))
     {
 
-        if((sMenuDataPtr->editingStat == 0))
+        if((sStatEditorDataPtr->editingStat == 0))
         {
-            StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 1);
+            StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 1);
             return;
         }
         
-        sMenuDataPtr->editingStat = 0;
-        StartSpriteAnim(&gSprites[sMenuDataPtr->selectorSpriteId], 1);  
+        sStatEditorDataPtr->editingStat = 0;
+        StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 1);  
         ChangeAndUpdateStat(); 
     }
 
