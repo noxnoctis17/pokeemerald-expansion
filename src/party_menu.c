@@ -4227,16 +4227,12 @@ static void UpdatePartyMonAilmentGfx(u8 status, struct PartyMenuBox *menuBox)
 
 static void ChangePokemonStatsPartyScreen_CB(void)
 {
-    //SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar2);
     CB2_ReturnToPartyMenuFromSummaryScreen();
 }
 
 static void ChangePokemonStatsPartyScreen(void)
 {
-    //GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar3);
-    //GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar2);
     StatEditor_Init(ChangePokemonStatsPartyScreen_CB);
-    // GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_PERSONALITY, NULL), ChangePokemonNicknamePartyScreen_CB);
 }
 static void CursorCb_StatEdit(u8 taskId)
 {
