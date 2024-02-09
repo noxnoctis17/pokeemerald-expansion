@@ -136,7 +136,7 @@ static const struct WindowTemplate sMenuWindowTemplates[] =
         .width = 18,        // width (per 8 pixels)
         .height = 17,        // height (per 8 pixels)
         .paletteNum = 15,   // palette index to use for text
-        .baseBlock = 1 + 69,     // tile start in VRAM
+        .baseBlock = 1 + 70,     // tile start in VRAM
     },
     [WINDOW_3] = 
     {
@@ -146,7 +146,7 @@ static const struct WindowTemplate sMenuWindowTemplates[] =
         .width = 8,        // width (per 8 pixels)
         .height = 9,        // height (per 8 pixels)
         .paletteNum = 15,   // palette index to use for text
-        .baseBlock = 1 + 69 + 297,     // tile start in VRAM
+        .baseBlock = 1 + 70 + 306,     // tile start in VRAM
     },
 };
 
@@ -856,10 +856,12 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
 
 static void ChangeAndUpdateStat()
 {
-    u16 currentStatEnum = selectedStatToStatEnum[sMenuDataPtr->selectedStat];
+    u16 currentStatEnum = selectedStatToStatEnum[sStatEditorDataPtr->selectedStat];
     u32 currentHP = 0;
     u32 oldMaxHP = 0;
     u32 amountHPLost = 0;
+    s32 tempDifference = 0;
+    u32 newDifference = 0;
 
     if (currentStatEnum == MON_DATA_HP_EV || currentStatEnum == MON_DATA_HP_IV)
     {
@@ -868,15 +870,15 @@ static void ChangeAndUpdateStat()
         amountHPLost = oldMaxHP - currentHP;
     }
 
-    SetMonData(ReturnPartyMon(), currentStatEnum, &(sMenuDataPtr->editingStat));
+    SetMonData(ReturnPartyMon(), currentStatEnum, &(sStatEditorDataPtr->editingStat));
     CalculateMonStats(ReturnPartyMon());
 
     if ((amountHPLost > 0) && (currentHP != 0))
     {
-        s32 tempDifference = GetMonData(ReturnPartyMon(), MON_DATA_MAX_HP) - amountHPLost;
+        tempDifference = GetMonData(ReturnPartyMon(), MON_DATA_MAX_HP) - amountHPLost;
         if (tempDifference < 0)
             tempDifference = 0;
-        u32 newDifference = (u32) tempDifference;
+        newDifference = (u32) tempDifference;
         SetMonData(ReturnPartyMon(), MON_DATA_HP, &newDifference);
     }
 
