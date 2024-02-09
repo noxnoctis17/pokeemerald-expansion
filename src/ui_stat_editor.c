@@ -941,7 +941,7 @@ static void HandleEditingStatInput(u32 input)
         return;
     }
 
-    #define INCREASE_DECREASE_AMOUNT 4
+    #define INCREASE_DECREASE_AMOUNT 1
 
     switch(input)
     {
