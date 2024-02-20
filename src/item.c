@@ -884,12 +884,12 @@ u16 ItemId_GetPrice(u16 itemId)
     return gItems[SanitizeItemId(itemId)].price;
 }
 
-u8 ItemId_GetHoldEffect(u16 itemId)
+u32 ItemId_GetHoldEffect(u32 itemId)
 {
     return gItems[SanitizeItemId(itemId)].holdEffect;
 }
 
-u8 ItemId_GetHoldEffectParam(u16 itemId)
+u32 ItemId_GetHoldEffectParam(u32 itemId)
 {
     return gItems[SanitizeItemId(itemId)].holdEffectParam;
 }
@@ -956,7 +956,7 @@ u8 ItemId_GetSecondaryId(u16 itemId)
     return gItems[SanitizeItemId(itemId)].secondaryId;
 }
 
-u8 ItemId_GetFlingPower(u16 itemId)
+u32 ItemId_GetFlingPower(u32 itemId)
 {
     return gItems[SanitizeItemId(itemId)].flingPower;
 }
@@ -974,11 +974,11 @@ u32 GetItemStatus1Mask(u16 itemId)
         case ITEM3_BURN:
             return STATUS1_BURN;
         case ITEM3_POISON:
-            return STATUS1_POISON | STATUS1_TOXIC_POISON;
+            return STATUS1_PSN_ANY | STATUS1_TOXIC_COUNTER;
         case ITEM3_SLEEP:
             return STATUS1_SLEEP;
         case ITEM3_STATUS_ALL:
-            return STATUS1_ANY;
+            return STATUS1_ANY | STATUS1_TOXIC_COUNTER;
     }
     return 0;
 }
