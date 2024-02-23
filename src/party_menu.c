@@ -2791,26 +2791,11 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         {
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
-                // AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES); //--nox hms
-                // If Mon already knows FLY and the HM is in the bag, prevent it from being added to action list
-                if (sFieldMoves[j] != MOVE_FLY || !CheckBagHasItem(ITEM_HM_FLY, 1)){
-                    // If Mon already knows FLASH and the HM is in the bag, prevent it from being added to action list
-                    if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem(ITEM_HM_FLASH, 1)){ 
-                        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                    }
-                }
+                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                 break;
             }
         }
     }
-    //CanLearnTeachableMove( GetMonData() )
-    //--nox hms
-    // If Mon can learn HM02 and action list consists of < 4 moves, add FLY to action list
-    if (sPartyMenuInternal->numActions < 5 && CanLearnTeachableMove( GetMonData( &mons[slotId], MON_DATA_SPECIES ), MOVE_FLY ) && CheckBagHasItem( ITEM_HM_FLY, 1 ) ) 
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
-    // If Mon can learn HM05 and action list consists of < 4 moves, add FLASH to action list
-    if (sPartyMenuInternal->numActions < 5 && CanLearnTeachableMove( GetMonData( &mons[slotId], MON_DATA_SPECIES ), MOVE_FLASH ) && CheckBagHasItem( ITEM_HM_FLASH, 1 ) ) 
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
 
     if (!InBattlePike())
     {
@@ -3914,15 +3899,9 @@ static void CursorCb_FieldMove(u8 taskId)
     {
         // All field moves before WATERFALL are HMs.
         if (fieldMove <= FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE01_GET + fieldMove) != TRUE)
-        { //--Nox removing fly badge limit
-            if( fieldMove == FIELD_MOVE_FLY && CheckBagHasItem( ITEM_HM_FLY, 1 ) ){
-                gPartyMenu.exitCallback = CB2_OpenFlyMap;
-                Task_ClosePartyMenu(taskId);
-            }
-            if( fieldMove != FIELD_MOVE_FLY ){
-                DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
-                gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
-            }
+        {
+            DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
+            gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         }
         else if (sFieldMoveCursorCallbacks[fieldMove].fieldMoveFunc() == TRUE)
         {
@@ -3946,10 +3925,10 @@ static void CursorCb_FieldMove(u8 taskId)
                 DisplayFieldMoveExitAreaMessage(taskId);
                 sPartyMenuInternal->data[0] = fieldMove;
                 break;
-            // case FIELD_MOVE_FLY:
-            //     gPartyMenu.exitCallback = CB2_OpenFlyMap;
-            //     Task_ClosePartyMenu(taskId);
-            //     break;
+            case FIELD_MOVE_FLY:
+                gPartyMenu.exitCallback = CB2_OpenFlyMap;
+                Task_ClosePartyMenu(taskId);
+                break;
             default:
                 gPartyMenu.exitCallback = CB2_ReturnToField;
                 Task_ClosePartyMenu(taskId);
@@ -5221,48 +5200,6 @@ bool8 MonKnowsMove(struct Pokemon *mon, u16 move)
             return TRUE;
     }
     return FALSE;
-}
-
-//--Nox HM Addition
-
-int MoveToHM(u16 move)
-{
-    u8 i;
-    int item;
-    switch (move)
-    {
-    case MOVE_SECRET_POWER:
-        item = ITEM_TM43;
-        break;
-    case MOVE_CUT:
-        item = ITEM_HM01;
-        break;
-    case MOVE_FLY:
-        item = ITEM_HM02;
-        break;
-    case MOVE_SURF:
-        item = ITEM_HM03;
-        break;
-    case MOVE_STRENGTH:
-        item = ITEM_HM04;
-        break;
-    case MOVE_FLASH:
-        item = ITEM_HM05;
-        break;
-    case MOVE_ROCK_SMASH:
-        item = ITEM_HM06;
-        break;
-    case MOVE_WATERFALL:
-        item = ITEM_HM07;
-        break;
-    case MOVE_DIVE:
-        item = ITEM_HM08;
-        break;
-    default:
-        item = 0;
-        break;
-    }
-    return item;
 }
 
 bool8 BoxMonKnowsMove(struct BoxPokemon *boxMon, u16 move)

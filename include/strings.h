@@ -927,8 +927,6 @@ extern const u8 gText_Roy[];
 extern const u8 gText_Gabby[];
 extern const u8 gText_Anna[];
 
-extern const u8 gText_ExpShareTurnOn[]; //--Nox
-extern const u8 gText_ExpShareTurnOff[]; //--Nox
 extern const u8 gText_DadsAdvice[];
 extern const u8 gText_CantDismountBike[];
 extern const u8 gText_ItemFinderNothing[];
