@@ -38977,50 +38977,50 @@ static const u16 sOgerponTeachableLearnset[] = {
 #endif //P_FAMILY_OGERPON
 
 //==[Nox Mons]==
-static const u16 sSnaseeTeachableLearnset[] = {
-    MOVE_CUT,
-    MOVE_UNAVAILABLE,
-};
+// static const u16 sSnaseeTeachableLearnset[] = {
+//     MOVE_CUT,
+//     MOVE_UNAVAILABLE,
+// };
 
-static const u16 sRebelinumTeachableLearnset[] = {
-    MOVE_CUT,
-    MOVE_UNAVAILABLE,
-};
+// static const u16 sRebelinumTeachableLearnset[] = {
+//     MOVE_CUT,
+//     MOVE_UNAVAILABLE,
+// };
 
-static const u16 sKnighinumTeachableLearnset[] = {
-    MOVE_CUT,
-    MOVE_UNAVAILABLE,
-};
+// static const u16 sKnighinumTeachableLearnset[] = {
+//     MOVE_CUT,
+//     MOVE_UNAVAILABLE,
+// };
 
-static const u16 sMeouchieTeachableLearnset[] = {
-    MOVE_CUT,
-    MOVE_UNAVAILABLE,
-};
+// static const u16 sMeouchieTeachableLearnset[] = {
+//     MOVE_CUT,
+//     MOVE_UNAVAILABLE,
+// };
 
-static const u16 sMeomberTeachableLearnset[] = {
-    MOVE_CUT,
-    MOVE_UNAVAILABLE,
-};
+// static const u16 sMeomberTeachableLearnset[] = {
+//     MOVE_CUT,
+//     MOVE_UNAVAILABLE,
+// };
 
-static const u16 sMeormorTeachableLearnset[] = {
-    MOVE_CUT,
-    MOVE_UNAVAILABLE,
-};
+// static const u16 sMeormorTeachableLearnset[] = {
+//     MOVE_CUT,
+//     MOVE_UNAVAILABLE,
+// };
 
-static const u16 sNurdibranchTeachableLearnset[] = {
-    MOVE_CUT,
-    MOVE_SURF,
-    MOVE_UNAVAILABLE,
-};
+// static const u16 sNurdibranchTeachableLearnset[] = {
+//     MOVE_CUT,
+//     MOVE_SURF,
+//     MOVE_UNAVAILABLE,
+// };
 
-static const u16 sNurdibragTeachableLearnset[] = {
-    MOVE_CUT,
-    MOVE_SURF,
-    MOVE_UNAVAILABLE,
-};
+// static const u16 sNurdibragTeachableLearnset[] = {
+//     MOVE_CUT,
+//     MOVE_SURF,
+//     MOVE_UNAVAILABLE,
+// };
 
-static const u16 sNurdibragonTeachableLearnset[] = {
-    MOVE_CUT,
-    MOVE_SURF,
-    MOVE_UNAVAILABLE,
-};
+// static const u16 sNurdibragonTeachableLearnset[] = {
+//     MOVE_CUT,
+//     MOVE_SURF,
+//     MOVE_UNAVAILABLE,
+// };
