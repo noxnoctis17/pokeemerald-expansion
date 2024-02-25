@@ -111,6 +111,7 @@ LittlerootTown_ProfessorBirchsLab_OnFrame:
 
 @ The starter is technically given prior to this on Route 101 by special ChooseStarter
 @ This is just where the game tells you its yours and lets you nickname it
+@ nox add zigzagoon give for doubles here
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	lockall
 	bufferleadmonspeciesname STR_VAR_1
@@ -120,11 +121,29 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	waitfanfare
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_GiveZigzagoon
 	end
-
+@ goto LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival // original goto instead of give ziggy
 LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter::
 	setvar VAR_0x8004, 0
+	call Common_EventScript_NameReceivedPartyMon
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_GiveZigzagoon
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_GiveZigzagoon::
+	message LittleRootTown_ProfessorBirchsLab_Text_GiveZigzagoon
+	waitmessage
+	setvar VAR_TEMP_1, SPECIES_ZIGZAGOON
+	givemon SPECIES_ZIGZAGOON, 5, ITEM_ORAN_BERRY
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveZigzagoon
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveZigzagoon::
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
+	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
 	end
@@ -706,6 +725,15 @@ LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon:
 	.string "PROF. BIRCH: While you're at it, why not\n"
 	.string "give a nickname to that {STR_VAR_1}?$"
+
+LittleRootTown_ProfessorBirchsLab_Text_GiveZigzagoon:
+	.string "PROF. BIRCH: We also caught the Zigzagoon\n"
+	.string "you knocked out for me, so please take it!\p"
+	.string "{PLAYER} received the Zigzagoon!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_NicknameZigzagoon:
+	.string "PROF. BIRCH: Would you like to give\n"
+	.string "it a nickname, too?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "PROF. BIRCH: If you work at POKéMON\n"

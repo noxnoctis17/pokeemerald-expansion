@@ -2806,11 +2806,27 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         {
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                // AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES); //--nox hms
+                // If Mon already knows FLY and the HM is in the bag, prevent it from being added to action list
+                if (sFieldMoves[j] != MOVE_FLY || !CheckBagHasItem(ITEM_HM_FLY, 1)){
+                    // If Mon already knows FLASH and the HM is in the bag, prevent it from being added to action list
+                    if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem(ITEM_HM_FLASH, 1)){ 
+                        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                    }
+                }
                 break;
             }
         }
     }
+
+    //CanLearnTeachableMove( GetMonData() )
+    //--nox hms
+    // If Mon can learn HM02 and action list consists of < 4 moves, add FLY to action list
+    if (sPartyMenuInternal->numActions < 5 && CanLearnTeachableMove( GetMonData( &mons[slotId], MON_DATA_SPECIES ), MOVE_FLY ) && CheckBagHasItem( ITEM_HM_FLY, 1 ) ) 
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
+    // If Mon can learn HM05 and action list consists of < 4 moves, add FLASH to action list
+    if (sPartyMenuInternal->numActions < 5 && CanLearnTeachableMove( GetMonData( &mons[slotId], MON_DATA_SPECIES ), MOVE_FLASH ) && CheckBagHasItem( ITEM_HM_FLASH, 1 ) ) 
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
 
     if (!InBattlePike())
     {
@@ -3920,9 +3936,17 @@ static void CursorCb_FieldMove(u8 taskId)
     {
         // All field moves before WATERFALL are HMs.
         if (fieldMove <= FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE01_GET + fieldMove) != TRUE)
-        {
-            DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
-            gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+        {   //--Nox HMs. Removing fly badge limit by checking if field move is fly
+            //--If it's fly and we have the HM, we use it. if it is not fly, we proceed as usual for badge check
+            if( fieldMove == FIELD_MOVE_FLY && CheckBagHasItem( ITEM_HM_FLY, 1 ) ){
+                gPartyMenu.exitCallback = CB2_OpenFlyMap;
+                Task_ClosePartyMenu( taskId );
+            }
+
+            if( fieldMove != FIELD_MOVE_FLY ){
+                DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
+                gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+            }
         }
         else if (sFieldMoveCursorCallbacks[fieldMove].fieldMoveFunc() == TRUE)
         {
@@ -5260,6 +5284,48 @@ bool8 MonKnowsMove(struct Pokemon *mon, u16 move)
             return TRUE;
     }
     return FALSE;
+}
+
+//--Nox HMs: int MoveToHm
+
+int MoveToHM(u16 move)
+{
+    // u8 i; //--unused?
+    int item;
+    switch (move)
+    {
+    case MOVE_SECRET_POWER:
+        item = ITEM_TM_SECRET_POWER;
+        break;
+    case MOVE_CUT:
+        item = ITEM_HM_CUT;
+        break;
+    case MOVE_FLY:
+        item = ITEM_HM_FLY;
+        break;
+    case MOVE_SURF:
+        item = ITEM_HM_SURF;
+        break;
+    case MOVE_STRENGTH:
+        item = ITEM_HM_STRENGTH;
+        break;
+    case MOVE_FLASH:
+        item = ITEM_HM_FLASH;
+        break;
+    case MOVE_ROCK_SMASH:
+        item = ITEM_HM_ROCK_SMASH;
+        break;
+    case MOVE_WATERFALL:
+        item = ITEM_HM_WATERFALL;
+        break;
+    case MOVE_DIVE:
+        item = ITEM_HM_DIVE;
+        break;
+    default:
+        item = 0;
+        break;
+    }
+    return item;
 }
 
 bool8 BoxMonKnowsMove(struct BoxPokemon *boxMon, u16 move)

@@ -6416,6 +6416,10 @@ static const struct TrainerMon sParty_BrendanRoute103Mudkip[] = {
     {
     .lvl = 5,
     .species = SPECIES_TREECKO,
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_POOCHYENA,
     }
 };
 
@@ -6459,6 +6463,10 @@ static const struct TrainerMon sParty_BrendanRoute103Treecko[] = {
     {
     .lvl = 5,
     .species = SPECIES_TORCHIC,
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_POOCHYENA,
     }
 };
 
@@ -6502,6 +6510,10 @@ static const struct TrainerMon sParty_BrendanRoute103Torchic[] = {
     {
     .lvl = 5,
     .species = SPECIES_MUDKIP,
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_POOCHYENA,
     }
 };
 
@@ -6545,6 +6557,10 @@ static const struct TrainerMon sParty_MayRoute103Mudkip[] = {
     {
     .lvl = 5,
     .species = SPECIES_TREECKO,
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_POOCHYENA,
     }
 };
 
@@ -6588,6 +6604,10 @@ static const struct TrainerMon sParty_MayRoute103Treecko[] = {
     {
     .lvl = 5,
     .species = SPECIES_TORCHIC,
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_POOCHYENA,
     }
 };
 
@@ -6631,6 +6651,10 @@ static const struct TrainerMon sParty_MayRoute103Torchic[] = {
     {
     .lvl = 5,
     .species = SPECIES_MUDKIP,
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_POOCHYENA,
     }
 };
 

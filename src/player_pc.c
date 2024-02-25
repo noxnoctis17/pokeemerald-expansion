@@ -229,7 +229,7 @@ static const u16 sNewGamePCItems[][2] =
     { ITEM_ABILITY_PATCH, 999 },
     { ITEM_ADAMANT_MINT, 999 },
     { ITEM_MODEST_MINT, 999 },
-    { ITEM_HM_FLY, 1 },
+    { ITEM_HM_SURF, 1 },
     { ITEM_NONE, 0 }
 };
 
