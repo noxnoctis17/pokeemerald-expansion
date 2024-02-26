@@ -19,7 +19,7 @@ Route102_EventScript_Boy::
 
 Route102_EventScript_HealPlayerParty::
 	special HealPlayerParty
-	end
+	return
 
 Route102_EventScript_Calvin::
 	trainerbattle_single TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle

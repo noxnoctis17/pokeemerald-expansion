@@ -62,7 +62,7 @@ Route103_EventScript_RivalBrendan::
 
 Route103_EventScript_HealPlayerParty::
 	special HealPlayerParty
-	end
+	return
 
 Route103_EventScript_StartMayBattleTreecko::
 	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayDefeated

@@ -13,7 +13,7 @@ Route104_OnFrame:
 
 Route104_EventScript_HealPlayerParty::
 	special HealPlayerParty
-	end
+	return
 
 Route104_EventScript_StartSailToDewford::
 	lockall
