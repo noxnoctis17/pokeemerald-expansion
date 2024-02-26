@@ -162,10 +162,11 @@ RustboroCity_DevonCorp_3F_EventScript_MrStone::
 
 RustboroCity_DevonCorp_3F_EventScript_GiveExpShare::
 	msgbox RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter, MSGBOX_DEFAULT
-	giveitem ITEM_EXP_SHARE
+	giveitem ITEM_GREAT_BALL, 25
+	giveitem ITEM_RARE_CANDY, 10
+	giveitem ITEM_NUGGET, 1
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_EXP_SHARE
-	msgbox RustboroCity_DevonCorp_3F_Text_ExplainExpShare, MSGBOX_DEFAULT
+	msgbox RustboroCity_DevonCorp_3F_Text_DontExplainExpShareLol, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -258,6 +259,10 @@ RustboroCity_DevonCorp_3F_Text_ExplainExpShare:
 	.string "actually battle.\p"
 	.string "I would say EXP. SHARE is quite useful\n"
 	.string "for raising weak POKéMON.$"
+
+RustboroCity_DevonCorp_3F_Text_DontExplainExpShareLol:
+	.string "MR. STONE: I hope those help you\n"
+	.string "on your journey!$"
 
 RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends:
 	.string "MR. STONE: Since my youth, I've immersed\n"

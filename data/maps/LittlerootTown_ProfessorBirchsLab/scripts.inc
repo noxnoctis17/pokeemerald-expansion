@@ -138,12 +138,18 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveZigzagoon::
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveZigzagoon
 	end
 
+@ 	call Common_EventScript_GetGiftMonPartySlot
+@	call Common_EventScript_NameReceivedPartyMon
 LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveZigzagoon::
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_NicknameZigzagoon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_NicknameZigzagoon
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
-	call Common_EventScript_GetGiftMonPartySlot
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_NicknameZigzagoon::
+	setvar VAR_0x8004, 0
 	call Common_EventScript_NameReceivedPartyMon
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
 	end
@@ -560,6 +566,10 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese, MSGBOX_DEFAULT
 	giveitem ITEM_POKE_BALL, 5
+	giveitem ITEM_EXP_SHARE
+	setflag FLAG_RECEIVED_EXP_SHARE
+	giveitem ITEM_HM_FLY
+	setflag FLAG_RECEIVED_HM_FLY
 	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanNoRoomForPokeBalls
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 1
@@ -827,7 +837,13 @@ LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls:
 	.string "I'm going to explore all over the place\n"
 	.string "to find different POKéMON.\p"
 	.string "If I find any cool POKéMON, you bet\n"
-	.string "I'll try to get them with POKé BALLS.$"
+	.string "I'll try to get them with POKé BALLS.\p"
+	.string "If you turn on the EXP. Share, all\n"
+	.string "POKéMON in your party will receive EXP.\p"
+	.string "With FLY, your POKéMON\n"
+	.string "instantly carries you to any town\l"
+	.string "you've already visited.\p"
+	.string "Anyway, I have to move along.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull:
 	.string "Hey, your BAG's full.$"
