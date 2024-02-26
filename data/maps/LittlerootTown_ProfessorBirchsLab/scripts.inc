@@ -149,7 +149,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveZigzagoon::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_NicknameZigzagoon::
-	setvar VAR_0x8004, 0
 	call Common_EventScript_NameReceivedPartyMon
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
 	end
