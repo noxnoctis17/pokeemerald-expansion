@@ -138,8 +138,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveZigzagoon::
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveZigzagoon
 	end
 
-@ 	call Common_EventScript_GetGiftMonPartySlot
-@	call Common_EventScript_NameReceivedPartyMon
 LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveZigzagoon::
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
@@ -149,6 +147,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveZigzagoon::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_NicknameZigzagoon::
+	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
 	end
@@ -556,7 +555,11 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
-	giveitem ITEM_POKE_BALL, 5
+	giveitem ITEM_POKE_BALL, 10
+	giveitem ITEM_EXP_SHARE
+	setflag FLAG_RECEIVED_EXP_SHARE
+	giveitem ITEM_HM_FLY
+	setflag FLAG_RECEIVED_HM_FLY
 	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_MayNoRoomForPokeBalls
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 0
@@ -564,7 +567,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese, MSGBOX_DEFAULT
-	giveitem ITEM_POKE_BALL, 5
+	giveitem ITEM_POKE_BALL, 10
 	giveitem ITEM_EXP_SHARE
 	setflag FLAG_RECEIVED_EXP_SHARE
 	giveitem ITEM_HM_FLY

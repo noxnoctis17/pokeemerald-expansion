@@ -17,13 +17,8 @@ Route102_EventScript_Boy::
 	msgbox Route102_Text_CatchWholeBunchOfPokemon, MSGBOX_NPC
 	end
 
-Route102_EventScript_HealPlayerParty::
-	special HealPlayerParty
-	return
-
 Route102_EventScript_Calvin::
 	trainerbattle_single TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
-	call Route102_EventScript_HealPlayerParty
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_CalvinRematch
 	setvar VAR_0x8004, TRAINER_CALVIN_1
@@ -34,6 +29,7 @@ Route102_EventScript_Calvin::
 	end
 
 Route102_EventScript_CalvinRegisterMatchCallAfterBattle::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegisterMatchCall
@@ -60,25 +56,22 @@ Route102_EventScript_CalvinRegister::
 
 Route102_EventScript_CalvinRematch::
 	trainerbattle_rematch TRAINER_CALVIN_1, Route102_Text_CalvinRematchIntro, Route102_Text_CalvinRematchDefeated
-	call Route102_EventScript_HealPlayerParty
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route102_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_Rick::
-	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
-	call Route102_EventScript_HealPlayerParty
+	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated, Common_EventScript_AfterBattleHeal
 	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_Tiana::
-	trainerbattle_single TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeated
-	call Route102_EventScript_HealPlayerParty
+	trainerbattle_single TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeated, Common_EventScript_AfterBattleHeal
 	msgbox Route102_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_Allen::
-	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated
-	call Route102_EventScript_HealPlayerParty
+	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated, Common_EventScript_AfterBattleHeal
 	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
 	end
 

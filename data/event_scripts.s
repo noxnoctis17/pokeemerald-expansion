@@ -727,6 +727,12 @@ Common_EventScript_OutOfCenterPartyHeal::
 	fadescreen FADE_FROM_BLACK
 	return
 
+Common_EventScript_AfterBattleHeal::
+	playfanfare MUS_HEAL
+	waitfanfare
+	special HealPlayerParty
+	return
+
 EventScript_RegionMap::
 	lockall
 	msgbox Common_Text_LookCloserAtMap, MSGBOX_DEFAULT

@@ -11,10 +11,6 @@ Route104_OnFrame:
 	map_script_2 VAR_BOARD_BRINEY_BOAT_STATE, 1, Route104_EventScript_StartSailToDewford
 	.2byte 0
 
-Route104_EventScript_HealPlayerParty::
-	special HealPlayerParty
-	return
-
 Route104_EventScript_StartSailToDewford::
 	lockall
 	goto Route104_EventScript_SailToDewford
@@ -168,21 +164,21 @@ Route104_EventScript_RestoreMusic::
 
 Route104_EventScript_BattleMayTreecko::
 	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TREECKO, Route104_Text_MayDefeat
-	call Route104_EventScript_HealPlayerParty
+	call Common_EventScript_AfterBattleHeal
 	setflag FLAG_DEFEATED_RIVAL_ROUTE_104
 	goto Route104_EventScript_MayDefeated
 	end
 
 Route104_EventScript_BattleMayTorchic::
 	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TORCHIC, Route104_Text_MayDefeat
-	call Route104_EventScript_HealPlayerParty
+	call Common_EventScript_AfterBattleHeal
 	setflag FLAG_DEFEATED_RIVAL_ROUTE_104
 	goto Route104_EventScript_MayDefeated
 	end
 
 Route104_EventScript_BattleMayMudkip::
 	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_MUDKIP, Route104_Text_MayDefeat
-	call Route104_EventScript_HealPlayerParty
+	call Common_EventScript_AfterBattleHeal
 	setflag FLAG_DEFEATED_RIVAL_ROUTE_104
 	goto Route104_EventScript_MayDefeated
 	end
@@ -238,21 +234,21 @@ Route104_EventScript_BrendanDefeated::
 
 Route104_EventScript_BattleBrendanTreecko::
 	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TREECKO, Route104_Text_BrendanDefeat
-	call Route104_EventScript_HealPlayerParty
+	call Common_EventScript_AfterBattleHeal
 	setflag FLAG_DEFEATED_RIVAL_ROUTE_104
 	goto Route104_EventScript_BrendanDefeated
 	end
 
 Route104_EventScript_BattleBrendanTorchic::
 	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TORCHIC, Route104_Text_BrendanDefeat
-	call Route104_EventScript_HealPlayerParty
+	call Common_EventScript_AfterBattleHeal
 	setflag FLAG_DEFEATED_RIVAL_ROUTE_104
 	goto Route104_EventScript_BrendanDefeated
 	end
 
 Route104_EventScript_BattleBrendanMudkip::
 	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_MUDKIP, Route104_Text_BrendanDefeat
-	call Route104_EventScript_HealPlayerParty
+	call Common_EventScript_AfterBattleHeal
 	setflag FLAG_DEFEATED_RIVAL_ROUTE_104
 	goto Route104_EventScript_BrendanDefeated
 	end
@@ -857,20 +853,17 @@ Route104_Movement_BrineyExitBoat:
 	step_end
 
 Route104_EventScript_Ivan::
-	trainerbattle_single TRAINER_IVAN, Route104_Text_IvanIntro, Route104_Text_IvanDefeat
-	call Route104_EventScript_HealPlayerParty
+	trainerbattle_single TRAINER_IVAN, Route104_Text_IvanIntro, Route104_Text_IvanDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route104_Text_IvanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_Billy::
-	trainerbattle_single TRAINER_BILLY, Route104_Text_BillyIntro, Route104_Text_BillyDefeat
-	call Route104_EventScript_HealPlayerParty
+	trainerbattle_single TRAINER_BILLY, Route104_Text_BillyIntro, Route104_Text_BillyDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route104_Text_BillyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_Haley::
 	trainerbattle_single TRAINER_HALEY_1, Route104_Text_HaleyIntro, Route104_Text_HaleyDefeat, Route104_EventScript_TryRegisterHaleyAfterBattle
-	call Route104_EventScript_HealPlayerParty
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_RematchHaley
 	setvar VAR_0x8004, TRAINER_HALEY_1
@@ -881,6 +874,7 @@ Route104_EventScript_Haley::
 	end
 
 Route104_EventScript_TryRegisterHaleyAfterBattle::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	goto_if_set FLAG_HAS_MATCH_CALL, Route104_EventScript_RegisterHaleyAfterBattle
@@ -907,13 +901,12 @@ Route104_EventScript_RegisterHaley::
 
 Route104_EventScript_RematchHaley::
 	trainerbattle_rematch TRAINER_HALEY_1, Route104_Text_HaleyRematchIntro, Route104_Text_HaleyRematchDefeat
-	call Route104_EventScript_HealPlayerParty
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route104_Text_HaleyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_Winston::
 	trainerbattle_single TRAINER_WINSTON_1, Route104_Text_WinstonIntro, Route104_Text_WinstonDefeat, Route104_EventScript_TryRegisterWinstonAfterBattle
-	call Route104_EventScript_HealPlayerParty
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_RematchWinston
 	setvar VAR_0x8004, TRAINER_WINSTON_1
@@ -924,6 +917,7 @@ Route104_EventScript_Winston::
 	end
 
 Route104_EventScript_TryRegisterWinstonAfterBattle::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	goto_if_set FLAG_HAS_MATCH_CALL, Route104_EventScript_RegisterWinstonAfterBattle
@@ -950,13 +944,12 @@ Route104_EventScript_RegisterWinston::
 
 Route104_EventScript_RematchWinston::
 	trainerbattle_rematch TRAINER_WINSTON_1, Route104_Text_WinstonRematchIntro, Route104_Text_WinstonRematchDefeat
-	call Route104_EventScript_HealPlayerParty
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route104_Text_WinstonPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_Cindy::
 	trainerbattle_single TRAINER_CINDY_1, Route104_Text_CindyIntro, Route104_Text_CindyDefeat, Route104_EventScript_TryRegisterCindyAfterBattle
-	call Route104_EventScript_HealPlayerParty
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_RematchCindy
 	setvar VAR_0x8004, TRAINER_CINDY_1
@@ -967,6 +960,7 @@ Route104_EventScript_Cindy::
 	end
 
 Route104_EventScript_TryRegisterCindyAfterBattle::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	goto_if_set FLAG_HAS_MATCH_CALL, Route104_EventScript_RegisterCindyAfterBattle
@@ -993,29 +987,26 @@ Route104_EventScript_RegisterCindy::
 
 Route104_EventScript_RematchCindy::
 	trainerbattle_rematch TRAINER_CINDY_1, Route104_Text_CindyRematchIntro, Route104_Text_CindyRematchDefeat
-	call Route104_EventScript_HealPlayerParty
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route104_Text_CindyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_Gina::
-	trainerbattle_double TRAINER_GINA_AND_MIA_1, Route104_Text_GinaIntro, Route104_Text_GinaDefeat, Route104_Text_GinaNotEnoughMons
-	call Route104_EventScript_HealPlayerParty
+	trainerbattle_double TRAINER_GINA_AND_MIA_1, Route104_Text_GinaIntro, Route104_Text_GinaDefeat, Route104_Text_GinaNotEnoughMons, Common_EventScript_AfterBattleHeal
 	special GetPlayerBigGuyGirlString
 	msgbox Route104_Text_GinaPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
 Route104_EventScript_Mia::
-	trainerbattle_double TRAINER_GINA_AND_MIA_1, Route104_Text_MiaIntro, Route104_Text_MiaDefeat, Route104_Text_MiaNotEnoughMons
-	call Route104_EventScript_HealPlayerParty
+	trainerbattle_double TRAINER_GINA_AND_MIA_1, Route104_Text_MiaIntro, Route104_Text_MiaDefeat, Route104_Text_MiaNotEnoughMons, Common_EventScript_AfterBattleHeal
 	special GetPlayerBigGuyGirlString
 	msgbox Route104_Text_MiaPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
 Route104_EventScript_Darian::
-	trainerbattle_single TRAINER_DARIAN, Route104_Text_DarianIntro, Route104_Text_DarianDefeat
-	call Route104_EventScript_HealPlayerParty
+	trainerbattle_single TRAINER_DARIAN, Route104_Text_DarianIntro, Route104_Text_DarianDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route104_Text_DarianPostBattle, MSGBOX_AUTOCLOSE
 	end
 

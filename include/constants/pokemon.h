@@ -220,13 +220,19 @@
 #define DAMAGE_CATEGORY_SPECIAL     1
 #define DAMAGE_CATEGORY_STATUS      2
 
-// Growth rates
-#define GROWTH_MEDIUM_FAST  0
-#define GROWTH_ERRATIC      1
-#define GROWTH_FLUCTUATING  2
-#define GROWTH_MEDIUM_SLOW  3
-#define GROWTH_FAST         4
-#define GROWTH_SLOW         5
+// Growth rates //--nox change all to growth_fast
+// #define GROWTH_MEDIUM_FAST  0
+// #define GROWTH_ERRATIC      1
+// #define GROWTH_FLUCTUATING  2
+// #define GROWTH_MEDIUM_SLOW  3
+// #define GROWTH_FAST         4
+// #define GROWTH_SLOW         5
+#define GROWTH_FAST         0
+#define GROWTH_MEDIUM_FAST  GROWTH_FAST
+#define GROWTH_ERRATIC      GROWTH_FAST
+#define GROWTH_FLUCTUATING  GROWTH_FAST
+#define GROWTH_MEDIUM_SLOW  GROWTH_FAST
+#define GROWTH_SLOW         GROWTH_FAST
 
 // Body colors for Pokédex search
 #define BODY_COLOR_RED      0
