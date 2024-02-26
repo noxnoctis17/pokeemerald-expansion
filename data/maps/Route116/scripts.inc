@@ -230,12 +230,12 @@ Route116_Movement_GlassesManExitEast:
 	step_end
 
 Route116_EventScript_Joey::
-	trainerbattle_single TRAINER_JOEY, Route116_Text_JoeyIntro, Route116_Text_JoeyDefeat
+	trainerbattle_single TRAINER_JOEY, Route116_Text_JoeyIntro, Route116_Text_JoeyDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route116_Text_JoeyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route116_EventScript_Jose::
-	trainerbattle_single TRAINER_JOSE, Route116_Text_JoseIntro, Route116_Text_JoseDefeat
+	trainerbattle_single TRAINER_JOSE, Route116_Text_JoseIntro, Route116_Text_JoseDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route116_Text_JosePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -251,6 +251,7 @@ Route116_EventScript_Jerry::
 	end
 
 Route116_EventScript_TryRegisterJerryAfterBattle::
+	call Common_EventScript_AfterBattleHeal
 	goto_if_set FLAG_HAS_MATCH_CALL, Route116_EventScript_RegisterJerryAfterBattle
 	release
 	end
@@ -277,16 +278,17 @@ Route116_EventScript_RegisterJerry::
 
 Route116_EventScript_RematchJerry::
 	trainerbattle_rematch TRAINER_JERRY_1, Route116_Text_JerryRematchIntro, Route116_Text_JerryRematchDefeat
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route116_Text_JerryPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route116_EventScript_Clark::
-	trainerbattle_single TRAINER_CLARK, Route116_Text_ClarkIntro, Route116_Text_ClarkDefeat
+	trainerbattle_single TRAINER_CLARK, Route116_Text_ClarkIntro, Route116_Text_ClarkDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route116_Text_ClarkPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route116_EventScript_Janice::
-	trainerbattle_single TRAINER_JANICE, Route116_Text_JaniceIntro, Route116_Text_JaniceDefeat
+	trainerbattle_single TRAINER_JANICE, Route116_Text_JaniceIntro, Route116_Text_JaniceDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route116_Text_JanicePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -302,6 +304,7 @@ Route116_EventScript_Karen::
 	end
 
 Route116_EventScript_TryRegisterKarenAfterBattle::
+	call Common_EventScript_AfterBattleHeal
 	goto_if_set FLAG_HAS_MATCH_CALL, Route116_EventScript_RegisterKarenAfterBattle
 	release
 	end
@@ -328,26 +331,27 @@ Route116_EventScript_RegisterKaren::
 
 Route116_EventScript_RematchKaren::
 	trainerbattle_rematch TRAINER_KAREN_1, Route116_Text_KarenRematchIntro, Route116_Text_KarenRematchDefeat
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route116_Text_KarenPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route116_EventScript_Sarah::
-	trainerbattle_single TRAINER_SARAH, Route116_Text_SarahIntro, Route116_Text_SarahDefeat
+	trainerbattle_single TRAINER_SARAH, Route116_Text_SarahIntro, Route116_Text_SarahDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route116_Text_SarahPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route116_EventScript_Dawson::
-	trainerbattle_single TRAINER_DAWSON, Route116_Text_DawsonIntro, Route116_Text_DawsonDefeat
+	trainerbattle_single TRAINER_DAWSON, Route116_Text_DawsonIntro, Route116_Text_DawsonDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route116_Text_DawsonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route116_EventScript_Devan::
-	trainerbattle_single TRAINER_DEVAN, Route116_Text_DevanIntro, Route116_Text_DevanDefeat
+	trainerbattle_single TRAINER_DEVAN, Route116_Text_DevanIntro, Route116_Text_DevanDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route116_Text_DevanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route116_EventScript_Johnson::
-	trainerbattle_single TRAINER_JOHNSON, Route116_Text_JohnsonIntro, Route116_Text_JohnsonDefeat
+	trainerbattle_single TRAINER_JOHNSON, Route116_Text_JohnsonIntro, Route116_Text_JohnsonDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route116_Text_JohnsonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
