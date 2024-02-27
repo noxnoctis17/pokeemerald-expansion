@@ -7826,14 +7826,19 @@ static const struct TrainerMon sParty_Lyle[] = {
 
 static const struct TrainerMon sParty_Jose[] = {
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 12,
-    .species = SPECIES_BEAUTIFLY,
+    .species = SPECIES_SILCOON,
     },
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 12,
-    .species = SPECIES_NINJASK,
+    .species = SPECIES_NINCADA,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 12,
+    .species = SPECIES_CASCOON,
     }
 };
 
