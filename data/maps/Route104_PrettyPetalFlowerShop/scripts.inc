@@ -63,6 +63,26 @@ Route104_PrettyPetalFlowerShop_Pokemart_Plants:
 	release
 	end
 
+Route104_PrettyPetalFlowerShop_EventScript_SellBerries::
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart Route104_PrettyPetalFlowerShop_Pokemart_Berries
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+Route104_PrettyPetalFlowerShop_Pokemart_Berries:
+	.2byte ITEM_ORAN_BERRY
+	.2byte ITEM_SITRUS_BERRY
+	.2byte ITEM_CHESTO_BERRY
+	.2byte ITEM_RAWST_BERRY
+	.2byte ITEM_ASPEAR_BERRY
+	.2byte ITEM_LUM_BERRY
+	.2byte ITEM_NONE
+	release
+	end
+
 Route104_PrettyPetalFlowerShop_EventScript_WailmerPailGirl::
 	lock
 	faceplayer

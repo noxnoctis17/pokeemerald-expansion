@@ -142,6 +142,7 @@ DewfordTown_Gym_EventScript_Brawly::
 	end
 
 DewfordTown_Gym_EventScript_BrawlyDefeated::
+	call Common_EventScript_AfterBattleHeal
 	call DewfordTown_Gym_EventScript_AnimateFlashFullBrightness
 	message DewfordTown_Gym_Text_ReceivedKnuckleBadge
 	waitmessage
@@ -184,6 +185,7 @@ DewfordTown_Gym_EventScript_GiveBulkUp2:
 
 DewfordTown_Gym_EventScript_BrawlyRematch::
 	trainerbattle_rematch_double TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons
+	call Common_EventScript_AfterBattleHeal
 	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -193,6 +195,7 @@ DewfordTown_Gym_EventScript_Takao::
 	end
 
 DewfordTown_Gym_EventScript_TakaoBrightenRoom::
+	call Common_EventScript_AfterBattleHeal
 	call DewfordTown_Gym_EventScript_BrightenRoom
 	release
 	end
@@ -203,6 +206,7 @@ DewfordTown_Gym_EventScript_Jocelyn::
 	end
 
 DewfordTown_Gym_EventScript_JocelynBrightenRoom::
+	call Common_EventScript_AfterBattleHeal
 	call DewfordTown_Gym_EventScript_BrightenRoom
 	release
 	end
@@ -213,6 +217,7 @@ DewfordTown_Gym_EventScript_Laura::
 	end
 
 DewfordTown_Gym_EventScript_LauraBrightenRoom::
+	call Common_EventScript_AfterBattleHeal
 	call DewfordTown_Gym_EventScript_BrightenRoom
 	release
 	end
@@ -223,6 +228,7 @@ DewfordTown_Gym_EventScript_Brenden::
 	end
 
 DewfordTown_Gym_EventScript_BrendenBrightenRoom::
+	call Common_EventScript_AfterBattleHeal
 	call DewfordTown_Gym_EventScript_BrightenRoom
 	release
 	end
@@ -233,6 +239,7 @@ DewfordTown_Gym_EventScript_Cristian::
 	end
 
 DewfordTown_Gym_EventScript_CristianBrightenRoom::
+	call Common_EventScript_AfterBattleHeal
 	call DewfordTown_Gym_EventScript_BrightenRoom
 	release
 	end
@@ -243,6 +250,7 @@ DewfordTown_Gym_EventScript_Lilith::
 	end
 
 DewfordTown_Gym_EventScript_LilithBrightenRoom::
+	call Common_EventScript_AfterBattleHeal
 	call DewfordTown_Gym_EventScript_BrightenRoom
 	release
 	end
