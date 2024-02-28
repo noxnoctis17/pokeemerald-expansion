@@ -148,6 +148,8 @@ SlateportCity_EventScript_EnergyGuru::
 
 	.align 2
 SlateportCity_Pokemart_EnergyGuru:
+	.2byte ITEM_ABILITY_CAPSULE
+	.2byte ITEM_ABILITY_PATCH
 	.2byte ITEM_PROTEIN
 	.2byte ITEM_IRON
 	.2byte ITEM_CARBOS

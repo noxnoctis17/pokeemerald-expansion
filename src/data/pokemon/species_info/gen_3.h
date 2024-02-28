@@ -118,12 +118,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     {
         SCEPTILE_MISC_INFO,
         .baseHP        = 70,
-        .baseAttack    = 85,
+        .baseAttack    = 100,
         .baseDefense   = 65,
         .baseSpeed     = 120,
         .baseSpAttack  = 105,
         .baseSpDefense = 85,
-        .types = MON_TYPES(TYPE_GRASS),
+        .types = MON_TYPES(TYPE_GRASS, TYPE_DRAGON),
     #if P_UPDATED_EXP_YIELDS >= GEN_8
         .expYield = 265,
     #elif P_UPDATED_EXP_YIELDS >= GEN_5
@@ -2869,12 +2869,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_DELCATTY] =
     {
         .baseHP        = 70,
-        .baseAttack    = 65,
+        .baseAttack    = 75, //--nox update to 75 from 65
         .baseDefense   = 65,
         .baseSpeed     = P_UPDATED_STATS >= GEN_7 ? 90 : 70,
-        .baseSpAttack  = 55,
+        .baseSpAttack  = 90, //-nox update to 90 from 55
         .baseSpDefense = 55,
-        .types = MON_TYPES(TYPE_NORMAL),
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_FAIRY), //--nox update for norm/fairy dual type
         .catchRate = 60,
     #if P_UPDATED_EXP_YIELDS >= GEN_7
         .expYield = 140,
@@ -2888,7 +2888,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_CUTE_CHARM, ABILITY_NORMALIZE, ABILITY_WONDER_SKIN },
+        .abilities = { ABILITY_PIXILATE, ABILITY_NORMALIZE, ABILITY_WONDER_SKIN }, //--NOX SWAP cute charm TO PIXILATE
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Delcatty"),
         .cryId = CRY_DELCATTY,
@@ -4888,10 +4888,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_SWABLU] =
     {
         .baseHP        = 45,
-        .baseAttack    = 40,
+        .baseAttack    = 50,
         .baseDefense   = 60,
         .baseSpeed     = 50,
-        .baseSpAttack  = 40,
+        .baseSpAttack  = 60,
         .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
         .catchRate = 255,
@@ -4952,14 +4952,14 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     {
         ALTARIA_MISC_INFO,
         .baseHP        = 75,
-        .baseAttack    = 70,
+        .baseAttack    = 90,
         .baseDefense   = 90,
         .baseSpeed     = 80,
-        .baseSpAttack  = 70,
+        .baseSpAttack  = 105,
         .baseSpDefense = 105,
-        .types = MON_TYPES(TYPE_DRAGON, TYPE_FLYING),
+        .types = MON_TYPES(TYPE_DRAGON, TYPE_FAIRY),
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 172 : 188,
-        .abilities = { ABILITY_NATURAL_CURE, ABILITY_NONE, ABILITY_CLOUD_NINE },
+        .abilities = { ABILITY_PIXILATE, ABILITY_LEVITATE, ABILITY_CLOUD_NINE },
         .cryId = CRY_ALTARIA,
         .height = 11,
         .weight = 206,
