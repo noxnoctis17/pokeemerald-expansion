@@ -38,6 +38,9 @@ Route117_EventScript_DayCareSign::
 	msgbox Route117_Text_DayCareSign, MSGBOX_SIGN
 	end
 
+Route117_EventScript_GiveBadge::
+	setflag FLAG_BADGE03_GET
+
 Route117_EventScript_Isaac::
 	trainerbattle_single TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_RegisterIsaac
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -47,6 +50,7 @@ Route117_EventScript_Isaac::
 	end
 
 Route117_EventScript_RegisterIsaac::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route117_Text_IsaacRegister, MSGBOX_DEFAULT
@@ -56,6 +60,7 @@ Route117_EventScript_RegisterIsaac::
 
 Route117_EventScript_RematchIsaac::
 	trainerbattle_rematch TRAINER_ISAAC_1, Route117_Text_IsaacRematchIntro, Route117_Text_IsaacRematchDefeat
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route117_Text_IsaacPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -68,6 +73,7 @@ Route117_EventScript_Lydia::
 	end
 
 Route117_EventScript_RegisterLydia::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route117_Text_LydiaRegister, MSGBOX_DEFAULT
@@ -77,6 +83,7 @@ Route117_EventScript_RegisterLydia::
 
 Route117_EventScript_RematchLydia::
 	trainerbattle_rematch TRAINER_LYDIA_1, Route117_Text_LydiaRematchIntro, Route117_Text_LydiaRematchDefeat
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route117_Text_LydiaPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -89,6 +96,7 @@ Route117_EventScript_Dylan::
 	end
 
 Route117_EventScript_RegisterDylan::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route117_Text_DylanRegister, MSGBOX_DEFAULT
@@ -98,6 +106,7 @@ Route117_EventScript_RegisterDylan::
 
 Route117_EventScript_RematchDylan::
 	trainerbattle_rematch TRAINER_DYLAN_1, Route117_Text_DylanRematchIntro, Route117_Text_DylanRematchDefeat
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route117_Text_DylanPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -110,6 +119,7 @@ Route117_EventScript_Maria::
 	end
 
 Route117_EventScript_RegisterMaria::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route117_Text_MariaRegister, MSGBOX_DEFAULT
@@ -119,11 +129,12 @@ Route117_EventScript_RegisterMaria::
 
 Route117_EventScript_RematchMaria::
 	trainerbattle_rematch TRAINER_MARIA_1, Route117_Text_MariaRematchIntro, Route117_Text_MariaRematchDefeat
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route117_Text_MariaPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route117_EventScript_Derek::
-	trainerbattle_single TRAINER_DEREK, Route117_Text_DerekIntro, Route117_Text_DerekDefeat
+	trainerbattle_single TRAINER_DEREK, Route117_Text_DerekIntro, Route117_Text_DerekDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route117_Text_DerekPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -136,6 +147,7 @@ Route117_EventScript_Anna::
 	end
 
 Route117_EventScript_RegisterAnna::
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route117_Text_AnnaAndMegRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_ANNA_AND_MEG_1
 	release
@@ -143,6 +155,7 @@ Route117_EventScript_RegisterAnna::
 
 Route117_EventScript_RematchAnna::
 	trainerbattle_rematch_double TRAINER_ANNA_AND_MEG_1, Route117_Text_AnnaRematchIntro, Route117_Text_AnnaRematchDefeat, Route117_Text_AnnaRematchNotEnoughMons
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route117_Text_AnnaPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -155,6 +168,7 @@ Route117_EventScript_Meg::
 	end
 
 Route117_EventScript_RegisterMeg::
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route117_Text_AnnaAndMegRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_ANNA_AND_MEG_1
 	release
@@ -162,21 +176,22 @@ Route117_EventScript_RegisterMeg::
 
 Route117_EventScript_RematchMeg::
 	trainerbattle_rematch_double TRAINER_ANNA_AND_MEG_1, Route117_Text_MegRematchIntro, Route117_Text_MegRematchDefeat, Route117_Text_MegRematchNotEnoughMons
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route117_Text_MegPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route117_EventScript_Melina::
-	trainerbattle_single TRAINER_MELINA, Route117_Text_MelinaIntro, Route117_Text_MelinaDefeat
+	trainerbattle_single TRAINER_MELINA, Route117_Text_MelinaIntro, Route117_Text_MelinaDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route117_Text_MelinaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route117_EventScript_Brandi::
-	trainerbattle_single TRAINER_BRANDI, Route117_Text_BrandiIntro, Route117_Text_BrandiDefeat
+	trainerbattle_single TRAINER_BRANDI, Route117_Text_BrandiIntro, Route117_Text_BrandiDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route117_Text_BrandiPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route117_EventScript_Aisha::
-	trainerbattle_single TRAINER_AISHA, Route117_Text_AishaIntro, Route117_Text_AishaDefeat
+	trainerbattle_single TRAINER_AISHA, Route117_Text_AishaIntro, Route117_Text_AishaDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route117_Text_AishaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
