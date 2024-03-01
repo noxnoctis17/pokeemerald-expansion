@@ -727,7 +727,8 @@ static void PrintMonStats()
     StringCopy(gStringVar2, gNatureNamePointers[nature]);
     AddTextPrinterParameterized4(WINDOW_3, FONT_SMALL_NARROW, 4, 50, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
-    StringCopy(gStringVar2, gAbilityNames[gSpeciesInfo[sStatEditorDataPtr->speciesID].abilities[GetMonData(ReturnPartyMon(), MON_DATA_ABILITY_NUM)]]);
+    StringCopy( gStringVar2, gAbilitiesInfo[ gSpeciesInfo [ sStatEditorDataPtr->speciesID ].abilities[ GetMonData( ReturnPartyMon(), MON_DATA_ABILITY_NUM )] ].name ); //--nox ability name stat editor nox update to current rhh
+    // StringCopy(gStringVar2, gAbilityNames[gSpeciesInfo[sStatEditorDataPtr->speciesID].abilities[GetMonData(ReturnPartyMon(), MON_DATA_ABILITY_NUM)]]); //--nox ability name stat editor original
     AddTextPrinterParameterized4(WINDOW_3, FONT_SMALL_NARROW, 4, 34, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
     PutWindowTilemap(WINDOW_3);
