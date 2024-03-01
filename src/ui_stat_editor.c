@@ -822,7 +822,7 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
         gTasks[taskId].func = Task_MenuEditingStat;
         if(sStatEditorDataPtr->editingStat == 0)
             StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 1);
-        if((sStatEditorDataPtr->editingStat == 255 || (sStatEditorDataPtr->evTotal == 510)) && (sStatEditorDataPtr->selector_x == 0))
+        if((sStatEditorDataPtr->editingStat == 252 || (sStatEditorDataPtr->evTotal == 508)) && (sStatEditorDataPtr->selector_x == 0))
             StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
         if((sStatEditorDataPtr->editingStat == 31) && (sStatEditorDataPtr->selector_x == 1))
             StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
@@ -912,17 +912,20 @@ static void ChangeAndUpdateStat()
 }
 
 #define EDIT_INPUT_INCREASE_STATE           0
-#define EDIT_INPUT_MAX_INCREASE_STATE       1
-#define EDIT_INPUT_DECREASE_STATE           2
-#define EDIT_INPUT_MAX_DECREASE_STATE       3
+#define EDIT_INPUT_INCREASE_BY_10           1   //--nox add increase/decrease by 10
+#define EDIT_INPUT_MAX_INCREASE_STATE       2
+#define EDIT_INPUT_DECREASE_STATE           3
+#define EDIT_INPUT_DECREASE_BY_10           4   //--nox add increase/decrease by 10
+#define EDIT_INPUT_MAX_DECREASE_STATE       5
 
-#define STAT_MINIMUM          0  
-#define IV_MAX_SINGLE_STAT    31   
-#define EV_MAX_SINGLE_STAT    255   
-#define EV_MAX_TOTAL          510            
+#define STAT_MINIMUM            0
+#define STAT_CHANGE_BY_10       10  //--nox add increase/decrease by 10
+#define IV_MAX_SINGLE_STAT      31
+#define EV_MAX_SINGLE_STAT      252
+#define EV_MAX_TOTAL            508
                 
-#define EDITING_EVS     0
-#define EDITING_IVS     1
+#define EDITING_EVS         0
+#define EDITING_IVS         1
 
 #define CHECK_IF_STAT_CANT_INCREASE (((sStatEditorDataPtr->editingStat == ((sStatEditorDataPtr->selector_x == EDITING_EVS) ? (EV_MAX_SINGLE_STAT) : (IV_MAX_SINGLE_STAT))) \
                                      || ((sStatEditorDataPtr->selector_x == EDITING_EVS) && (sStatEditorDataPtr->evTotal == EV_MAX_TOTAL))))
@@ -955,7 +958,23 @@ static void HandleEditingStatInput(u32 input)
                     break;
             }
             break;
-       case EDIT_INPUT_MAX_DECREASE_STATE:
+        //--nox add increase/decrease by 10
+        case EDIT_INPUT_DECREASE_BY_10:
+            if( ( sStatEditorDataPtr->selector_y == EDITING_EVS ) ){
+                if( ( sStatEditorDataPtr->editingStat - STAT_CHANGE_BY_10 >= STAT_MINIMUM ) )
+                    sStatEditorDataPtr->editingStat - 10;
+                else
+                    sStatEditorDataPtr->editingStat = STAT_MINIMUM;
+            }
+            else{
+                if( ( sStatEditorDataPtr->editingStat - STAT_CHANGE_BY_10 >= STAT_MINIMUM ) )
+                    sStatEditorDataPtr->editingStat - 10;
+                else
+                    sStatEditorDataPtr->editingStat = STAT_MINIMUM;
+            }
+            break;
+
+        case EDIT_INPUT_MAX_DECREASE_STATE:
             sStatEditorDataPtr->editingStat = STAT_MINIMUM;
             break;
         case EDIT_INPUT_INCREASE_STATE:
@@ -967,6 +986,22 @@ static void HandleEditingStatInput(u32 input)
                     break;
             }
             break;
+        //--nox add increase/decrease by 10
+        case EDIT_INPUT_INCREASE_BY_10:
+            if( ( sStatEditorDataPtr->selector_y == EDITING_EVS ) ){
+                if( ( sStatEditorDataPtr->editingStat + STAT_CHANGE_BY_10 <= EV_MAX_SINGLE_STAT ) )
+                    sStatEditorDataPtr->editingStat + 10;
+                else
+                    sStatEditorDataPtr->editingStat = EV_MAX_SINGLE_STAT;
+            }
+            else{
+                if( ( !sStatEditorDataPtr->editingStat + STAT_CHANGE_BY_10 <= IV_MAX_SINGLE_STAT ) )
+                    sStatEditorDataPtr->editingStat + 10;
+                else
+                    sStatEditorDataPtr->editingStat = IV_MAX_SINGLE_STAT;
+            }
+            break;
+
         case EDIT_INPUT_MAX_INCREASE_STATE:
             if((sStatEditorDataPtr->selector_x == EDITING_EVS))
             {
@@ -979,6 +1014,7 @@ static void HandleEditingStatInput(u32 input)
             {
                 sStatEditorDataPtr->editingStat = IV_MAX_SINGLE_STAT;
             }
+            break;
     }
 
     ChangeAndUpdateStat();
@@ -1002,14 +1038,27 @@ static void Task_MenuEditingStat(u8 taskId) // This function should be refactore
         PrintTitleToWindowMainState();
         return;
     }
+    //--nox add increase by 10
     if (JOY_NEW(DPAD_LEFT))
         HandleEditingStatInput(EDIT_INPUT_DECREASE_STATE);
     if (JOY_NEW(DPAD_RIGHT))
         HandleEditingStatInput(EDIT_INPUT_INCREASE_STATE);
-    if (JOY_NEW(DPAD_UP) || JOY_NEW(R_BUTTON))
+    if ( JOY_NEW(DPAD_UP) )
+        HandleEditingStatInput( EDIT_INPUT_INCREASE_BY_10 );
+    if ( JOY_NEW(DPAD_DOWN) )
+        HandleEditingStatInput( EDIT_INPUT_DECREASE_BY_10 );
+    if( JOY_NEW(R_BUTTON) )
         HandleEditingStatInput(EDIT_INPUT_MAX_INCREASE_STATE);
-    if (JOY_NEW(DPAD_DOWN) || JOY_NEW(L_BUTTON))
+    if ( JOY_NEW(L_BUTTON) )
         HandleEditingStatInput(EDIT_INPUT_MAX_DECREASE_STATE);
+    // if (JOY_NEW(DPAD_LEFT))
+    //     HandleEditingStatInput(EDIT_INPUT_DECREASE_STATE);
+    // if (JOY_NEW(DPAD_RIGHT))
+    //     HandleEditingStatInput(EDIT_INPUT_INCREASE_STATE);
+    // if (JOY_NEW(DPAD_UP) || JOY_NEW(R_BUTTON))
+    //     HandleEditingStatInput(EDIT_INPUT_MAX_INCREASE_STATE);
+    // if (JOY_NEW(DPAD_DOWN) || JOY_NEW(L_BUTTON))
+    //     HandleEditingStatInput(EDIT_INPUT_MAX_DECREASE_STATE);
 
 }
 
