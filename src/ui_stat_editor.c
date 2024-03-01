@@ -958,17 +958,17 @@ static void HandleEditingStatInput(u32 input)
                     break;
             }
             break;
-        //--nox add increase/decrease by 10
+        //--nox decrease by 10
         case EDIT_INPUT_DECREASE_BY_10:
-            if( ( sStatEditorDataPtr->selector_y == EDITING_EVS ) ){
-                if( ( sStatEditorDataPtr->editingStat - STAT_CHANGE_BY_10 >= STAT_MINIMUM ) )
-                    sStatEditorDataPtr->editingStat - 10;
+            if( ( sStatEditorDataPtr->selector_x == EDITING_EVS ) ){
+                if( sStatEditorDataPtr->editingStat - STAT_CHANGE_BY_10 > STAT_MINIMUM )
+                    sStatEditorDataPtr->editingStat -= ( sStatEditorDataPtr->editingStat + STAT_CHANGE_BY_10 - sStatEditorDataPtr->editingStat );
                 else
                     sStatEditorDataPtr->editingStat = STAT_MINIMUM;
             }
             else{
-                if( ( sStatEditorDataPtr->editingStat - STAT_CHANGE_BY_10 >= STAT_MINIMUM ) )
-                    sStatEditorDataPtr->editingStat - 10;
+                if( sStatEditorDataPtr->editingStat - STAT_CHANGE_BY_10 > STAT_MINIMUM )
+                    sStatEditorDataPtr->editingStat -= ( sStatEditorDataPtr->editingStat + STAT_CHANGE_BY_10 - sStatEditorDataPtr->editingStat );
                 else
                     sStatEditorDataPtr->editingStat = STAT_MINIMUM;
             }
@@ -986,17 +986,17 @@ static void HandleEditingStatInput(u32 input)
                     break;
             }
             break;
-        //--nox add increase/decrease by 10
+        //--nox increase by 10
         case EDIT_INPUT_INCREASE_BY_10:
-            if( ( sStatEditorDataPtr->selector_y == EDITING_EVS ) ){
-                if( ( sStatEditorDataPtr->editingStat + STAT_CHANGE_BY_10 <= EV_MAX_SINGLE_STAT ) )
-                    sStatEditorDataPtr->editingStat + 10;
+            if( ( sStatEditorDataPtr->selector_x == EDITING_EVS ) ){
+                if( sStatEditorDataPtr->editingStat + STAT_CHANGE_BY_10 < EV_MAX_SINGLE_STAT )
+                    sStatEditorDataPtr->editingStat += ( sStatEditorDataPtr->editingStat + STAT_CHANGE_BY_10 - sStatEditorDataPtr->editingStat );
                 else
                     sStatEditorDataPtr->editingStat = EV_MAX_SINGLE_STAT;
             }
             else{
-                if( ( !sStatEditorDataPtr->editingStat + STAT_CHANGE_BY_10 <= IV_MAX_SINGLE_STAT ) )
-                    sStatEditorDataPtr->editingStat + 10;
+                if( sStatEditorDataPtr->editingStat + STAT_CHANGE_BY_10 < IV_MAX_SINGLE_STAT )
+                    sStatEditorDataPtr->editingStat += ( sStatEditorDataPtr->editingStat + STAT_CHANGE_BY_10 - sStatEditorDataPtr->editingStat );
                 else
                     sStatEditorDataPtr->editingStat = IV_MAX_SINGLE_STAT;
             }
