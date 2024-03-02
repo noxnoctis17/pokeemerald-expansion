@@ -58,6 +58,7 @@ LavaridgeTown_Gym_1F_EventScript_Flannery::
 	end
 
 LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
+	call Common_EventScript_AfterBattleHeal
 	message LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -100,6 +101,7 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat::
 
 LavaridgeTown_Gym_1F_EventScript_FlanneryRematch::
 	trainerbattle_rematch_double TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons
+	call Common_EventScript_AfterBattleHeal
 	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -109,6 +111,7 @@ LavaridgeTown_Gym_1F_EventScript_Cole::
 	end
 
 LavaridgeTown_Gym_EventScript_CheckTrainerScript::
+	call Common_EventScript_AfterBattleHeal
 	call LavaridgeTown_Gym_1F_EventScript_SetTrainerTempVars
 	release
 	special ShouldTryGetTrainerScript
