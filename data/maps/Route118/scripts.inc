@@ -97,6 +97,7 @@ Route118_EventScript_StevenTrigger::
 	delay 30
 	msgbox Route118_Text_StevenQuestions, MSGBOX_DEFAULT
 	closemessage
+	giveitem ITEM_WATER_STONE
 	call_if_eq VAR_0x8008, 0, Route118_EventScript_StevenExit0
 	call_if_eq VAR_0x8008, 1, Route118_EventScript_StevenExit1
 	call_if_eq VAR_0x8008, 2, Route118_EventScript_StevenExit2
@@ -261,7 +262,7 @@ Route118_Text_StevenQuestions:
 	.string "what do you think?\p"
 	.string "Of course, it's not any of my business.\p"
 	.string "It would be nice if we were to meet\n"
-	.string "again somewhere.$"
+	.string "again somewhere. Here, take this!$"
 
 Route118_Text_YouAgreeGoodRodIsGood:
 	.string "Hmm!\n"

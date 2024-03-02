@@ -12,10 +12,9 @@ FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
 	setflag FLAG_TEMP_1
 	goto FallarborTown_MoveRelearnersHouse_EventScript_AskTeachMove
 	end
-
+@ checkitem ITEM_HEART_SCALE
+@ goto_if_eq VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithHeartScale
 FallarborTown_MoveRelearnersHouse_EventScript_AskTeachMove::
-	checkitem ITEM_HEART_SCALE
-	goto_if_eq VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithHeartScale
 	msgbox FallarborTown_MoveRelearnersHouse_Text_ThatsAHeartScaleWantMeToTeachMove, MSGBOX_YESNO
 	switch VAR_RESULT
 	case NO, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithHeartScale
@@ -33,13 +32,13 @@ FallarborTown_MoveRelearnersHouse_EventScript_ChooseMon::
 	goto FallarborTown_MoveRelearnersHouse_EventScript_ChooseMove
 	end
 
+@ msgbox FallarborTown_MoveRelearnersHouse_Text_HandedOverHeartScale, MSGBOX_DEFAULT
+@ removeitem ITEM_HEART_SCALE
 FallarborTown_MoveRelearnersHouse_EventScript_ChooseMove::
 	msgbox FallarborTown_MoveRelearnersHouse_Text_TeachWhichMove, MSGBOX_DEFAULT
 	special TeachMoveRelearnerMove
 	waitstate
 	goto_if_eq VAR_0x8004, 0, FallarborTown_MoveRelearnersHouse_EventScript_ChooseMon
-	msgbox FallarborTown_MoveRelearnersHouse_Text_HandedOverHeartScale, MSGBOX_DEFAULT
-	removeitem ITEM_HEART_SCALE
 	goto FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithHeartScale
 	end
 
@@ -68,9 +67,9 @@ FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor:
 	.string "I'll do it for a HEART SCALE.\n"
 	.string "I'm collecting those now.$"
 
+@ .string "Oh! That's it! That's an honest to\n"
+@ .string "goodness HEART SCALE!\p"
 FallarborTown_MoveRelearnersHouse_Text_ThatsAHeartScaleWantMeToTeachMove:
-	.string "Oh! That's it! That's an honest to\n"
-	.string "goodness HEART SCALE!\p"
 	.string "Let me guess, you want me to teach\n"
 	.string "a move?$"
 
@@ -91,7 +90,7 @@ FallarborTown_MoveRelearnersHouse_Text_HandedOverHeartScale:
 
 FallarborTown_MoveRelearnersHouse_Text_ComeBackWithHeartScale:
 	.string "If your POKéMON need to learn a move,\n"
-	.string "come back with a HEART SCALE.$"
+	.string "come back any time.$"
 
 FallarborTown_MoveRelearnersHouse_Text_CantTeachEgg:
 	.string "Hunh? There isn't a single move that\n"

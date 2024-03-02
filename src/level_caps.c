@@ -12,8 +12,8 @@ u32 GetCurrentLevelCap(void)
         {FLAG_BADGE01_GET, 15},
         {FLAG_BADGE02_GET, 19},
         {FLAG_BADGE03_GET, 24},
-        {FLAG_BADGE04_GET, 99}, //--29 is default, looking to get a better gauge based on exp gained for the entire party after every single trainer battle until next gym
-        {FLAG_BADGE05_GET, 31},
+        {FLAG_BADGE04_GET, 35}, //--29 is default, looking to get a better gauge based on exp gained for the entire party after every single trainer battle until next gym
+        {FLAG_BADGE05_GET, 99}, //--31 is default, which is lower than flannery's. looking to get a feel for what level you'll be by this
         {FLAG_BADGE06_GET, 33},
         {FLAG_BADGE07_GET, 42},
         {FLAG_BADGE08_GET, 46},
