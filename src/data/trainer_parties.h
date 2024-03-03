@@ -1,7 +1,3 @@
-#include "level_caps.h"
-
-#define LEVEL_SCALED GetCurrentLevelCap(LEVEL_SCALED)
-
 static const struct TrainerMon sParty_Sawyer1[] = {
     {
     .lvl = 21,
