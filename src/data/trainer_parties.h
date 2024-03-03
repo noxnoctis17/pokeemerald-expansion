@@ -5622,12 +5622,12 @@ static const struct TrainerMon sParty_Laura[] = {
 static const struct TrainerMon sParty_Cyndy1[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
-    .lvl = LEVEL_SCALED,
+    .lvl = 36,
     .species = SPECIES_MEDICHAM,
     },
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
-    .lvl = LEVEL_SCALED,
+    .lvl = 36,
     .species = SPECIES_HARIYAMA,
     }
 };
