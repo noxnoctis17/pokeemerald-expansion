@@ -5845,12 +5845,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
 #if P_FAMILY_CASTFORM
 #define CASTFORM_MISC_INFO                                               \
-        .baseHP        = 70,                                             \
-        .baseAttack    = 70,                                             \
-        .baseDefense   = 70,                                             \
-        .baseSpeed     = 70,                                             \
-        .baseSpAttack  = 70,                                             \
-        .baseSpDefense = 70,                                             \
+        .baseHP        = 95,                                             \
+        .baseAttack    = 95,                                             \
+        .baseDefense   = 95,                                             \
+        .baseSpeed     = 95,                                             \
+        .baseSpAttack  = 115,                                             \
+        .baseSpDefense = 95,                                             \
         .catchRate = 45,                                                 \
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 147 : 145,         \
         .itemCommon = ITEM_MYSTIC_WATER,                                 \

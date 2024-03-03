@@ -31,17 +31,17 @@ Route119_WeatherInstitute_2F_EventScript_SetScientistPosGameClear::
 	return
 
 Route119_WeatherInstitute_2F_EventScript_Grunt5::
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_5, Route119_WeatherInstitute_2F_Text_Grunt5Intro, Route119_WeatherInstitute_2F_Text_Grunt5Defeat
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_5, Route119_WeatherInstitute_2F_Text_Grunt5Intro, Route119_WeatherInstitute_2F_Text_Grunt5Defeat, Common_EventScript_AfterBattleHeal
 	msgbox Route119_WeatherInstitute_2F_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_WeatherInstitute_2F_EventScript_Grunt2::
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_2, Route119_WeatherInstitute_2F_Text_Grunt2Intro, Route119_WeatherInstitute_2F_Text_Grunt2Defeat
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_2, Route119_WeatherInstitute_2F_Text_Grunt2Intro, Route119_WeatherInstitute_2F_Text_Grunt2Defeat, Common_EventScript_AfterBattleHeal
 	msgbox Route119_WeatherInstitute_2F_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_WeatherInstitute_2F_EventScript_Grunt3::
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_3, Route119_WeatherInstitute_2F_Text_Grunt3Intro, Route119_WeatherInstitute_2F_Text_Grunt3Defeat
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_3, Route119_WeatherInstitute_2F_Text_Grunt3Intro, Route119_WeatherInstitute_2F_Text_Grunt3Defeat, Common_EventScript_AfterBattleHeal
 	msgbox Route119_WeatherInstitute_2F_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -51,6 +51,7 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 	end
 
 Route119_WeatherInstitute_2F_EventScript_ShellyDefeated::
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route119_WeatherInstitute_2F_Text_ShellyPostBattle, MSGBOX_DEFAULT
 	closemessage
 	addobject LOCALID_GRUNT_3
@@ -88,6 +89,7 @@ Route119_WeatherInstitute_2F_EventScript_ShellyDefeated::
 
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastform::
 	msgbox Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon, MSGBOX_DEFAULT
+	giveitem ITEM_TM_WEATHER_BALL
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CASTFORM_NORMAL
 	givemon SPECIES_CASTFORM_NORMAL, 25, ITEM_MYSTIC_WATER
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty
@@ -288,7 +290,7 @@ Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon:
 	.string "Thanks!\n"
 	.string "Thanks to you, we're safe!\p"
 	.string "It might be an odd way of thanking you,\n"
-	.string "but take this POKéMON.$"
+	.string "but take this TM and this POKéMON.$"
 
 @ Unused
 Route119_WeatherInstitute_2F_Text_NoRoomForPokemon:

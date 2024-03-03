@@ -9976,19 +9976,22 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_OVERHEAT,
     },
 
-    [ITEM_TM51] =
+    [ITEM_TM_WEATHER_BALL] =
     {
         .name = _("TM51"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "This move's type\n"
+            "and power change with\n"
+            "the current weather"),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_WEATHER_BALL,
     },
 
-    [ITEM_TM52] =
+    [ITEM_TM_SWORDS_DANCE] =
     {
         .name = _("TM52"),
         .price = 3000,
@@ -9997,7 +10000,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_SWORDS_DANCE,
     },
 
     [ITEM_TM53] =
