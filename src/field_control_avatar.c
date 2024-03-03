@@ -15,11 +15,14 @@
 #include "field_screen_effect.h"
 #include "field_specials.h"
 #include "fldeff_misc.h"
+#include "item.h" //--nox hms
 #include "item_menu.h"
 #include "link.h"
 #include "match_call.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
+#include "party_menu.h"
+#include "player_pc.h"
 #include "pokemon.h"
 #include "safari_zone.h"
 #include "script.h"
@@ -468,8 +471,8 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
 }
 
 static const u8 *GetInteractedWaterScript(struct MapPosition *unused1, u8 metatileBehavior, u8 direction)
-{
-    if (FlagGet(FLAG_BADGE05_GET) == TRUE && PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
+{   //--nox hms come here if you want to remove badge restriction for surf and
+    if ( FlagGet(FLAG_BADGE05_GET) == TRUE && PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE )
         return EventScript_UseSurf;
 
     if (MetatileBehavior_IsWaterfall(metatileBehavior) == TRUE)

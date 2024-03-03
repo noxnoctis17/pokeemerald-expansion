@@ -2812,10 +2812,12 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             {
                 // AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES); //--nox hms
                 // If Mon already knows FLY and the HM is in the bag, prevent it from being added to action list
-                if (sFieldMoves[j] != MOVE_FLY || !CheckBagHasItem(ITEM_HM_FLY, 1)){
+                if (sFieldMoves[j] != MOVE_FLY || !CheckBagHasItem( ITEM_HM_FLY, 1 ) ){
                     // If Mon already knows FLASH and the HM is in the bag, prevent it from being added to action list
-                    if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem(ITEM_HM_FLASH, 1)){ 
-                        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                    if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem( ITEM_HM_FLASH, 1 ) ){ 
+                        if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem( ITEM_HM_SURF, 1 ) ){ 
+                            AppendToList( sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES );
+                        }
                     }
                 }
                 break;
@@ -2830,6 +2832,10 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
     // If Mon can learn HM05 and action list consists of < 4 moves, add FLASH to action list
     if (sPartyMenuInternal->numActions < 5 && CanLearnTeachableMove( GetMonData( &mons[slotId], MON_DATA_SPECIES ), MOVE_FLASH ) && CheckBagHasItem( ITEM_HM_FLASH, 1 ) ) 
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
+
+    //--If mon can learn Surf and action list consists of < 4 moves, add surf to action list
+    if (sPartyMenuInternal->numActions < 5 && CanLearnTeachableMove( GetMonData( &mons[slotId], MON_DATA_SPECIES ), MOVE_SURF ) && CheckBagHasItem( ITEM_HM_SURF, 1 ) ) 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
 
     if (!InBattlePike())

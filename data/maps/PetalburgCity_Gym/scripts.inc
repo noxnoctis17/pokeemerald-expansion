@@ -345,6 +345,7 @@ PetalburgCity_Gym_EventScript_GiveFacade2::
 
 PetalburgCity_Gym_EventScript_NormanRematch::
 	trainerbattle_rematch_double TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
+	call Common_EventScript_AfterBattleHeal
 	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -374,6 +375,7 @@ PetalburgCity_Gym_EventScript_GiveEnigmaBerry::
 PetalburgCity_Gym_EventScript_NormanBattle::
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
+	call Common_EventScript_AfterBattleHeal
 	message PetalburgCity_Gym_Text_ReceivedBalanceBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -879,6 +881,7 @@ PetalburgCity_Gym_EventScript_Randall::
 	end
 
 PetalburgCity_Gym_EventScript_SlideOpenSpeedRoomDoors::
+	call Common_EventScript_AfterBattleHeal
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenSpeedRoomDoors
 	special DrawWholeMapView
@@ -896,6 +899,7 @@ PetalburgCity_Gym_EventScript_Parker::
 	end
 
 PetalburgCity_Gym_EventScript_SlideOpenConfusionRoomDoors::
+	call Common_EventScript_AfterBattleHeal
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenConfusionRoomDoors
 	special DrawWholeMapView
@@ -913,6 +917,7 @@ PetalburgCity_Gym_EventScript_George::
 	end
 
 PetalburgCity_Gym_EventScript_SlideOpenRecoveryRoomDoors::
+	call Common_EventScript_AfterBattleHeal
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenRecoveryRoomDoors
 	special DrawWholeMapView
@@ -930,6 +935,7 @@ PetalburgCity_Gym_EventScript_Berke::
 	end
 
 PetalburgCity_Gym_EventScript_SlideOpenOHKORoomDoors::
+	call Common_EventScript_AfterBattleHeal
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenOHKORoomDoors
 	special DrawWholeMapView
@@ -947,6 +953,7 @@ PetalburgCity_Gym_EventScript_Mary::
 	end
 
 PetalburgCity_Gym_EventScript_SlideOpenAccuracyRoomDoors::
+	call Common_EventScript_AfterBattleHeal
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenAccuracyRoomDoors
 	special DrawWholeMapView
@@ -964,6 +971,7 @@ PetalburgCity_Gym_EventScript_Alexia::
 	end
 
 PetalburgCity_Gym_EventScript_SlideOpenDefenseRoomDoors::
+	call Common_EventScript_AfterBattleHeal
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenDefenseRoomDoors
 	special DrawWholeMapView
@@ -981,6 +989,7 @@ PetalburgCity_Gym_EventScript_Jody::
 	end
 
 PetalburgCity_Gym_EventScript_SlideOpenStrengthRoomDoors::
+	call Common_EventScript_AfterBattleHeal
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenStrengthRoomDoors
 	special DrawWholeMapView
