@@ -1977,7 +1977,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            CreateMon(&party[i], partyData[i].species, GetCurrentLevelCap(), 0, TRUE, personalityValue, otIdType, fixedOtId); //--nox dynamic levels, old level thing is partyData[i].lvl
+            CreateMon(&party[i], partyData[i].species, GetCurrentLevelCap() - Random2( 3 ), 0, TRUE, personalityValue, otIdType, fixedOtId); //--nox dynamic levels, old level thing is partyData[i].lvl
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[i]);
