@@ -3100,7 +3100,7 @@ static const struct TrainerMon sParty_William[] = {
 static const struct TrainerMon sParty_Joshua[] = {
     {
     .lvl = 5,
-    .species = SPECIES_KADABRA,
+    .species = SPECIES_ALAKAZAM,
     },
     {
     .lvl = 5,
@@ -3225,7 +3225,8 @@ static const struct TrainerMon sParty_Kayla[] = {
 static const struct TrainerMon sParty_Alexis[] = {
     {
     .lvl = 5,
-    .species = SPECIES_KIRLIA,
+    .species = SPECIES_GALLADE,
+    .gender = 0,
     },
     {
     .lvl = 5,
@@ -8706,7 +8707,7 @@ static const struct TrainerMon sParty_Alan[] = {
     },
     {
     .lvl = 5,
-    .species = SPECIES_GRAVELER,
+    .species = SPECIES_ARON,
     }
 };
 
@@ -12794,7 +12795,7 @@ static const struct TrainerMon sParty_Alvaro[] = {
     },
     {
     .lvl = 5,
-    .species = SPECIES_KADABRA,
+    .species = SPECIES_ALAKAZAM,
     }
 };
 
