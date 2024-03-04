@@ -29,6 +29,13 @@ LilycoveCity_DepartmentStore_4F_Pokemart_AttackTMs:
 	.2byte ITEM_TM_THUNDER
 	.2byte ITEM_TM_BLIZZARD
 	.2byte ITEM_TM_HYPER_BEAM
+	.2byte ITEM_TM_THUNDER_PUNCH
+	.2byte ITEM_TM_FIRE_PUNCH
+	.2byte ITEM_TM_ICE_PUNCH
+	.2byte ITEM_TM_THUNDER_FANG
+	.2byte ITEM_TM_FIRE_FANG
+	.2byte ITEM_TM_ICE_FANG
+	.2byte ITEM_TM_SCALD
 	.2byte ITEM_NONE
 	release
 	end
@@ -45,10 +52,12 @@ LilycoveCity_DepartmentStore_4F_EventScript_ClerkRight::
 
 	.align 2
 LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
-	.2byte ITEM_TM_PROTECT
+	.2byte ITEM_TM_TAUNT
 	.2byte ITEM_TM_SAFEGUARD
 	.2byte ITEM_TM_REFLECT
 	.2byte ITEM_TM_LIGHT_SCREEN
+	.2byte ITEM_TM_SWORDS_DANCE
+	.2byte ITEM_TM_HELPING_HAND
 	.2byte ITEM_NONE
 	release
 	end

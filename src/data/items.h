@@ -10051,7 +10051,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_ICE_PUNCH, // Todo
     },
 
-    [ITEM_TM57] =
+    [ITEM_TM_THUNDER_FANG] =
     {
         .name = _("TM57"),
         .price = 3000,
@@ -10060,10 +10060,10 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_THUNDER_FANG, // Todo
     },
 
-    [ITEM_TM58] =
+    [ITEM_TM_FIRE_FANG] =
     {
         .name = _("TM58"),
         .price = 3000,
@@ -10072,10 +10072,10 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_FIRE_FANG, // Todo
     },
 
-    [ITEM_TM59] =
+    [ITEM_TM_ICE_FANG] =
     {
         .name = _("TM59"),
         .price = 3000,
@@ -10084,10 +10084,10 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_ICE_FANG, // Todo
     },
 
-    [ITEM_TM60] =
+    [ITEM_TM_SCALD] =
     {
         .name = _("TM60"),
         .price = 3000,
@@ -10096,10 +10096,10 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_SCALD, // Todo
     },
 
-    [ITEM_TM61] =
+    [ITEM_TM_TRICK_ROOM] =
     {
         .name = _("TM61"),
         .price = 3000,
@@ -10108,7 +10108,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_TRICK_ROOM, // Todo
     },
 
     [ITEM_TM62] =

@@ -57,7 +57,12 @@
     F(HELPING_HAND) \
     F(THUNDER_PUNCH) \
     F(FIRE_PUNCH) \
-    F(ICE_PUNCH)
+    F(ICE_PUNCH) \
+    F(THUNDER_FANG) \
+    F(FIRE_FANG) \
+    F(ICE_FANG) \
+    F(SCALD) \
+    F(TRICK_ROOM)
 
 #define FOREACH_HM(F) \
     F(CUT) \
