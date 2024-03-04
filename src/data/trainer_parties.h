@@ -166,39 +166,60 @@ static const struct TrainerMon sParty_GruntRusturfTunnel[] = {
 
 static const struct TrainerMon sParty_GruntWeatherInst1[] = {
     {
-    .lvl = 5,
-    .species = SPECIES_ZUBAT,
+    .lvl = 3,
+    .species = SPECIES_GOLBAT,
+    .ability = ABILITY_INNER_FOCUS,
+    .nature = NATURE_ADAMANT,
+    .moves = { MOVE_WING_ATTACK, MOVE_POISON_FANG, MOVE_SUPERSONIC, MOVE_PROTECT },
     },
     {
-    .lvl = 5,
-    .species = SPECIES_POOCHYENA,
+    .lvl = 3,
+    .species = SPECIES_MIGHTYENA,
+    .ability = ABILITY_INTIMIDATE,
+    .nature = NATURE_ADAMANT,
+    .moves = { MOVE_CRUNCH, MOVE_HOWL, MOVE_SNARL, MOVE_PROTECT },
     }
 };
 
 static const struct TrainerMon sParty_GruntWeatherInst2[] = {
     {
-    .lvl = 5,
-    .species = SPECIES_POOCHYENA,
+    .lvl = 3,
+    .species = SPECIES_SHARPEDO,
+    .ability = ABILITY_ROUGH_SKIN,
+    .nature = NATURE_JOLLY,
+    .moves = { MOVE_CRUNCH, MOVE_AQUA_JET, MOVE_ICE_FANG, MOVE_PROTECT },
     },
     {
-    .lvl = 5,
-    .species = SPECIES_CARVANHA,
+    .lvl = 3,
+    .species = SPECIES_MIGHTYENA,
+    .ability = ABILITY_INTIMIDATE,
+    .nature = NATURE_ADAMANT,
+    .moves = { MOVE_CRUNCH, MOVE_HOWL, MOVE_SNARL, MOVE_PROTECT },
     }
 };
 
 static const struct TrainerMon sParty_GruntWeatherInst3[] = {
     {
-    .lvl = 5,
-    .species = SPECIES_POOCHYENA,
+    .lvl = 3,
+    .species = SPECIES_GOLBAT,
+    .ability = ABILITY_INNER_FOCUS,
+    .nature = NATURE_ADAMANT,
+    .moves = { MOVE_WING_ATTACK, MOVE_POISON_FANG, MOVE_SUPERSONIC, MOVE_PROTECT },
     },
     {
-    .lvl = 5,
-    .species = SPECIES_ZUBAT,
+    .lvl = 3,
+    .species = SPECIES_MIGHTYENA,
+    .ability = ABILITY_INTIMIDATE,
+    .nature = NATURE_ADAMANT,
+    .moves = { MOVE_CRUNCH, MOVE_HOWL, MOVE_SNARL, MOVE_PROTECT },
     },
     {
-    .lvl = 5,
-    .species = SPECIES_CARVANHA,
-    }
+    .lvl = 3,
+    .species = SPECIES_SHARPEDO,
+    .ability = ABILITY_ROUGH_SKIN,
+    .nature = NATURE_JOLLY,
+    .moves = { MOVE_CRUNCH, MOVE_AQUA_JET, MOVE_ICE_FANG, MOVE_PROTECT },
+    },
 };
 
 static const struct TrainerMon sParty_GruntMuseum1[] = {
@@ -269,9 +290,19 @@ static const struct TrainerMon sParty_GruntMtPyre3[] = {
 
 static const struct TrainerMon sParty_GruntWeatherInst4[] = {
     {
-    .lvl = 5,
-    .species = SPECIES_CARVANHA,
-    }
+    .lvl = 3,
+    .species = SPECIES_SHARPEDO,
+    .ability = ABILITY_ROUGH_SKIN,
+    .nature = NATURE_JOLLY,
+    .moves = { MOVE_CRUNCH, MOVE_AQUA_JET, MOVE_ICE_FANG, MOVE_PROTECT },
+    },
+    {
+    .lvl = 3,
+    .species = SPECIES_GOLBAT,
+    .ability = ABILITY_INNER_FOCUS,
+    .nature = NATURE_ADAMANT,
+    .moves = { MOVE_WING_ATTACK, MOVE_POISON_FANG, MOVE_SUPERSONIC, MOVE_PROTECT },
+    },
 };
 
 static const struct TrainerMon sParty_GruntAquaHideout5[] = {
@@ -323,15 +354,46 @@ static const struct TrainerMon sParty_Zander[] = {
 
 static const struct TrainerMon sParty_ShellyWeatherInstitute[] = {
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 5,
-    .species = SPECIES_CARVANHA,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .ev = TRAINER_PARTY_EVS( 12, 244, 0, 252, 0, 0 ),
+    .lvl = 2,
+    .species = SPECIES_SHARPEDO,
+    .ability = ABILITY_ROUGH_SKIN,
+    .nature = NATURE_ADAMANT,
+    .heldItem = ITEM_ROCKY_HELMET,
+    .moves = { MOVE_LIQUIDATION, MOVE_CRUNCH, MOVE_AQUA_JET, MOVE_PROTECT },
     },
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 5,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .ev = TRAINER_PARTY_EVS( 252, 76, 4, 124, 0, 52 ),
+    .lvl = 2,
     .species = SPECIES_MIGHTYENA,
-    }
+    .ability = ABILITY_INTIMIDATE,
+    .nature = NATURE_ADAMANT,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = { MOVE_CRUNCH, MOVE_THUNDER_FANG, MOVE_SCARY_FACE, MOVE_PROTECT },
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .ev = TRAINER_PARTY_EVS( 12, 244, 0, 252, 0, 0 ),
+    .lvl = 2,
+    .species = SPECIES_GOLBAT,
+    .ability = ABILITY_INNER_FOCUS,
+    .nature = NATURE_ADAMANT,
+    .heldItem = ITEM_NONE,
+    .moves = { MOVE_ACROBATICS, MOVE_POISON_FANG, MOVE_RAIN_DANCE, MOVE_PROTECT },
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .ev = TRAINER_PARTY_EVS( 12, 244, 0, 252, 0, 0 ),
+    .lvl = 2,
+    .species = SPECIES_CRAWDAUNT,
+    .ability = ABILITY_ADAPTABILITY,
+    .nature = NATURE_ADAMANT,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = { MOVE_RAZOR_SHELL, MOVE_KNOCK_OFF, MOVE_SWORDS_DANCE, MOVE_PROTECT },
+    },
+    
 };
 
 static const struct TrainerMon sParty_ShellySeafloorCavern[] = {
@@ -7994,12 +8056,18 @@ static const struct TrainerMon sParty_Isabella[] = {
 
 static const struct TrainerMon sParty_GruntWeatherInst5[] = {
     {
-    .lvl = 5,
-    .species = SPECIES_ZUBAT,
+    .lvl = 3,
+    .species = SPECIES_GOLBAT,
+    .ability = ABILITY_INNER_FOCUS,
+    .nature = NATURE_ADAMANT,
+    .moves = { MOVE_WING_ATTACK, MOVE_POISON_FANG, MOVE_SUPERSONIC, MOVE_PROTECT },
     },
     {
-    .lvl = 5,
-    .species = SPECIES_POOCHYENA,
+    .lvl = 3,
+    .species = SPECIES_MIGHTYENA,
+    .ability = ABILITY_INTIMIDATE,
+    .nature = NATURE_ADAMANT,
+    .moves = { MOVE_CRUNCH, MOVE_HOWL, MOVE_SNARL, MOVE_PROTECT },
     }
 };
 
