@@ -70,7 +70,7 @@ Route121_Movement_Grunt3Exit:
 	step_end
 
 Route121_EventScript_Vanessa::
-	trainerbattle_single TRAINER_VANESSA, Route121_Text_VanessaIntro, Route121_Text_VanessaDefeat
+	trainerbattle_single TRAINER_VANESSA, Route121_Text_VanessaIntro, Route121_Text_VanessaDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route121_Text_VanessaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -83,6 +83,7 @@ Route121_EventScript_Walter::
 	end
 
 Route121_EventScript_RegisterWalter::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route121_Text_WalterRegister, MSGBOX_DEFAULT
@@ -92,21 +93,22 @@ Route121_EventScript_RegisterWalter::
 
 Route121_EventScript_RematchWalter::
 	trainerbattle_rematch TRAINER_WALTER_1, Route121_Text_WalterRematchIntro, Route121_Text_WalterRematchDefeat
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route121_Text_WalterPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route121_EventScript_Tammy::
-	trainerbattle_single TRAINER_TAMMY, Route121_Text_TammyIntro, Route121_Text_TammyDefeat
+	trainerbattle_single TRAINER_TAMMY, Route121_Text_TammyIntro, Route121_Text_TammyDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route121_Text_TammyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route121_EventScript_Kate::
-	trainerbattle_double TRAINER_KATE_AND_JOY, Route121_Text_KateIntro, Route121_Text_KateDefeat, Route121_Text_KateNotEnoughMons
+	trainerbattle_double TRAINER_KATE_AND_JOY, Route121_Text_KateIntro, Route121_Text_KateDefeat, Route121_Text_KateNotEnoughMons, Common_EventScript_AfterBattleHeal
 	msgbox Route121_Text_KatePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route121_EventScript_Joy::
-	trainerbattle_double TRAINER_KATE_AND_JOY, Route121_Text_JoyIntro, Route121_Text_JoyDefeat, Route121_Text_JoyNotEnoughMons
+	trainerbattle_double TRAINER_KATE_AND_JOY, Route121_Text_JoyIntro, Route121_Text_JoyDefeat, Route121_Text_JoyNotEnoughMons, Common_EventScript_AfterBattleHeal
 	msgbox Route121_Text_JoyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -119,6 +121,7 @@ Route121_EventScript_Jessica::
 	end
 
 Route121_EventScript_RegisterJessica::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route121_Text_JessicaRegister, MSGBOX_DEFAULT
@@ -128,26 +131,27 @@ Route121_EventScript_RegisterJessica::
 
 Route121_EventScript_RematchJessica::
 	trainerbattle_rematch TRAINER_JESSICA_1, Route121_Text_JessicaRematchIntro, Route121_Text_JessicaRematchDefeat
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route121_Text_JessicaPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route121_EventScript_Cale::
-	trainerbattle_single TRAINER_CALE, Route121_Text_CaleIntro, Route121_Text_CaleDefeat
+	trainerbattle_single TRAINER_CALE, Route121_Text_CaleIntro, Route121_Text_CaleDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route121_Text_CalePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route121_EventScript_Myles::
-	trainerbattle_single TRAINER_MYLES, Route121_Text_MylesIntro, Route121_Text_MylesDefeat
+	trainerbattle_single TRAINER_MYLES, Route121_Text_MylesIntro, Route121_Text_MylesDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route121_Text_MylesPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route121_EventScript_Pat::
-	trainerbattle_single TRAINER_PAT, Route121_Text_PatIntro, Route121_Text_PatDefeat
+	trainerbattle_single TRAINER_PAT, Route121_Text_PatIntro, Route121_Text_PatDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route121_Text_PatPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route121_EventScript_Marcel::
-	trainerbattle_single TRAINER_MARCEL, Route121_Text_MarcelIntro, Route121_Text_MarcelDefeat
+	trainerbattle_single TRAINER_MARCEL, Route121_Text_MarcelIntro, Route121_Text_MarcelDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route121_Text_MarcelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -160,6 +164,7 @@ Route121_EventScript_Cristin::
 	end
 
 Route121_EventScript_RegisterCristin::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route121_Text_CristinRegister, MSGBOX_DEFAULT
@@ -169,6 +174,7 @@ Route121_EventScript_RegisterCristin::
 
 Route121_EventScript_RematchCristin::
 	trainerbattle_rematch TRAINER_CRISTIN_1, Route121_Text_CristinRematchIntro, Route121_Text_CristinRematchDefeat
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route121_Text_CristinPostRematch, MSGBOX_AUTOCLOSE
 	end
 

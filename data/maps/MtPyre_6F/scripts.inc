@@ -10,6 +10,7 @@ MtPyre_6F_EventScript_Valerie::
 	end
 
 MtPyre_6F_EventScript_RegisterValerie::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox MtPyre_6F_Text_ValerieRegister, MSGBOX_DEFAULT
@@ -19,11 +20,12 @@ MtPyre_6F_EventScript_RegisterValerie::
 
 MtPyre_6F_EventScript_RematchValerie::
 	trainerbattle_rematch TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieRematchIntro, MtPyre_6F_Text_ValerieRematchDefeat
+	call Common_EventScript_AfterBattleHeal
 	msgbox MtPyre_6F_Text_ValeriePostRematch, MSGBOX_AUTOCLOSE
 	end
 
 MtPyre_6F_EventScript_Cedric::
-	trainerbattle_single TRAINER_CEDRIC, MtPyre_6F_Text_CedricIntro, MtPyre_6F_Text_CedricDefeat
+	trainerbattle_single TRAINER_CEDRIC, MtPyre_6F_Text_CedricIntro, MtPyre_6F_Text_CedricDefeat, Common_EventScript_AfterBattleHeal
 	msgbox MtPyre_6F_Text_CedricPostBattle, MSGBOX_AUTOCLOSE
 	end
 

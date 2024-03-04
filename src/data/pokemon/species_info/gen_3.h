@@ -4731,12 +4731,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_FLYGON] =
     {
         .baseHP        = 80,
-        .baseAttack    = 100,
-        .baseDefense   = 80,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 80,
-        .baseSpDefense = 80,
-        .types = MON_TYPES(TYPE_GROUND, TYPE_DRAGON),
+        .baseAttack    = 80,
+        .baseDefense   = 90,
+        .baseSpeed     = 90,
+        .baseSpAttack  = 110,
+        .baseSpDefense = 90,
+        .types = MON_TYPES(TYPE_BUG, TYPE_DRAGON),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
         .expYield = 260,
@@ -4754,7 +4754,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         #else
             .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
         #endif
-        .abilities = { ABILITY_LEVITATE, ABILITY_LEVITATE, ABILITY_LEVITATE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_LEVITATE, ABILITY_LIGHTNING_ROD },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Flygon"),
         .cryId = CRY_FLYGON,
@@ -6087,12 +6087,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         BANETTE_MISC_INFO,
         .baseHP        = 64,
         .baseAttack    = 115,
-        .baseDefense   = 65,
-        .baseSpeed     = 65,
+        .baseDefense   = 75,
+        .baseSpeed     = 75,
         .baseSpAttack  = 83,
-        .baseSpDefense = 63,
+        .baseSpDefense = 73,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 159 : 179,
-        .abilities = { ABILITY_INSOMNIA, ABILITY_FRISK, ABILITY_CURSED_BODY },
+        .abilities = { ABILITY_PRANKSTER, ABILITY_FRISK, ABILITY_CURSED_BODY },
         .cryId = CRY_BANETTE,
         .height = 11,
         .weight = 125,
@@ -6314,12 +6314,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_TROPIUS
     [SPECIES_TROPIUS] =
     {
-        .baseHP        = 99,
-        .baseAttack    = 68,
-        .baseDefense   = 83,
-        .baseSpeed     = 51,
-        .baseSpAttack  = 72,
-        .baseSpDefense = 87,
+        .baseHP        = 100,
+        .baseAttack    = 75,
+        .baseDefense   = 85,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 75,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_GRASS, TYPE_FLYING),
         .catchRate = 200,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 161 : 169,
