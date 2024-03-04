@@ -53,7 +53,11 @@
     F(SNATCH) \
     F(OVERHEAT) \
     F(WEATHER_BALL) \
-    F(SWORDS_DANCE)
+    F(SWORDS_DANCE) \
+    F(HELPING_HAND) \
+    F(THUNDER_PUNCH) \
+    F(FIRE_PUNCH) \
+    F(ICE_PUNCH)
 
 #define FOREACH_HM(F) \
     F(CUT) \
