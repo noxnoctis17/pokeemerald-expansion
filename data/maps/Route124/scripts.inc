@@ -11,12 +11,12 @@ Route124_EventScript_HuntersHouseSign::
 	end
 
 Route124_EventScript_Spencer::
-	trainerbattle_single TRAINER_SPENCER, Route124_Text_SpencerIntro, Route124_Text_SpencerDefeat
+	trainerbattle_single TRAINER_SPENCER, Route124_Text_SpencerIntro, Route124_Text_SpencerDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route124_Text_SpencerPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route124_EventScript_Roland::
-	trainerbattle_single TRAINER_ROLAND, Route124_Text_RolandIntro, Route124_Text_RolandDefeat
+	trainerbattle_single TRAINER_ROLAND, Route124_Text_RolandIntro, Route124_Text_RolandDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route124_Text_RolandPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -29,6 +29,7 @@ Route124_EventScript_Jenny::
 	end
 
 Route124_EventScript_RegisterJenny::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route124_Text_JennyRegister, MSGBOX_DEFAULT
@@ -38,16 +39,17 @@ Route124_EventScript_RegisterJenny::
 
 Route124_EventScript_RematchJenny::
 	trainerbattle_rematch TRAINER_JENNY_1, Route124_Text_JennyRematchIntro, Route124_Text_JennyRematchDefeat
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route124_Text_JennyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route124_EventScript_Grace::
-	trainerbattle_single TRAINER_GRACE, Route124_Text_GraceIntro, Route124_Text_GraceDefeat
+	trainerbattle_single TRAINER_GRACE, Route124_Text_GraceIntro, Route124_Text_GraceDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route124_Text_GracePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route124_EventScript_Chad::
-	trainerbattle_single TRAINER_CHAD, Route124_Text_ChadIntro, Route124_Text_ChadDefeat
+	trainerbattle_single TRAINER_CHAD, Route124_Text_ChadIntro, Route124_Text_ChadDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route124_Text_ChadPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -60,6 +62,7 @@ Route124_EventScript_Lila::
 	end
 
 Route124_EventScript_RegisterLila::
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route124_Text_LilaRoyRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_LILA_AND_ROY_1
 	release
@@ -67,6 +70,7 @@ Route124_EventScript_RegisterLila::
 
 Route124_EventScript_RematchLila::
 	trainerbattle_rematch_double TRAINER_LILA_AND_ROY_1, Route124_Text_LilaRematchIntro, Route124_Text_LilaRematchDefeat, Route124_Text_LilaRematchNotEnoughMons
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route124_Text_LilaPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -79,6 +83,7 @@ Route124_EventScript_Roy::
 	end
 
 Route124_EventScript_RegisterRoy::
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route124_Text_LilaRoyRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_LILA_AND_ROY_1
 	release
@@ -86,16 +91,17 @@ Route124_EventScript_RegisterRoy::
 
 Route124_EventScript_RematchRoy::
 	trainerbattle_rematch_double TRAINER_LILA_AND_ROY_1, Route124_Text_RoyRematchIntro, Route124_Text_RoyRematchDefeat, Route124_Text_RoyRematchNotEnoughMons
+	call Common_EventScript_AfterBattleHeal
 	msgbox Route124_Text_RoyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route124_EventScript_Declan::
-	trainerbattle_single TRAINER_DECLAN, Route124_Text_DeclanIntro, Route124_Text_DeclanDefeat
+	trainerbattle_single TRAINER_DECLAN, Route124_Text_DeclanIntro, Route124_Text_DeclanDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route124_Text_DeclanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route124_EventScript_Isabella::
-	trainerbattle_single TRAINER_ISABELLA, Route124_Text_IsabellaIntro, Route124_Text_IsabellaDefeat
+	trainerbattle_single TRAINER_ISABELLA, Route124_Text_IsabellaIntro, Route124_Text_IsabellaDefeat, Common_EventScript_AfterBattleHeal
 	msgbox Route124_Text_IsabellaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
