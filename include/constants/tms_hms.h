@@ -63,7 +63,8 @@
     F(ICE_FANG) \
     F(SCALD) \
     F(TRICK_ROOM) \
-    F(DISCHARGE)
+    F(DISCHARGE) \
+    F(HEAT_WAVE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

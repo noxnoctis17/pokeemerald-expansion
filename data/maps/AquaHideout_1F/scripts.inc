@@ -46,6 +46,7 @@ AquaHideout_1F_EventScript_Grunt1::
 	end
 
 AquaHideout_1F_EventScript_Grunt1Defeated::
+	call Common_EventScript_AfterBattleHeal
 	msgbox AquaHideout_1F_Text_Grunt1PostBattle, MSGBOX_DEFAULT
 	release
 	end

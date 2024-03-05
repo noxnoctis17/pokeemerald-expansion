@@ -80,6 +80,7 @@ AquaHideout_B1F_EventScript_Grunt2::
 	end
 
 AquaHideout_B1F_EventScript_Grunt2Defeated::
+	call Common_EventScript_AfterBattleHeal
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox AquaHideout_B1F_Text_Grunt2PostBattle, MSGBOX_DEFAULT
@@ -92,17 +93,18 @@ AquaHideout_B1F_EventScript_Grunt3::
 	end
 
 AquaHideout_B1F_EventScript_Grunt3Defeated::
+	call Common_EventScript_AfterBattleHeal
 	msgbox AquaHideout_B1F_Text_Grunt3PostBattle, MSGBOX_DEFAULT
 	release
 	end
 
 AquaHideout_B1F_EventScript_Grunt5::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_5, AquaHideout_B1F_Text_Grunt5Intro, AquaHideout_B1F_Text_Grunt5Defeat
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_5, AquaHideout_B1F_Text_Grunt5Intro, AquaHideout_B1F_Text_Grunt5Defeat, Common_EventScript_AfterBattleHeal
 	msgbox AquaHideout_B1F_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AquaHideout_B1F_EventScript_Grunt7::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_7, AquaHideout_B1F_Text_Grunt7Intro, AquaHideout_B1F_Text_Grunt7Defeat
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_7, AquaHideout_B1F_Text_Grunt7Intro, AquaHideout_B1F_Text_Grunt7Defeat, Common_EventScript_AfterBattleHeal
 	msgbox AquaHideout_B1F_Text_Grunt7PostBattle, MSGBOX_AUTOCLOSE
 	end
 

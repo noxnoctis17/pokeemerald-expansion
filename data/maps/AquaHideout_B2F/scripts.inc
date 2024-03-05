@@ -32,6 +32,7 @@ AquaHideout_B2F_EventScript_Matt::
 	end
 
 AquaHideout_B2F_EventScript_SubmarineEscape::
+	call Common_EventScript_AfterBattleHeal
 	setvar VAR_0x8008, LOCALID_MATT
 	setvar VAR_0x8009, LOCALID_SUBMARINE
 	applymovement VAR_0x8008, Common_Movement_WalkInPlaceFasterLeft
@@ -75,17 +76,18 @@ AquaHideout_B2F_EventScript_Grunt4::
 	end
 
 AquaHideout_B2F_EventScript_Grunt4Defeated::
+	call Common_EventScript_AfterBattleHeal
 	msgbox AquaHideout_B2F_Text_Grunt4PostBattle, MSGBOX_DEFAULT
 	release
 	end
 
 AquaHideout_B2F_EventScript_Grunt6::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_6, AquaHideout_B2F_Text_Grunt6Intro, AquaHideout_B2F_Text_Grunt6Defeat
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_6, AquaHideout_B2F_Text_Grunt6Intro, AquaHideout_B2F_Text_Grunt6Defeat, Common_EventScript_AfterBattleHeal
 	msgbox AquaHideout_B2F_Text_Grunt6PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AquaHideout_B2F_EventScript_Grunt8::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_8, AquaHideout_B2F_Text_Grunt8Intro, AquaHideout_B2F_Text_Grunt8Defeat
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_8, AquaHideout_B2F_Text_Grunt8Intro, AquaHideout_B2F_Text_Grunt8Defeat, Common_EventScript_AfterBattleHeal
 	msgbox AquaHideout_B2F_Text_Grunt8PostBattle, MSGBOX_AUTOCLOSE
 	end
 
