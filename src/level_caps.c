@@ -16,9 +16,9 @@ u32 GetCurrentLevelCap(void)
         {FLAG_BADGE05_GET, 38}, //--31
         {FLAG_BADGE06_GET, 45}, //--33
         {FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, 55}, //--42
-        {FLAG_LEGENDARIES_IN_SOOTOPOLIS, 60}, //--42
+        {FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, 58}, //--42
         {FLAG_BADGE07_GET, 65}, //--42
-        {FLAG_BADGE08_GET, 70}, //--46
+        {FLAG_BADGE08_GET, 70}, //--46 FLAG_LEGENDARIES_IN_SOOTOPOLIS
         {FLAG_IS_CHAMPION, 75}, //--58
     };
 
