@@ -7004,6 +7004,7 @@ static const struct LevelUpMove sGrovyleLevelUpLearnset[] = {
 static const struct LevelUpMove sSceptileLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_DUAL_CHOP),
     LEVEL_UP_MOVE( 1, MOVE_DUAL_CHOP),
+    LEVEL_UP_MOVE( 1, MOVE_DRAGON_CLAW),
     LEVEL_UP_MOVE( 1, MOVE_FURY_CUTTER),
     LEVEL_UP_MOVE( 1, MOVE_FALSE_SWIPE),
     LEVEL_UP_MOVE( 1, MOVE_X_SCISSOR),
@@ -7021,7 +7022,7 @@ static const struct LevelUpMove sSceptileLevelUpLearnset[] = {
     LEVEL_UP_MOVE(35, MOVE_DOUBLE_TEAM),
     LEVEL_UP_MOVE(42, MOVE_LEAF_BLADE),
     LEVEL_UP_MOVE(49, MOVE_SCREECH),
-    LEVEL_UP_MOVE(56, MOVE_ENDEAVOR),
+    LEVEL_UP_MOVE(56, MOVE_EARTHQUAKE),
     LEVEL_UP_MOVE(63, MOVE_LEAF_STORM),
     LEVEL_UP_END
 };

@@ -62,7 +62,8 @@
     F(FIRE_FANG) \
     F(ICE_FANG) \
     F(SCALD) \
-    F(TRICK_ROOM)
+    F(TRICK_ROOM) \
+    F(DISCHARGE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

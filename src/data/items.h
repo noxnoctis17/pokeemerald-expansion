@@ -9995,7 +9995,11 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM52"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "A frenetic dance\n"
+            "to uplift the fighting\n"
+            "spirit. Sharply boosts\n"
+            "the user's Attack stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10007,7 +10011,10 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM53"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The user assists an\n"
+            "ally by boosting the\n"
+            "spower of their attack"),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10019,108 +10026,142 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM54"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The target is attacked\n"
+            "with an electrified\n"
+            "punch. May paralyze."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_THUNDER_PUNCH, // Todo
+        .secondaryId = MOVE_THUNDER_PUNCH,
     },
 
     [ITEM_TM_FIRE_PUNCH] =
     {
         .name = _("TM55"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The target is attacked\n"
+            "with a fiery punch.\n"
+            "May inflict burn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_FIRE_PUNCH, // Todo
+        .secondaryId = MOVE_FIRE_PUNCH,
     },
 
     [ITEM_TM_ICE_PUNCH] =
     {
         .name = _("TM56"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The target is attacked\n"
+            "with an icy punch.\n"
+            "May inflict frostbite."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_ICE_PUNCH, // Todo
+        .secondaryId = MOVE_ICE_PUNCH,
     },
 
     [ITEM_TM_THUNDER_FANG] =
     {
         .name = _("TM57"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The user bites with\n"
+            "electrified fangs. May\n"
+            "make the target flinch.\n"
+            "or inflict paralysis."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_THUNDER_FANG, // Todo
+        .secondaryId = MOVE_THUNDER_FANG,
     },
 
     [ITEM_TM_FIRE_FANG] =
     {
         .name = _("TM58"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The user bites with\n"
+            "flame-cloaked fangs. May\n"
+            "make the target flinch.\n"
+            "or inflict burn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_FIRE_FANG, // Todo
+        .secondaryId = MOVE_FIRE_FANG,
     },
 
     [ITEM_TM_ICE_FANG] =
     {
         .name = _("TM59"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The user bites with\n"
+            "cold-infused fangs. May\n"
+            "make the target flinch.\n"
+            "or inflict frostbite."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_ICE_FANG, // Todo
+        .secondaryId = MOVE_ICE_FANG,
     },
 
     [ITEM_TM_SCALD] =
     {
         .name = _("TM60"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The user attacks by\n"
+            "shooting boiling hot\n"
+            "water at the target.\n"
+            "May cause a burn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_SCALD, // Todo
+        .secondaryId = MOVE_SCALD,
     },
 
     [ITEM_TM_TRICK_ROOM] =
     {
         .name = _("TM61"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The user creates a\n"
+            "bizzare area in which\n"
+            "slower Pokémon get to move.\n"
+            "first for 5 turns."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_TRICK_ROOM, // Todo
+        .secondaryId = MOVE_TRICK_ROOM,
     },
 
-    [ITEM_TM62] =
+    [ITEM_TM_DISCHARGE] =
     {
         .name = _("TM62"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The user strikes\n"
+            "everything around it by\n"
+            "letting loose a flare of.\n"
+            "electricity. May cause\n"
+            "paralysis."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_DISCHARGE,
     },
 
     [ITEM_TM63] =
