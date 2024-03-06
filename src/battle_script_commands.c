@@ -7480,7 +7480,7 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         const struct TrainerMon *party = GetTrainerPartyFromId(trainerId);
         if (party == NULL)
             return 20;
-        lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
+        lastMonLevel = ( GetCurrentLevelCap() - party[GetTrainerPartySizeFromId(trainerId) - 1].lvl ); //--nox money fix, added levelcap to mon level get as appropriate
         trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money;
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)

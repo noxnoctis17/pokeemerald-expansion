@@ -19,9 +19,8 @@ u32 GetCurrentLevelCap(void)
         {FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, 58},
         {FLAG_BADGE07_GET, 62}, //--42
         {FLAG_HIDE_MOSSDEEP_CITY_SCOTT, 64},
-        {FLAG_LEGENDARIES_IN_SOOTOPOLIS, 68},
-        {FLAG_DEFEATED_RAYQUAZA, 70}, //--46
-        {FLAG_BADGE08_GET, 72}, //--46
+        {FLAG_RECEIVED_HM_WATERFALL, 68},
+        {FLAG_BADGE08_GET, 70}, //--46
         {FLAG_IS_CHAMPION, 75}, //--58
     };
 
