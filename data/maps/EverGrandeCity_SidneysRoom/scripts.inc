@@ -49,6 +49,7 @@ EverGrandeCity_SidneysRoom_EventScript_Sidney::
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_SidneysRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_SIDNEY, EverGrandeCity_SidneysRoom_Text_Defeat
+	call Common_EventScript_AfterBattleHeal
 	goto EverGrandeCity_SidneysRoom_EventScript_Defeated
 	end
 

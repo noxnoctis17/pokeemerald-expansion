@@ -21,6 +21,7 @@ u32 GetCurrentLevelCap(void)
         {FLAG_HIDE_MOSSDEEP_CITY_SCOTT, 64},
         {FLAG_RECEIVED_HM_WATERFALL, 68},
         {FLAG_BADGE08_GET, 70}, //--46
+        {FLAG_DEFEATED_WALLY_VICTORY_ROAD, 73},
         {FLAG_IS_CHAMPION, 75}, //--58
     };
 

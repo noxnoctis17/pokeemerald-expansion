@@ -43,6 +43,7 @@ EverGrandeCity_GlaciasRoom_EventScript_Glacia::
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GLACIA, EverGrandeCity_GlaciasRoom_Text_Defeat
+	call Common_EventScript_AfterBattleHeal
 	goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
 	end
 

@@ -43,6 +43,7 @@ EverGrandeCity_PhoebesRoom_EventScript_Phoebe::
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_PhoebesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_PHOEBE, EverGrandeCity_PhoebesRoom_Text_Defeat
+	call Common_EventScript_AfterBattleHeal
 	goto EverGrandeCity_PhoebesRoom_EventScript_Defeated
 	end
 

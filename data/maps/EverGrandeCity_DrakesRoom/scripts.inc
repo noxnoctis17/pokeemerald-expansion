@@ -44,6 +44,7 @@ EverGrandeCity_DrakesRoom_EventScript_Drake::
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_DRAKE, EverGrandeCity_DrakesRoom_Text_Defeat
+	call Common_EventScript_AfterBattleHeal
 	goto EverGrandeCity_DrakesRoom_EventScript_Defeated
 	end
 
