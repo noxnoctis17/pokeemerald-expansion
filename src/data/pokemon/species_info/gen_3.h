@@ -2869,10 +2869,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_DELCATTY] =
     {
         .baseHP        = 70,
-        .baseAttack    = 75, //--nox update to 75 from 65
+        .baseAttack    = 90, //--nox update to 90 from 65
         .baseDefense   = 65,
         .baseSpeed     = P_UPDATED_STATS >= GEN_7 ? 90 : 70,
-        .baseSpAttack  = 90, //-nox update to 90 from 55
+        .baseSpAttack  = 75, //-nox update to 70 from 55
         .baseSpDefense = 55,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FAIRY), //--nox update for norm/fairy dual type
         .catchRate = 60,
