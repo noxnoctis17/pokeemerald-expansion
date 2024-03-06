@@ -64,7 +64,8 @@
     F(SCALD) \
     F(TRICK_ROOM) \
     F(DISCHARGE) \
-    F(HEAT_WAVE)
+    F(HEAT_WAVE) \
+    F(DAZZLING_GLEAM)
 
 #define FOREACH_HM(F) \
     F(CUT) \

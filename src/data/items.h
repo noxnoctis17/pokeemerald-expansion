@@ -9983,7 +9983,7 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "This move's type\n"
             "and power change with\n"
-            "the current weather"),
+            "the current weather."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -9996,10 +9996,9 @@ const struct Item gItemsInfo[] =
         .name = _("TM52"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "A frenetic dance\n"
-            "to uplift the fighting\n"
-            "spirit. Sharply boosts\n"
-            "the user's Attack stat."),
+            "A dance to uplift\n"
+            "the fighting spirit.\n"
+            "Sharply boosts ATK.\n"),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10014,7 +10013,7 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "The user assists an\n"
             "ally by boosting the\n"
-            "spower of their attack"),
+            "spower of their attack."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10027,7 +10026,7 @@ const struct Item gItemsInfo[] =
         .name = _("TM54"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The target is attacked\n"
+            "The user attacks\n"
             "with an electrified\n"
             "punch. May paralyze."),
         .importance = I_REUSABLE_TMS,
@@ -10042,7 +10041,7 @@ const struct Item gItemsInfo[] =
         .name = _("TM55"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The target is attacked\n"
+            "The user attacks\n"
             "with a fiery punch.\n"
             "May inflict burn."),
         .importance = I_REUSABLE_TMS,
@@ -10057,7 +10056,7 @@ const struct Item gItemsInfo[] =
         .name = _("TM56"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The target is attacked\n"
+            "The user attacks\n"
             "with an icy punch.\n"
             "May inflict frostbite."),
         .importance = I_REUSABLE_TMS,
@@ -10072,10 +10071,9 @@ const struct Item gItemsInfo[] =
         .name = _("TM57"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The user bites with\n"
-            "electrified fangs. May\n"
-            "make the target flinch.\n"
-            "or inflict paralysis."),
+            "The user teef shocky.\n"
+            "May cause the target\n"
+            "paralysis or to flinch.\n"),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10088,10 +10086,9 @@ const struct Item gItemsInfo[] =
         .name = _("TM58"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The user bites with\n"
-            "flame-cloaked fangs. May\n"
-            "make the target flinch.\n"
-            "or inflict burn."),
+            "The user teef hot.\n"
+            "May cause the target\n"
+            "to burn or to flinch.\n"),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10104,10 +10101,9 @@ const struct Item gItemsInfo[] =
         .name = _("TM59"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The user bites with\n"
-            "cold-infused fangs. May\n"
-            "make the target flinch.\n"
-            "or inflict frostbite."),
+            "The user teef cold.\n"
+            "May cause the target\n"
+            "frostbite or to flinch.\n"),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10120,10 +10116,9 @@ const struct Item gItemsInfo[] =
         .name = _("TM60"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The user attacks by\n"
-            "shooting boiling hot\n"
-            "water at the target.\n"
-            "May cause a burn."),
+            "The user shoots\n"
+            "boiling water at\n"
+            "the target. May burn.\n"),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10136,10 +10131,9 @@ const struct Item gItemsInfo[] =
         .name = _("TM61"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The user creates a\n"
-            "bizzare area in which\n"
-            "slower Pokémon get to move.\n"
-            "first for 5 turns."),
+            "The user tricks your\n"
+            "room. Slower Pokémon\n"
+            "move first for 5 turns.\n"),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10153,10 +10147,8 @@ const struct Item gItemsInfo[] =
         .price = 3000,
         .description = COMPOUND_STRING(
             "The user strikes\n"
-            "everything around it by\n"
-            "letting loose a flare of.\n"
-            "electricity. May cause\n"
-            "paralysis."),
+            "all with electricity\n"
+            "May cause paralysis.\n"),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10168,24 +10160,30 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM63"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The user hotly waves\n"
+            "the targets. Hits all\n"
+            "foes."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_HEAT_WAVE, // Todo
+        .secondaryId = MOVE_HEAT_WAVE,
     },
 
-    [ITEM_TM64] =
+    [ITEM_TM_DAZZLING_GLEAM] =
     {
         .name = _("TM64"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The user dazzlingly\n"
+            "gleams the targets.\n"
+            "Hits all foes."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_DAZZLING_GLEAM,
     },
 
     [ITEM_TM65] =
