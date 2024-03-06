@@ -65,7 +65,8 @@
     F(TRICK_ROOM) \
     F(DISCHARGE) \
     F(HEAT_WAVE) \
-    F(DAZZLING_GLEAM)
+    F(DAZZLING_GLEAM) \
+    F(HYPER_VOICE)
 
 #define FOREACH_HM(F) \
     F(CUT) \
