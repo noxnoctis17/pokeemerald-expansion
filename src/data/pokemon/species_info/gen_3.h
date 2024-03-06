@@ -131,7 +131,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     #else
         .expYield = 208,
     #endif
-        .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_UNBURDEN },
+        .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_LIGHTNING_ROD },
         .cryId = CRY_SCEPTILE,
         .height = 17,
         .weight = 522,
