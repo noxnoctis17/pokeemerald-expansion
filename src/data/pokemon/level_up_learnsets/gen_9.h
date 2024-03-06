@@ -5848,6 +5848,7 @@ static const struct LevelUpMove sGirafarigLevelUpLearnset[] = {
 
 #if P_GEN_9_CROSS_EVOS
 static const struct LevelUpMove sFarigirafLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_TRICK_ROOM),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
     LEVEL_UP_MOVE( 1, MOVE_ASTONISH),
@@ -5864,6 +5865,8 @@ static const struct LevelUpMove sFarigirafLevelUpLearnset[] = {
     LEVEL_UP_MOVE(41, MOVE_BATON_PASS),
     LEVEL_UP_MOVE(46, MOVE_NASTY_PLOT),
     LEVEL_UP_MOVE(50, MOVE_PSYCHIC),
+    LEVEL_UP_MOVE(58, MOVE_DAZZLING_GLEAM),
+    LEVEL_UP_MOVE(64, MOVE_HYPER_VOICE),
     LEVEL_UP_END
 };
 #endif //P_GEN_9_CROSS_EVOS
