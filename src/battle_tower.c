@@ -39,6 +39,7 @@
 #include "constants/trainers.h"
 #include "constants/event_objects.h"
 #include "constants/moves.h"
+#include "level_caps.h"
 
 // EWRAM vars.
 EWRAM_DATA const struct BattleFrontierTrainer *gFacilityTrainers = NULL;
@@ -3065,7 +3066,7 @@ static void FillPartnerParty(u16 trainerId)
             if (partyData[i].nature != 0)
                 ModifyPersonalityForNature(&personality, partyData[i].nature - 1);
 
-            CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, 0, TRUE, personality, OT_ID_PRESET, otID);
+            CreateMon(&gPlayerParty[i + 3], partyData[i].species, GetCurrentLevelCap() - partyData[i].lvl, 0, TRUE, personality, OT_ID_PRESET, otID); //--nox homogenize createmon levels for partner battles with dynamic level capped trainers
             j = partyData[i].isShiny;
             SetMonData(&gPlayerParty[i + 3], MON_DATA_IS_SHINY, &j);
             SetMonData(&gPlayerParty[i + 3], MON_DATA_HELD_ITEM, &partyData[i].heldItem);

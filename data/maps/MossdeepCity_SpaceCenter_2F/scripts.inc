@@ -268,6 +268,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_DoStevenMultiBattle::
 	waitstate
 
 MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
+	call Common_EventScript_AfterBattleHeal
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided, MSGBOX_DEFAULT
 	closemessage
 	delay 20
