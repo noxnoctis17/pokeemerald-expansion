@@ -4446,7 +4446,17 @@ static const struct TrainerMon sParty_Sidney[] = {
 
 static const struct TrainerMon sParty_Phoebe[] = {
     {
-    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
+    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 0, 31, 31 ),
+    .ev = TRAINER_PARTY_EVS( 252, 0, 100, 0, 0, 156 ),
+    .lvl = 0,
+    .species = SPECIES_DUSCLOPS,
+    .ability = ABILITY_PRESSURE,
+    .nature = NATURE_SASSY,
+    .heldItem = ITEM_EVIOLITE,
+    .moves = { MOVE_BRICK_BREAK, MOVE_PAIN_SPLIT, MOVE_WILL_O_WISP, MOVE_TRICK_ROOM }
+    },
+    {
+    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 0, 31, 31 ),
     .ev = TRAINER_PARTY_EVS( 0, 252, 0, 0, 4, 252 ),
     .lvl = 0,
     .species = SPECIES_SHEDINJA,
@@ -4456,14 +4466,14 @@ static const struct TrainerMon sParty_Phoebe[] = {
     .moves = { MOVE_POLTERGEIST, MOVE_SUCKER_PUNCH, MOVE_SWORDS_DANCE, MOVE_PROTECT }
     },
     {
-    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
-    .ev = TRAINER_PARTY_EVS( 252, 0, 100, 0, 0, 156 ),
+    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 0, 31, 31 ),
+    .ev = TRAINER_PARTY_EVS( 4, 0, 252, 0, 0, 252 ),
     .lvl = 0,
-    .species = SPECIES_DUSCLOPS,
-    .ability = ABILITY_PRESSURE,
-    .nature = NATURE_SASSY,
-    .heldItem = ITEM_EVIOLITE,
-    .moves = { MOVE_BRICK_BREAK, MOVE_PAIN_SPLIT, MOVE_WILL_O_WISP, MOVE_TRICK_ROOM }
+    .species = SPECIES_WOBBUFFET,
+    .ability = ABILITY_SHADOW_TAG,
+    .nature = NATURE_BOLD,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = { MOVE_COUNTER, MOVE_MIRROR_COAT, MOVE_DESTINY_BOND, MOVE_ENCORE },
     },
     {
     .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
@@ -4476,7 +4486,7 @@ static const struct TrainerMon sParty_Phoebe[] = {
     .moves = { MOVE_KNOCK_OFF, MOVE_WILL_O_WISP, MOVE_FAKE_OUT, MOVE_PROTECT }
     },
     {
-    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
+    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 0, 31, 31 ),
     .ev = TRAINER_PARTY_EVS( 0, 184, 68, 252, 0, 4 ),
     .lvl = 0,
     .species = SPECIES_BANETTE,
@@ -4486,26 +4496,14 @@ static const struct TrainerMon sParty_Phoebe[] = {
     .moves = { MOVE_SHADOW_CLAW, MOVE_ENCORE, MOVE_DESTINY_BOND, MOVE_PROTECT }
     },
     {
-    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
-    .ev = TRAINER_PARTY_EVS( 4, 0, 252, 0, 0, 252 ),
-    .lvl = 0,
-    .species = SPECIES_WOBBUFFET,
-    .ability = ABILITY_SHADOW_TAG,
-    .nature = NATURE_BOLD,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = { MOVE_COUNTER, MOVE_MIRROR_COAT, MOVE_DESTINY_BOND, MOVE_ENCORE }.iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
-    .ev = TRAINER_PARTY_EVS( 252, 0, 252, 4, 0, 0 ),
-    .lvl = 0,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
+    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 0, 31, 31 ),
     .ev = TRAINER_PARTY_EVS( 252, 0, 252, 4, 0, 0 ),
     .lvl = 0,
     .species = SPECIES_DUSKNOIR,
     .ability = ABILITY_PRESSURE,
     .nature = NATURE_ADAMANT,
     .heldItem = ITEM_LIFE_ORB,
-    .moves = { MOVE_SHADOW_SNEAK, MOVE_ICE_PUNCH, MOVE_PAYBACK, MOVE_PROTECT }
+    .moves = { MOVE_SHADOW_SNEAK, MOVE_ICE_PUNCH, MOVE_BRICK_BREAK, MOVE_PROTECT }
     }
 };
 
@@ -4558,7 +4556,7 @@ static const struct TrainerMon sParty_Glacia[] = {
     .ability = ABILITY_SNOW_CLOAK,
     .nature = NATURE_TIMID,
     .heldItem = ITEM_FOCUS_SASH,
-    .moves = { MOVE_BLIZZARD, MOVE_SHADOW_BALL, MOVE_HAIL, MOVE_DESTINY_BOND }
+    .moves = { MOVE_BLIZZARD, MOVE_SHADOW_BALL, MOVE_SNOWSCAPE, MOVE_DESTINY_BOND }
     },
     {
     .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
