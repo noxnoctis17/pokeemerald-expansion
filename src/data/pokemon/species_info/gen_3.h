@@ -6086,13 +6086,13 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     {
         BANETTE_MISC_INFO,
         .baseHP        = 64,
-        .baseAttack    = 115,
-        .baseDefense   = 75,
-        .baseSpeed     = 75,
+        .baseAttack    = 120, //--nox banette 115
+        .baseDefense   = 75, //--nox banette 65
+        .baseSpeed     = 75, //--nox banette 65
         .baseSpAttack  = 83,
-        .baseSpDefense = 73,
+        .baseSpDefense = 83, //--nox banette 63
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 159 : 179,
-        .abilities = { ABILITY_PRANKSTER, ABILITY_FRISK, ABILITY_CURSED_BODY },
+        .abilities = { ABILITY_PRANKSTER, ABILITY_FRISK, ABILITY_CURSED_BODY }, //--nox banette insomnia -> prankster
         .cryId = CRY_BANETTE,
         .height = 11,
         .weight = 125,
