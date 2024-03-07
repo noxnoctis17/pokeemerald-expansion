@@ -4736,7 +4736,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseSpeed     = 90,
         .baseSpAttack  = 110,
         .baseSpDefense = 90,
-        .types = MON_TYPES(TYPE_BUG, TYPE_DRAGON),
+        .types = MON_TYPES(TYPE_BUG, TYPE_DRAGON), //--nox flygon "buffs" ground -> bug
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
         .expYield = 260,
@@ -4754,7 +4754,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         #else
             .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
         #endif
-        .abilities = { ABILITY_LEVITATE, ABILITY_LEVITATE, ABILITY_LIGHTNING_ROD },
+        .abilities = { ABILITY_LEVITATE, ABILITY_SAND_FORCE, ABILITY_LIGHTNING_ROD }, //--nox flygon "buffs" levitate2 -> sand force, HA -> lightning rod
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Flygon"),
         .cryId = CRY_FLYGON,
