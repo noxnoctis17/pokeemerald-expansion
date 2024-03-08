@@ -6,7 +6,32 @@ RustboroCity_Gym_EventScript_Roxanne::
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneRematch
 	goto_if_unset FLAG_RECEIVED_TM_ROCK_TOMB, RustboroCity_Gym_EventScript_GiveRockTomb
+	checkflag FLAG_IS_CHAMPION
+	goto_if TRUE, RustboroCity_Gym_EventScript_RoxanneYouAreTheChampion
 	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_Gym_EventScript_RoxanneYouAreTheChampion::
+	msgbox RustboroCity_Gym_Text_RoxanneYouAreTheChampion, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, RustboroCity_Gym_EventScript_RoxanneChampionRematch
+	goto_if_eq VAR_RESULT, NO, RustboroCity_Gym_EventScript_RoxanneComeTrainAnyTime
+	end
+
+RustboroCity_Gym_EventScript_RoxanneChampionRematch::
+	trainerbattle_no_intro TRAINER_ROXANNE_5, RustboroCity_Gym_Text_RoxanneChampionDefeat
+	goto RustboroCity_Gym_EventScript_RoxanneAfterDefeatedByChampion
+	end
+
+RustboroCity_Gym_EventScript_RoxanneAfterDefeatedByChampion::
+	call Common_EventScript_AfterBattleHeal
+	setflag FLAG_REMATCHED_ROXANNE
+	msgbox RustboroCity_Gym_Text_RoxanneAfterDefeatedByChampion, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_Gym_EventScript_RoxanneComeTrainAnyTime::
+	msgbox RustboroCity_Gym_Text_RoxanneComeTrainAnyTime, MSGBOX_DEFAULT
 	release
 	end
 
@@ -223,6 +248,35 @@ RustboroCity_Gym_Text_RoxannePostBattle:
 	.string "challenge other GYM LEADERS.\p"
 	.string "By battling many TRAINERS, you should\n"
 	.string "learn many things.$"
+
+RustboroCity_Gym_Text_RoxanneYouAreTheChampion:
+	.string "So…\n"
+	.string "You are the CHAMPION now.\p"
+	.string "How about a rematch, to see\n"
+	.string "for myself how you've grown?.$"
+
+RustboroCity_Gym_Text_RoxanneChampionDefeat:
+	.string "So…\n"
+	.string "I lost again…\p"
+	.string "It seems that I still have much more\n"
+	.string "to learn…\p"
+	.string "I understand.$"
+
+RustboroCity_Gym_Text_RoxanneAfterDefeatedByChampion:
+	.string "Since you are so strong, you should\n"
+	.string "rechallenge other GYM LEADERS.\p"
+	.string "By continuing to challenge yourself\n"
+	.string "you can continue to grow.\p"
+	.string "I too wish to keep growing.\p"
+	.string "Champion {PLAYER},\n"
+	.string "come back any time for a rematch.$"
+
+RustboroCity_Gym_Text_RoxanneComeTrainAnyTime:
+	.string "By continuing to challenge yourself\n"
+	.string "you can continue to grow.\p"
+	.string "I too wish to keep growing.\p"
+	.string "Champion {PLAYER},\n"
+	.string "come back any time for a rematch.$"
 
 RustboroCity_Gym_Text_GymStatue:
 	.string "RUSTBORO CITY POKéMON GYM$"
