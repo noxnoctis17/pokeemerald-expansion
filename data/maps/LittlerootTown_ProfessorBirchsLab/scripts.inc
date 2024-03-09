@@ -567,14 +567,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	giveitem ITEM_HM_ROCK_SMASH
 	giveitem ITEM_HM_WATERFALL
 	giveitem ITEM_HM_DIVE
-	setflag FLAG_RECEIVED_HM_CUT
-	setflag FLAG_RECEIVED_HM_FLY
-	setflag FLAG_RECEIVED_HM_SURF
-	setflag FLAG_RECEIVED_HM_STRENGTH
-	setflag FLAG_RECEIVED_HM_FLASH
-	setflag FLAG_RECEIVED_HM_ROCK_SMASH
-	setflag FLAG_RECEIVED_HM_WATERFALL
-	setflag FLAG_RECEIVED_HM_DIVE
 	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_MayNoRoomForPokeBalls
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 0
@@ -592,14 +584,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	giveitem ITEM_HM_ROCK_SMASH
 	giveitem ITEM_HM_WATERFALL
 	giveitem ITEM_HM_DIVE
-	setflag FLAG_RECEIVED_HM_CUT
-	setflag FLAG_RECEIVED_HM_FLY
-	setflag FLAG_RECEIVED_HM_SURF
-	setflag FLAG_RECEIVED_HM_STRENGTH
-	setflag FLAG_RECEIVED_HM_FLASH
-	setflag FLAG_RECEIVED_HM_ROCK_SMASH
-	setflag FLAG_RECEIVED_HM_WATERFALL
-	setflag FLAG_RECEIVED_HM_DIVE
 	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanNoRoomForPokeBalls
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 1
