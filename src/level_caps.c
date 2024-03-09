@@ -75,3 +75,7 @@ u32 GetSoftLevelCapExpValue(u32 level, u32 expValue)
         return 0;
 
 }
+
+u32 GetNumBadges( void ){
+    return NUM_BADGES;
+}

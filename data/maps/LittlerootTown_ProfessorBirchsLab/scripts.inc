@@ -555,11 +555,26 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
-	giveitem ITEM_POKE_BALL, 10
+	giveitem ITEM_POKE_BALL, 20
 	giveitem ITEM_EXP_SHARE
-	setflag FLAG_RECEIVED_EXP_SHARE
+	giveitem ITEM_EXP_CHARM
+	giveitem ITEM_HM_CUT
 	giveitem ITEM_HM_FLY
+	giveitem ITEM_HM_SURF
+	giveitem ITEM_HM_STRENGTH
+	giveitem ITEM_HM_FLASH
+	giveitem ITEM_HM_ROCK_SMASH
+	giveitem ITEM_HM_WATERFALL
+	giveitem ITEM_HM_DIVE
+	setflag FLAG_RECEIVED_EXP_SHARE
+	setflag FLAG_RECEIVED_HM_CUT
 	setflag FLAG_RECEIVED_HM_FLY
+	setflag FLAG_RECEIVED_HM_SURF
+	setflag FLAG_RECEIVED_HM_STRENGTH
+	setflag FLAG_RECEIVED_HM_FLASH
+	setflag FLAG_RECEIVED_HM_ROCK_SMASH
+	setflag FLAG_RECEIVED_HM_WATERFALL
+	setflag FLAG_RECEIVED_HM_DIVE
 	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_MayNoRoomForPokeBalls
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 0
@@ -567,11 +582,26 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese, MSGBOX_DEFAULT
-	giveitem ITEM_POKE_BALL, 10
+	giveitem ITEM_POKE_BALL, 20
 	giveitem ITEM_EXP_SHARE
-	setflag FLAG_RECEIVED_EXP_SHARE
+	giveitem ITEM_EXP_CHARM
+	giveitem ITEM_HM_CUT
 	giveitem ITEM_HM_FLY
+	giveitem ITEM_HM_SURF
+	giveitem ITEM_HM_STRENGTH
+	giveitem ITEM_HM_FLASH
+	giveitem ITEM_HM_ROCK_SMASH
+	giveitem ITEM_HM_WATERFALL
+	giveitem ITEM_HM_DIVE
+	setflag FLAG_RECEIVED_EXP_SHARE
+	setflag FLAG_RECEIVED_HM_CUT
 	setflag FLAG_RECEIVED_HM_FLY
+	setflag FLAG_RECEIVED_HM_SURF
+	setflag FLAG_RECEIVED_HM_STRENGTH
+	setflag FLAG_RECEIVED_HM_FLASH
+	setflag FLAG_RECEIVED_HM_ROCK_SMASH
+	setflag FLAG_RECEIVED_HM_WATERFALL
+	setflag FLAG_RECEIVED_HM_DIVE
 	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanNoRoomForPokeBalls
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 1
@@ -818,7 +848,12 @@ LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
 	.string "I'm going to look all over the place\n"
 	.string "because I want different POKéMON.\p"
 	.string "If I find any cute POKéMON, I'll catch\n"
-	.string "them with POKé BALLS!$"
+	.string "them with POKé BALLS!"
+	.string "With those HMs, you can go anywhere!\n"
+	.string "as long as a pokemon in your party\p"
+	.string "can learn the HM! You don't have to\n"
+	.string "teach it to them directly!\p"
+	.string "Isn't this exciting?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull:
 	.string "Oh? Your BAG's full.$"
@@ -842,9 +877,10 @@ LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls:
 	.string "I'll try to get them with POKé BALLS.\p"
 	.string "If you turn on the EXP. Share, all\n"
 	.string "POKéMON in your party will receive EXP.\p"
-	.string "With FLY, your POKéMON\n"
-	.string "instantly carries you to any town\l"
-	.string "you've already visited.\p"
+	.string "With those HMs, you can go anywhere!\n"
+	.string "as long as a pokemon in your party\p"
+	.string "can learn the HM! You don't have to\n"
+	.string "teach it to them directly!\p"
 	.string "Anyway, I have to move along.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull:

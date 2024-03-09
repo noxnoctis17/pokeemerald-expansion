@@ -288,6 +288,30 @@ RustboroCity_EventScript_StolenGoodsTrigger4::
 	goto RustboroCity_EventScript_StolenGoodsScene
 	end
 
+RustboroCity_EventScript_StolenGoodsTrigger5::
+	lockall
+	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 14, 21
+	setobjectmovementtype LOCALID_DEVON_EMPLOYEE, MOVEMENT_TYPE_FACE_RIGHT
+	setvar VAR_0x8004, 5
+	goto RustboroCity_EventScript_StolenGoodsScene
+	end
+
+RustboroCity_EventScript_StolenGoodsTrigger6::
+	lockall
+	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 14, 21
+	setobjectmovementtype LOCALID_DEVON_EMPLOYEE, MOVEMENT_TYPE_FACE_RIGHT
+	setvar VAR_0x8004, 6
+	goto RustboroCity_EventScript_StolenGoodsScene
+	end
+
+RustboroCity_EventScript_StolenGoodsTrigger7::
+	lockall
+	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 14, 21
+	setobjectmovementtype LOCALID_DEVON_EMPLOYEE, MOVEMENT_TYPE_FACE_RIGHT
+	setvar VAR_0x8004, 7
+	goto RustboroCity_EventScript_StolenGoodsScene
+	end
+
 RustboroCity_EventScript_StolenGoodsScene::
 	msgbox RustboroCity_Text_OutOfTheWay, MSGBOX_DEFAULT
 	closemessage
@@ -1313,4 +1337,5 @@ RustboroCity_Text_BattleNox:
 RustboroCity_Text_NoxDefeated:
 	.string "You're good! No wonder you\n"
 	.string "made it to the end!$"
+
 	

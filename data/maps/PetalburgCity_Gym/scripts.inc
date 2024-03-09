@@ -77,6 +77,7 @@ PetalburgCity_Gym_OnFrame:
 	map_script_2 VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial
 	.2byte 0
 
+@ msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT //--nox original message
 PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	lockall
 	msgbox PetalburgCity_Gym_Text_DadSoDidItWorkOut, MSGBOX_DEFAULT
@@ -91,7 +92,7 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Gym_Text_ReadyForBattleSoon, MSGBOX_DEFAULT
 	setvar VAR_PETALBURG_GYM_STATE, 2
 	releaseall
 	end
@@ -373,7 +374,7 @@ PetalburgCity_Gym_EventScript_GiveEnigmaBerry::
 	end
 
 PetalburgCity_Gym_EventScript_NormanBattle::
-	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Gym_Text_NormanPreRematch, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
 	call Common_EventScript_AfterBattleHeal
 	message PetalburgCity_Gym_Text_ReceivedBalanceBadge
@@ -1601,4 +1602,10 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "capable of battle?\p"
 	.string "Sorry, but you'll have to come back\n"
 	.string "with at least two POKéMON.$"
+
+PetalburgCity_Gym_Text_ReadyForBattleSoon:
+	.string "DAD: {Player}…\n"
+	.string "Come back in a little while.\p"
+	.string "My GYM will be ready for you\n"
+	.string "to challenge by then.$"
 

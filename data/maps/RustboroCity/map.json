@@ -341,8 +341,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 23,
-      "y": 20,
+      "x": 18,
+      "y": 24,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "1",
@@ -350,8 +350,8 @@
     },
     {
       "type": "trigger",
-      "x": 23,
-      "y": 21,
+      "x": 20,
+      "y": 24,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "1",
@@ -359,8 +359,8 @@
     },
     {
       "type": "trigger",
-      "x": 23,
-      "y": 22,
+      "x": 21,
+      "y": 24,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "1",
@@ -369,7 +369,7 @@
     {
       "type": "trigger",
       "x": 23,
-      "y": 23,
+      "y": 24,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "1",
@@ -377,8 +377,8 @@
     },
     {
       "type": "trigger",
-      "x": 23,
-      "y": 24,
+      "x": 18,
+      "y": 16,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "1",
@@ -527,6 +527,42 @@
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
       "script": "RustboroCity_EventScript_RivalTrigger7"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_RUSTBORO_CITY_STATE",
+      "var_value": "1",
+      "script": "RustboroCity_EventScript_StolenGoodsTrigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_RUSTBORO_CITY_STATE",
+      "var_value": "1",
+      "script": "RustboroCity_EventScript_StolenGoodsTrigger4"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_RUSTBORO_CITY_STATE",
+      "var_value": "1",
+      "script": "RustboroCity_EventScript_StolenGoodsTrigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_RUSTBORO_CITY_STATE",
+      "var_value": "1",
+      "script": "RustboroCity_EventScript_StolenGoodsTrigger7"
     }
   ],
   "bg_events": [
