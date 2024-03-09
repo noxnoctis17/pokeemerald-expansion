@@ -12112,7 +12112,7 @@ static const struct TrainerMon sParty_Roxanne5[] = {
     .species = SPECIES_GOLEM,
     .ability = ABILITY_STURDY,
     .nature = NATURE_ADAMANT,
-    .heldItem = ITEM_SMOOTH_ROCK,
+    .heldItem = ITEM_COVERT_CLOAK,
     .moves = { MOVE_EARTHQUAKE, MOVE_THUNDER_PUNCH, MOVE_SANDSTORM, MOVE_STEALTH_ROCK }
     },
     {
@@ -14004,4 +14004,67 @@ static const struct TrainerMon sParty_MayLinkPlaceholder[] = {
     .lvl = 5,
     .species = SPECIES_KYOGRE,
     }
+};
+
+static const struct TrainerMon sParty_Nox[] = {
+    {
+        .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
+        .ev = TRAINER_PARTY_EVS( 4, 252, 0, 252, 0, 0 ),
+        .lvl = 0,
+        .species = SPECIES_LILLIGANT_HISUIAN,
+        .ability = ABILITY_CHLOROPHYLL,
+        .nature = NATURE_TIMID,
+        .heldItem = ITEM_FOCUS_SASH,
+        .moves = { MOVE_LEAF_BLADE, MOVE_CLOSE_COMBAT, MOVE_AFTER_YOU, MOVE_QUIVER_DANCE },
+    },
+    {
+        .iv = TRAINER_PARTY_IVS( 31, 0, 31, 0, 31, 31 ),
+        .ev = TRAINER_PARTY_EVS( 4, 0, 0, 252, 252, 0 ),
+        .lvl = 0,
+        .species = SPECIES_TORKOAL,
+        .ability = ABILITY_DROUGHT,
+        .nature = NATURE_QUIET,
+        .heldItem = ITEM_CHARCOAL,
+        .moves = { MOVE_ERUPTION, MOVE_HEAT_WAVE, MOVE_EARTH_POWER, MOVE_PROTECT },
+    },
+    {
+        .iv = TRAINER_PARTY_IVS( 31, 0, 31, 0, 31, 31 ),
+        .ev = TRAINER_PARTY_EVS( 244, 0, 0, 0, 252, 12 ),
+        .lvl = 0,
+        .species = SPECIES_ARMAROUGE,
+        .ability = ABILITY_FLASH_FIRE,
+        .nature = NATURE_QUIET,
+        .heldItem = ITEM_COVERT_CLOAK,
+        .moves = { MOVE_ARMOR_CANNON, MOVE_PSYCHIC, MOVE_TRICK_ROOM, MOVE_WIDE_GUARD },
+    },
+    {
+        .iv = TRAINER_PARTY_IVS( 31, 0, 31, 0, 31, 31 ),
+        .ev = TRAINER_PARTY_EVS( 252, 0, 4, 0, 252, 0 ),
+        .lvl = 0,
+        .species = SPECIES_PORYGON2,
+        .ability = ABILITY_DOWNLOAD,
+        .nature = NATURE_QUIET,
+        .heldItem = ITEM_EVIOLITE,
+        .moves = { MOVE_THUNDERBOLT, MOVE_ICE_BEAM, MOVE_TRICK_ROOM, MOVE_RECOVER },
+    },
+    {
+        .iv = TRAINER_PARTY_IVS( 31, 31, 31, 0, 31, 31 ),
+        .ev = TRAINER_PARTY_EVS( 0, 252, 124, 0, 0, 132 ),
+        .lvl = 0,
+        .species = SPECIES_HARIYAMA,
+        .ability = ABILITY_GUTS,
+        .nature = NATURE_BRAVE,
+        .heldItem = ITEM_FLAME_ORB,
+        .moves = { MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_THUNDER_PUNCH, MOVE_FAKE_OUT },
+    },
+    {
+        .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
+        .ev = TRAINER_PARTY_EVS( 252, 252, 0, 4, 0, 0 ),
+        .lvl = 0,
+        .species = SPECIES_METAGROSS,
+        .ability = ABILITY_CLEAR_BODY,
+        .nature = NATURE_ADAMANT,
+        .heldItem = ITEM_CHOICE_BAND,
+        .moves = { MOVE_HEAVY_SLAM, MOVE_PSYCHIC_FANGS, MOVE_BULLET_PUNCH, MOVE_STOMPING_TANTRUM },
+    },
 };

@@ -1297,3 +1297,20 @@ RustboroCity_Text_YouCanHave2On2Battle:
 	.string "they'll both challenge you.\p"
 	.string "Don't you think it'd be cool if you\n"
 	.string "could beat two TRAINERS by yourself?$"
+
+RustboroCity_EventScript_EncounterNox::
+	msgbox RustboroCity_Text_BattleNox, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleNox
+	end
+
+RustboroCity_EventScript_BattleNox::
+	trainerbattle_no_intro TRAINER_NOX, RustboroCity_Text_NoxDefeated
+	end
+
+RustboroCity_Text_BattleNox:
+	.string "Hey! You should battle me.$"
+
+RustboroCity_Text_NoxDefeated:
+	.string "You're good! No wonder you\n"
+	.string "made it to the end!$"
+	
