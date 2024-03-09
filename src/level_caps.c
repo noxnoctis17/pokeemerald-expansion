@@ -10,6 +10,7 @@ u32 GetCurrentLevelCap(void)
     static const u32 sLevelCapFlagMap[][2] =
     {
         {FLAG_DEFEATED_RIVAL_ROUTE103, 6},
+        {FLAG_RECEIVED_MIRACLE_SEED, 10}, //--temporary flag so that random trainers aren't dumb lol. this will be 0 badges flag
         {FLAG_BADGE01_GET, 15},
         {FLAG_BADGE02_GET, 19},
         {FLAG_BADGE03_GET, 24},
