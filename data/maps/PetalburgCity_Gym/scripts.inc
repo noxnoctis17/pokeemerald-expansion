@@ -1604,7 +1604,7 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "with at least two POKéMON.$"
 
 PetalburgCity_Gym_Text_ReadyForBattleSoon:
-	.string "DAD: {Player}…\n"
+	.string "DAD: {PLAYER}…\n"
 	.string "Come back in a little while.\p"
 	.string "My GYM will be ready for you\n"
 	.string "to challenge by then.$"

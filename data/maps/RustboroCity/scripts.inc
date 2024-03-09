@@ -1337,5 +1337,4 @@ RustboroCity_Text_BattleNox:
 RustboroCity_Text_NoxDefeated:
 	.string "You're good! No wonder you\n"
 	.string "made it to the end!$"
-
 	

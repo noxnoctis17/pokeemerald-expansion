@@ -123,7 +123,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_GiveZigzagoon
 	end
-@ goto LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival // original goto instead of give ziggy
+
 LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter::
 	setvar VAR_0x8004, 0
 	call Common_EventScript_NameReceivedPartyMon
@@ -134,7 +134,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveZigzagoon::
 	message LittleRootTown_ProfessorBirchsLab_Text_GiveZigzagoon
 	waitmessage
 	setvar VAR_TEMP_1, SPECIES_ZIGZAGOON
-	givemon SPECIES_ZIGZAGOON, 5, ITEM_ORAN_BERRY
+	givemon SPECIES_ZIGZAGOON, 2, ITEM_ORAN_BERRY, NATURE_JOLLY, 2, 1, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveZigzagoon
 	end
 
