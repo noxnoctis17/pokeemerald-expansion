@@ -35,6 +35,8 @@ RustboroCity_Gym_EventScript_RoxanneComeTrainAnyTime::
 	release
 	end
 
+@ setvar VAR_RUSTBORO_CITY_STATE, 1 removed the stolen goods flag from here, placing it in petalburg woods
+@ removing addvar VAR_PETALBURG_GYM_STATE, 1 i believe i should set petalburg gym to it's battle-able state when you get the pokedex
 RustboroCity_Gym_EventScript_RoxanneDefeated::
 	call Common_EventScript_AfterBattleHeal
 	message RustboroCity_Gym_Text_ReceivedStoneBadge
@@ -43,8 +45,6 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_RUSTBORO_GYM
 	setflag FLAG_BADGE01_GET
-	setvar VAR_RUSTBORO_CITY_STATE, 1
-	addvar VAR_PETALBURG_GYM_STATE, 1
 	setvar VAR_0x8008, 1
 	call Common_EventScript_SetGymTrainers
 	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
@@ -250,10 +250,11 @@ RustboroCity_Gym_Text_RoxannePostBattle:
 	.string "learn many things.$"
 
 RustboroCity_Gym_Text_RoxanneYouAreTheChampion:
+	.string "ROXANNE: I'm so glad to see you again.\p"
 	.string "So…\n"
 	.string "You are the CHAMPION now.\p"
 	.string "How about a rematch, to see\n"
-	.string "for myself how you've grown?.$"
+	.string "for myself how you've grown?$"
 
 RustboroCity_Gym_Text_RoxanneChampionDefeat:
 	.string "So…\n"
@@ -336,3 +337,4 @@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 	.string "You only have one POKéMON with you?\p"
 	.string "Please return with at least one more\n"
 	.string "POKéMON.$"
+
