@@ -134,7 +134,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveZigzagoon::
 	message LittleRootTown_ProfessorBirchsLab_Text_GiveZigzagoon
 	waitmessage
 	setvar VAR_TEMP_1, SPECIES_ZIGZAGOON
-	givemon SPECIES_ZIGZAGOON, 2, ITEM_ORAN_BERRY, NATURE_JOLLY, 2, 1, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31
+	givemon SPECIES_ZIGZAGOON, 2, ITEM_ORAN_BERRY, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveZigzagoon
 	end
 
@@ -160,6 +160,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
+	giveitem ITEM_EXP_SHARE
+	setflag FLAG_RECEIVED_EXP_SHARE
 	clearflag FLAG_HIDE_ROUTE_101_BOY
 	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
@@ -556,7 +558,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
 	giveitem ITEM_POKE_BALL, 20
-	giveitem ITEM_EXP_SHARE
 	giveitem ITEM_EXP_CHARM
 	giveitem ITEM_HM_CUT
 	giveitem ITEM_HM_FLY
@@ -566,7 +567,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	giveitem ITEM_HM_ROCK_SMASH
 	giveitem ITEM_HM_WATERFALL
 	giveitem ITEM_HM_DIVE
-	setflag FLAG_RECEIVED_EXP_SHARE
 	setflag FLAG_RECEIVED_HM_CUT
 	setflag FLAG_RECEIVED_HM_FLY
 	setflag FLAG_RECEIVED_HM_SURF
@@ -583,7 +583,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese, MSGBOX_DEFAULT
 	giveitem ITEM_POKE_BALL, 20
-	giveitem ITEM_EXP_SHARE
 	giveitem ITEM_EXP_CHARM
 	giveitem ITEM_HM_CUT
 	giveitem ITEM_HM_FLY
@@ -593,7 +592,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	giveitem ITEM_HM_ROCK_SMASH
 	giveitem ITEM_HM_WATERFALL
 	giveitem ITEM_HM_DIVE
-	setflag FLAG_RECEIVED_EXP_SHARE
 	setflag FLAG_RECEIVED_HM_CUT
 	setflag FLAG_RECEIVED_HM_FLY
 	setflag FLAG_RECEIVED_HM_SURF
@@ -790,7 +788,11 @@ LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou:
 	.string "PROF. BIRCH: Great!\n"
 	.string "{RIVAL} should be happy, too.\p"
 	.string "Get {RIVAL} to teach you what it\n"
-	.string "means to be a TRAINER.$"
+	.string "means to be a TRAINER.\p"
+	.string "Here, take this! If you turn it\n"
+	.string "on, all of your Pokemon will\p"
+	.string "receive EXP, even if they didn't\n"
+	.string "participate in battle.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWay:
 	.string "PROF. BIRCH: Oh, don't be that way.\n"
