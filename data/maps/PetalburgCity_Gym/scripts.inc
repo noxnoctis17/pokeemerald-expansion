@@ -93,7 +93,7 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	msgbox PetalburgCity_Gym_Text_ReadyForBattleSoon, MSGBOX_DEFAULT
-	setvar VAR_PETALBURG_GYM_STATE, 2
+	setvar VAR_PETALBURG_GYM_STATE, 6
 	releaseall
 	end
 

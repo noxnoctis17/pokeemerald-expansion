@@ -765,3 +765,79 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "I'm roaming the land in search of\n"
 	.string "talented TRAINERS.\p"
 	.string "I'm sorry to have taken your time.$"
+
+PetalburgCity_EventScript_TestGymBadgeCount::
+	checkflag NUM_BADGES
+	goto_if_eq VAR_RESULT, 0, PetalburgCity_EventScript_0Badge
+	goto_if_eq VAR_RESULT, 1, PetalburgCity_EventScript_1Badge
+	goto_if_eq VAR_RESULT, 2, PetalburgCity_EventScript_2Badge
+	goto_if_eq VAR_RESULT, 3, PetalburgCity_EventScript_3Badge
+	goto_if_eq VAR_RESULT, 4, PetalburgCity_EventScript_4Badge
+	goto_if_eq VAR_RESULT, 5, PetalburgCity_EventScript_5Badge
+	goto_if_eq VAR_RESULT, 6, PetalburgCity_EventScript_6Badge
+	goto_if_eq VAR_RESULT, 7, PetalburgCity_EventScript_7Badge
+	goto_if_eq VAR_RESULT, 8, PetalburgCity_EventScript_8Badge
+	end
+
+PetalburgCity_EventScript_0Badge::
+	msgbox PetalburgCity_Text_0Badge, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_EventScript_1Badge::
+	msgbox PetalburgCity_Text_1Badge, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_EventScript_2Badge::
+	msgbox PetalburgCity_Text_2Badge, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_EventScript_3Badge::
+	msgbox PetalburgCity_Text_3Badge, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_EventScript_4Badge::
+	msgbox PetalburgCity_Text_4Badge, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_EventScript_5Badge::
+	msgbox PetalburgCity_Text_5Badge, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_EventScript_6Badge::
+	msgbox PetalburgCity_Text_6Badge, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_EventScript_7Badge::
+	msgbox PetalburgCity_Text_7Badge, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_EventScript_8Badge::
+	msgbox PetalburgCity_Text_8Badge, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Text_0Badge:
+	.string "0$"
+
+PetalburgCity_Text_1Badge:
+	.string "1$"
+
+PetalburgCity_Text_2Badge:
+	.string "2$"
+
+PetalburgCity_Text_3Badge:
+	.string "3$"
+
+PetalburgCity_Text_4Badge:
+	.string "4$"
+
+PetalburgCity_Text_5Badge:
+	.string "5$"
+
+PetalburgCity_Text_6Badge:
+	.string "6$"
+
+PetalburgCity_Text_7Badge:
+	.string "7$"
+
+PetalburgCity_Text_8Badge:
+	.string "8$"
