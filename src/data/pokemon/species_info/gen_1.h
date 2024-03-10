@@ -5534,7 +5534,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #define KANTONIAN_GEODUDE_FAMILY_INFO                                       \
         .types = MON_TYPES(TYPE_ROCK, TYPE_GROUND),                         \
         .itemRare = ITEM_EVERSTONE,                                         \
-        .abilities = { ABILITY_ROCK_HEAD, ABILITY_STURDY, ABILITY_SAND_VEIL }
+        .abilities = { ABILITY_SAND_STREAM, ABILITY_STURDY, ABILITY_SAND_VEIL }
 
 #define GEODUDE_FAMILY_MISC_INFO                        \
         .genderRatio = PERCENT_FEMALE(50),              \
