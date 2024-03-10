@@ -94,6 +94,7 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	waitmovement 0
 	msgbox PetalburgCity_Gym_Text_ReadyForBattleSoon, MSGBOX_DEFAULT
 	setvar VAR_PETALBURG_GYM_STATE, 6
+	setflag FLAG_COMPLETED_WALLY_TUTORIAL
 	releaseall
 	end
 

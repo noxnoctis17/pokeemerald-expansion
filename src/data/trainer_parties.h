@@ -12110,10 +12110,10 @@ static const struct TrainerMon sParty_Roxanne5[] = {
     .ev = TRAINER_PARTY_EVS( 252, 252, 0, 0, 4, 0 ),
     .lvl = 0,
     .species = SPECIES_GOLEM,
-    .ability = ABILITY_STURDY,
+    .ability = ABILITY_SAND_STREAM,
     .nature = NATURE_ADAMANT,
     .heldItem = ITEM_COVERT_CLOAK,
-    .moves = { MOVE_EARTHQUAKE, MOVE_THUNDER_PUNCH, MOVE_SANDSTORM, MOVE_STEALTH_ROCK }
+    .moves = { MOVE_EARTHQUAKE, MOVE_THUNDER_PUNCH, MOVE_STEALTH_ROCK, MOVE_PROTECT }
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

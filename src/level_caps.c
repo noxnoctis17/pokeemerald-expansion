@@ -46,8 +46,15 @@
 //     return MAX_LEVEL;
 // }
 
-int CheckLevelCapFlagIsTrue( int flag ){
-    return( flag % 2 ==0 ) ? 1 : 0;
+bool8 CheckLevelCapFlagIsTrue( bool8 flag ){
+    bool8 result;
+
+    if( flag == TRUE )
+        result = TRUE;
+    else
+        result = FALSE;
+
+    return result;
 }
 
 int CheckHasGymBadges(){
@@ -68,14 +75,11 @@ int CheckHasGymBadges(){
 
     for( i = 0; i < ARRAY_COUNT( sBadgesObtained ); i++ ){
         if( i >= 1 ){
-            break;
-        }
-        else{
-            return 0;
+           break;
         }
     }
 
-    return( sBadgesObtained[i] % 2 ==0 ) ? 1 : 0;
+    return i;
 }
 
 u32 GetCurrentLevelCap(void)
@@ -83,7 +87,7 @@ u32 GetCurrentLevelCap(void)
     static const u32 sLevelCapFlagMap[] =
     {
         FLAG_DEFEATED_RIVAL_ROUTE103,
-        FLAG_HIDE_PETALBURG_CITY_WALLY,
+        FLAG_COMPLETED_WALLY_TUTORIAL,
         FLAG_BADGE01_GET,
         FLAG_BADGE02_GET,
         FLAG_BADGE03_GET,
@@ -101,114 +105,113 @@ u32 GetCurrentLevelCap(void)
         FLAG_REMATCHED_ALL_GYMS,
     };
 
-    u32 amountFlagsTrue;
+    u32 amountFlags = 0;
     u32 levelCap;
 
     for( int i = 0; i < ARRAY_COUNT( sLevelCapFlagMap ); i++ ){
-        if( CheckLevelCapFlagIsTrue( i ) )
-            amountFlagsTrue++;
-    }
-
-    if ( B_LEVEL_CAP_TYPE == LEVEL_CAP_FLAG_LIST ){
-        switch ( amountFlagsTrue ){
-            case 0:
-                levelCap = 6;
-                
-                break;
-
-            case 1:
-
-                levelCap = 10;
-                
-                break;
-
-            case 2:
-                levelCap = 15;
-                
-                break;
-
-            case 3:
-                levelCap = 19;
-                
-                break;
-
-            case 4:
-                levelCap = 24;
-                
-                break;
-
-            case 5:
-                levelCap = 35;
-                
-                break;
-
-            case 6:
-                levelCap = 38;
-                
-                break;
-
-            case 7:
-                levelCap = 45;
-                
-                break;
-
-            case 8:
-                levelCap = 55;
-                
-                break;
-
-            case 9:
-                levelCap = 58;
-                
-                break;
-
-            case 10:
-                levelCap = 62;
-                
-                break;
-
-            case 11:
-                levelCap = 64;
-                
-                break;
-
-            case 12:
-                levelCap = 68;
-                
-                break;
-
-            case 13:
-                levelCap = 70;
-                
-                break;
-
-            case 14:
-                levelCap = 73;
-                
-                break;
-
-            case 15:
-                levelCap = 75;
-                
-                break;
-
-            case 16:
-                levelCap = 80;
-                
-                break;
-            
-            default:
-                levelCap = 100;
-                
-                break;
-
+        if( FlagGet( sLevelCapFlagMap[i] ) ){
+            amountFlags++;
         }
     }
 
-    if( CheckHasGymBadges() && !FLAG_HIDE_PETALBURG_CITY_WALLY )
-        return levelCap + 1;
-    else
-        return levelCap;
+    // if( CheckHasGymBadges() && !FLAG_HIDE_PETALBURG_CITY_WALLY ){ //--probably doesn't work because of getting flags magic!!!!
+    //     amountFlags = amountFlags + 1;
+    // }
+
+    switch ( amountFlags ){
+        case 0:
+            levelCap = 6;
+                
+            break;
+
+        case 1:
+            levelCap = 10;
+                
+            break;
+
+        case 2:
+            levelCap = 15;
+                
+            break;
+
+        case 3:
+            levelCap = 19;
+                
+            break;
+
+        case 4:
+            levelCap = 24;
+                
+            break;
+
+        case 5:
+            levelCap = 35;
+                
+            break;
+
+        case 6:
+            levelCap = 38;
+                
+            break;
+
+        case 7:
+            levelCap = 45;
+                
+            break;
+
+        case 8:
+            levelCap = 55;
+                
+            break;
+
+        case 9:
+            levelCap = 58;
+                
+            break;
+
+        case 10:
+            levelCap = 62;
+                
+            break;
+
+        case 11:
+            levelCap = 64;
+                
+            break;
+
+        case 12:
+            levelCap = 68;
+                
+            break;
+
+        case 13:
+            levelCap = 70;
+                
+            break;
+
+        case 14:
+            levelCap = 73;
+                
+            break;
+
+        case 15:
+            levelCap = 75;
+                
+            break;
+
+        case 16:
+            levelCap = 80;
+                
+            break;
+            
+        default:
+            levelCap = 100;
+                
+            break;
+
+        }
+        
+    return levelCap;
 }
 
 u32 GetSoftLevelCapExpValue(u32 level, u32 expValue)
