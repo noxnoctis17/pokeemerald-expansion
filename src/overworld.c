@@ -1023,8 +1023,8 @@ static bool8 CanLearnFlashInParty( void ){
 // Flash level of 8 is fully black
 void SetDefaultFlashLevel(void)
 {   //--Auto Use Flash Nox HMs
-    if( CheckBagHasItem( ITEM_HM_FLASH, 1 ) && CanLearnFlashInParty() )
-        FlagSet( FLAG_SYS_USE_FLASH );
+    // if( CheckBagHasItem( ITEM_HM_FLASH, 1 ) && CanLearnFlashInParty() )
+    FlagSet( FLAG_SYS_USE_FLASH );
 
     if (!gMapHeader.cave)
         gSaveBlock1Ptr->flashLevel = 0;

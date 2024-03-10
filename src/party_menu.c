@@ -3945,10 +3945,10 @@ static void CursorCb_FieldMove(u8 taskId)
     else
     {
         // All field moves before WATERFALL are HMs.
-        if (fieldMove <= FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE01_GET + fieldMove) != TRUE)
+        if (fieldMove <= FIELD_MOVE_WATERFALL /*&& FlagGet(FLAG_BADGE01_GET + fieldMove) != TRUE*/ )
         {   //--Nox HMs. Removing fly badge limit by checking if field move is fly
             //--If it's fly and we have the HM, we use it. if it is not fly, we proceed as usual for badge check
-            if( fieldMove == FIELD_MOVE_FLY && CheckBagHasItem( ITEM_HM_FLY, 1 ) ){
+            if( fieldMove == FIELD_MOVE_FLY && CheckBagHasItem( ITEM_HM_FLY, 1 ) ){ //--nox add fly item here
                 gPartyMenu.exitCallback = CB2_OpenFlyMap;
                 Task_ClosePartyMenu( taskId );
             }
@@ -4088,7 +4088,7 @@ static void FieldCallback_Surf(void)
 
 static bool8 SetUpFieldMove_Surf(void)
 {
-    if (PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
+    if ( IsPlayerFacingSurfableFishableWater() == TRUE )
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_Surf;

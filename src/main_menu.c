@@ -2187,7 +2187,7 @@ static void MainMenu_FormatSavegameBadges(void)
 
     for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
     {
-        if (FlagGet(i))
+        if ( FlagGet(i) )
             badgeCount++;
     }
     StringExpandPlaceholders(gStringVar4, gText_ContinueMenuBadges);
