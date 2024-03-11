@@ -53,6 +53,7 @@ MtChimney_EventScript_Maxie::
 	trainerbattle_no_intro TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat
 	call Common_EventScript_AfterBattleHeal
 	msgbox MtChimney_Text_MaxieYouHaventSeenLastOfMagma, MSGBOX_DEFAULT
+	setflag FLAG_DEFEATED_MT_PYRE_MAXIE
 	closemessage
 	delay 30
 	fadescreen FADE_TO_BLACK
