@@ -150,6 +150,8 @@ DewfordTown_Gym_EventScript_BrawlyYouAreTheChampion::
 
 DewfordTown_Gym_EventScript_BrawlyChampionRematch::
 	trainerbattle_no_intro TRAINER_BRAWLY_5, DewfordTown_Gym_Text_BrawlyPostRematch
+	call Common_EventScript_AfterBattleHeal
+	msgbox DewfordTown_Gym_Text_BrawlyComeBackAnyTime
 	end
 
 Dewfordtown_Gym_EventScript_BrawlyComeBackAnyTime::
@@ -474,10 +476,9 @@ DewfordTown_Gym_Text_BrawlyPostRematch:
 	.string "It's just like the sea of HOENN!$"
 
 DewfordTown_Gym_Text_BrawlyComeBackAnyTime:
-	.string "BRAWLY: Battling is vast and it's deep.\n"
-	.string "You can't see the bottom.\l"
-	.string "It's just like the sea of HOENN!\p"
-	.string "Come surf on by any time!$"
+	.string "BRAWLY: You really are the CHAMPION.\n"
+	.string "of HOENN's waves! Come surf on by\p"
+	.string "any time!$"
 
 DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons:
 	.string "BRAWLY: A wave may draw back, but it\n"
