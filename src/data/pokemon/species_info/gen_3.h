@@ -6424,7 +6424,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             .baseDefense   = 70,
             .baseSpDefense = 80,
         #endif
-        .types = MON_TYPES(TYPE_PSYCHIC),
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_NORMAL), //--nox buff chimecho, secondary typing -> normal
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_7
         .expYield = 159,
@@ -6439,7 +6439,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_LEVITATE, ABILITY_NONE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_PSYCHIC_SURGE }, //--nox buff chimecho second ability none -> psychic surge to become indeedee at home
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Chimecho"),
         .cryId = CRY_CHIMECHO,
