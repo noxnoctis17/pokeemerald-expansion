@@ -135,13 +135,14 @@ DewfordTown_Gym_EventScript_StopCountingTrainers::
 DewfordTown_Gym_EventScript_Brawly::
 	trainerbattle_single TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC
 	checkflag FLAG_IS_CHAMPION
-	goto_if TRUE,
+	goto_if TRUE, DewfordTown_Gym_EventScript_BrawlyYouAreTheChampion
 	goto_if_unset FLAG_RECEIVED_TM_BULK_UP, DewfordTown_Gym_EventScript_GiveBulkUp2
 	msgbox DewfordTown_Gym_Text_BrawlyPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
 DewfordTown_Gym_EventScript_BrawlyYouAreTheChampion::
+	setflag FLAG_COMPLETED_WALLY_TUTORIAL
 	msgbox DewfordTown_Gym_Text_BrawlyPreRematch, MSGBOX_DEFAULT
 	msgbox DewfordTown_Gym_Text_BrawlyYouAreTheChampion, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, DewfordTown_Gym_EventScript_BrawlyChampionRematch
@@ -458,9 +459,11 @@ DewfordTown_Gym_Text_BrawlyPreRematch:
 	.string "BRAWLY: A wave may draw back, but it\n"
 	.string "always returns to the shore.\p"
 	.string "A giant wave of a talent like you…\n"
-	.string "I knew you would return!\p"
-	.string "Show me how much higher\n"
-	.string "you've gone!$"
+	.string "I knew you would return!$"
+
+DewfordTown_Gym_Text_BrawlyYouAreTheChampion:
+	.string "Let our waves crash together!\n"
+	.string "Would you like a rematch?$"
 
 DewfordTown_Gym_Text_BrawlyRematchDefeat:
 	.string "Wow!\n"
