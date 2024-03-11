@@ -6,19 +6,6 @@
 #include "battle_tower.h"
 #include "constants/battle_tower.h"
 
-
-bool8 CheckLevelCapFlagIsTrue( bool8 flag ){
-    bool8 result;
-
-    if( flag == TRUE )
-        result = TRUE;
-    else
-        result = FALSE;
-
-    return result;
-}
-
-
 u32 GetCurrentLevelCap(void)
 {
     static const u32 sLevelCapFlagMap[] =
@@ -55,13 +42,17 @@ u32 GetCurrentLevelCap(void)
         case 0:
             highestLevel = GetHighestLevelInPlayerParty();
 
-            if( !FlagGet( FLAG_DEFEATED_RIVAL_ROUTE103 ) )
+            if( !FlagGet( FLAG_DEFEATED_RIVAL_ROUTE103 ) ){
                 levelCap = 6;
-            else if( highestLevel != 10 )
+            }
+            else if( highestLevel != 10 ){
                 levelCap = 10;
-            else if( highestLevel == 10 )
-                FLAG_REACHED_LEVEL_10 == TRUE;
-                
+            }
+            else if( highestLevel >= 10 ){
+                FlagSet( FLAG_REACHED_LEVEL_10 );
+                levelCap = 15;
+            }
+            
             break;
 
         case 1:

@@ -1,5 +1,5 @@
-.set LOCALID_GRUNT, 3
-.set LOCALID_DEVON_EMPLOYEE, 4
+.set LOCALID_GRUNT, 1
+.set LOCALID_DEVON_EMPLOYEE, 2
 
 PetalburgWoods_MapScripts::
 	.byte 0
