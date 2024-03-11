@@ -12315,7 +12315,7 @@ static const struct TrainerMon sParty_Brawly5[] = {
     .species = SPECIES_HARIYAMA,
     .ability = ABILITY_GUTS,
     .nature = NATURE_ADAMANT,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_FLAME_ORB,
     .moves = { MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_THUNDER_PUNCH, MOVE_FAKE_OUT }
     }
 };
