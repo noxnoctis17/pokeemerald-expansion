@@ -10,10 +10,11 @@ u32 GetCurrentLevelCap(void)
     static const u32 sLevelCapFlagMap[][2] =
     {
         {FLAG_DEFEATED_RIVAL_ROUTE103, 6},
-        {FLAG_HIDE_PETALBURG_CITY_WALLY, 10},
+        {FLAG_COMPLETED_WALLY_TUTORIAL, 10},
         {FLAG_BADGE01_GET, 15},
         {FLAG_BADGE02_GET, 19},
         {FLAG_BADGE03_GET, 24},
+        {FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE, 32},
         {FLAG_BADGE04_GET, 35}, //--29
         {FLAG_BADGE05_GET, 38}, //--31
         {FLAG_BADGE06_GET, 45}, //--33
