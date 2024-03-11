@@ -142,7 +142,6 @@ DewfordTown_Gym_EventScript_Brawly::
 	end
 
 DewfordTown_Gym_EventScript_BrawlyYouAreTheChampion::
-	setflag FLAG_COMPLETED_WALLY_TUTORIAL
 	msgbox DewfordTown_Gym_Text_BrawlyPreRematch, MSGBOX_DEFAULT
 	msgbox DewfordTown_Gym_Text_BrawlyYouAreTheChampion, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, DewfordTown_Gym_EventScript_BrawlyChampionRematch
