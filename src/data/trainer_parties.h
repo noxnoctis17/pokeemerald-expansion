@@ -12259,46 +12259,64 @@ static const struct TrainerMon sParty_Brawly4[] = {
 
 static const struct TrainerMon sParty_Brawly5[] = {
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 5,
-    .species = SPECIES_HITMONLEE,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_MEGA_KICK, MOVE_FOCUS_PUNCH, MOVE_EARTHQUAKE, MOVE_BULK_UP}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 5,
-    .species = SPECIES_HITMONCHAN,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SKY_UPPERCUT, MOVE_PROTECT, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 5,
-    .species = SPECIES_MACHAMP,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_CROSS_CHOP, MOVE_ROCK_SLIDE, MOVE_FOCUS_PUNCH, MOVE_BULK_UP}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 5,
-    .species = SPECIES_MEDICHAM,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_FOCUS_PUNCH, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_PSYCHIC}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 5,
+    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
+    .ev = TRAINER_PARTY_EVS( 252, 252, 4, 0, 0, 0 ),
+    .lvl = 0,
     .species = SPECIES_HITMONTOP,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_PURSUIT, MOVE_COUNTER, MOVE_PROTECT, MOVE_TRIPLE_KICK}
+    .ability = ABILITY_INTIMIDATE,
+    .nature = NATURE_ADAMANT,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = { MOVE_CLOSE_COMBAT, MOVE_SUCKER_PUNCH, MOVE_FAKE_OUT, MOVE_DETECT }
     },
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 5,
+    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
+    .ev = TRAINER_PARTY_EVS( 4, 252, 0, 252, 0, 0 ),
+    .lvl = 0,
+    .species = SPECIES_MEDICHAM,
+    .ability = ABILITY_PURE_POWER,
+    .nature = NATURE_JOLLY,
+    .heldItem = ITEM_FOCUS_SASH,
+    .moves = { MOVE_CLOSE_COMBAT, MOVE_PSYCHO_CUT, MOVE_BULLET_PUNCH, MOVE_TRICK_ROOM },
+    },
+    {
+    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
+    .ev = TRAINER_PARTY_EVS( 104, 176, 0, 228, 0, 0 ),
+    .lvl = 0,
+    .species = SPECIES_HERACROSS,
+    .ability = ABILITY_MOXIE,
+    .nature = NATURE_ADAMANT,
+    .heldItem = ITEM_CHOICE_BAND,
+    .moves = { MOVE_CLOSE_COMBAT, MOVE_MEGAHORN, MOVE_KNOCK_OFF, MOVE_ICE_PUNCH }
+    },
+    {
+    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
+    .ev = TRAINER_PARTY_EVS( 252, 252, 0, 0, 0, 4 ),
+    .lvl = 0,
+    .species = SPECIES_MACHAMP,
+    .ability = ABILITY_NO_GUARD,
+    .nature = NATURE_ADAMANT,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .moves = { MOVE_DYNAMIC_PUNCH, MOVE_ROCK_SLIDE, MOVE_BULLET_PUNCH, MOVE_THUNDER_PUNCH }
+    },
+    {
+    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
+    .ev = TRAINER_PARTY_EVS( 252, 252, 4, 0, 0, 0 ),
+    .lvl = 0,
+    .species = SPECIES_BRELOOM,
+    .ability = ABILITY_TECHNICIAN,
+    .nature = NATURE_ADAMANT,
+    .heldItem = ITEM_LOADED_DICE,
+    .moves = { MOVE_MACH_PUNCH, MOVE_BULLET_SEED, MOVE_SPORE, MOVE_PROTECT }
+    },
+    {
+    .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
+    .ev = TRAINER_PARTY_EVS( 0, 252, 124, 0, 0, 132 ),
+    .lvl = 0,
     .species = SPECIES_HARIYAMA,
+    .ability = ABILITY_GUTS,
+    .nature = NATURE_ADAMANT,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_FAKE_OUT, MOVE_FOCUS_PUNCH, MOVE_BELLY_DRUM, MOVE_EARTHQUAKE}
+    .moves = { MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_THUNDER_PUNCH, MOVE_FAKE_OUT }
     }
 };
 

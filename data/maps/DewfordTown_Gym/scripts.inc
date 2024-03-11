@@ -134,11 +134,26 @@ DewfordTown_Gym_EventScript_StopCountingTrainers::
 
 DewfordTown_Gym_EventScript_Brawly::
 	trainerbattle_single TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, DewfordTown_Gym_EventScript_BrawlyRematch
+	checkflag FLAG_IS_CHAMPION
+	goto_if TRUE,
 	goto_if_unset FLAG_RECEIVED_TM_BULK_UP, DewfordTown_Gym_EventScript_GiveBulkUp2
 	msgbox DewfordTown_Gym_Text_BrawlyPostBattle, MSGBOX_DEFAULT
 	release
+	end
+
+DewfordTown_Gym_EventScript_BrawlyYouAreTheChampion::
+	msgbox DewfordTown_Gym_Text_BrawlyPreRematch, MSGBOX_DEFAULT
+	msgbox DewfordTown_Gym_Text_BrawlyYouAreTheChampion, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, DewfordTown_Gym_EventScript_BrawlyChampionRematch
+	goto_if_eq VAR_RESULT, NO, Dewfordtown_Gym_EventScript_BrawlyComeBackAnyTime
+	end
+
+DewfordTown_Gym_EventScript_BrawlyChampionRematch::
+	trainerbattle_no_intro TRAINER_BRAWLY_5, DewfordTown_Gym_Text_BrawlyPostRematch
+	end
+
+Dewfordtown_Gym_EventScript_BrawlyComeBackAnyTime::
+	msgbox DewfordTown_Gym_Text_BrawlyComeBackAnyTime, MSGBOX_AUTOCLOSE
 	end
 
 DewfordTown_Gym_EventScript_BrawlyDefeated::
@@ -455,6 +470,12 @@ DewfordTown_Gym_Text_BrawlyPostRematch:
 	.string "BRAWLY: Battling is vast and it's deep.\n"
 	.string "You can't see the bottom.\l"
 	.string "It's just like the sea of HOENN!$"
+
+DewfordTown_Gym_Text_BrawlyComeBackAnyTime:
+	.string "BRAWLY: Battling is vast and it's deep.\n"
+	.string "You can't see the bottom.\l"
+	.string "It's just like the sea of HOENN!\p"
+	.string "Come surf on by any time!$"
 
 DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons:
 	.string "BRAWLY: A wave may draw back, but it\n"
