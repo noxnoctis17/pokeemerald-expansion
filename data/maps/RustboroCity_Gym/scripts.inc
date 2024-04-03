@@ -35,8 +35,6 @@ RustboroCity_Gym_EventScript_RoxanneComeTrainAnyTime::
 	release
 	end
 
-@ setvar VAR_RUSTBORO_CITY_STATE, 1 removed the stolen goods flag from here, placing it in petalburg woods
-@ removing addvar VAR_PETALBURG_GYM_STATE, 1 i believe i should set petalburg gym to it's battle-able state when you get the pokedex
 RustboroCity_Gym_EventScript_RoxanneDefeated::
 	call Common_EventScript_AfterBattleHeal
 	message RustboroCity_Gym_Text_ReceivedStoneBadge
@@ -46,7 +44,9 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 	setflag FLAG_DEFEATED_RUSTBORO_GYM
 	setflag FLAG_BADGE01_GET
 	setvar VAR_0x8008, 1
+	setvar VAR_RUSTBORO_CITY_STATE, 1
 	call Common_EventScript_SetGymTrainers
+	addvar VAR_PETALBURG_GYM_STATE, 1
 	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
 	goto RustboroCity_Gym_EventScript_GiveRockTomb
 	end
