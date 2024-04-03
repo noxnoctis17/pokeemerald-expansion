@@ -65,13 +65,13 @@ struct TrainerMon
     u8 lvl;
     u8 ball;
     u8 friendship;
-    u8 nature : 5;
-    bool8 gender : 2;
-    bool8 isShiny : 1;
-    u8 dynamaxLevel : 4;
-    bool8 gigantamaxFactor : 1;
-    bool8 shouldDynamax : 1;
-    bool8 shouldTerastal : 1;
+    u8 nature:5;
+    bool8 gender:2;
+    bool8 isShiny:1;
+    u8 dynamaxLevel:4;
+    bool8 gigantamaxFactor:1;
+    bool8 shouldDynamax:1;
+    bool8 shouldTerastal:1;
 };
 
 #define TRAINER_PARTY(partyArray) partyArray, .partySize = ARRAY_COUNT(partyArray)
@@ -97,6 +97,23 @@ struct TrainerClass
     u8 name[13];
     u8 money;
     u16 ball;
+};
+
+struct TypeInfo
+{
+    u8 name[TYPE_NAME_LENGTH + 1];
+    u8 generic[17];
+    u8 palette;
+    u16 zMove;
+    u16 maxMove;
+    //u16 enhanceItem;
+    //u16 berry;
+    //u16 gem;
+    //u16 plate;
+    //u16 memory;
+    //u16 zCrystal;
+    //u16 teraShard;
+    //u16 arceusForm;
 };
 
 extern const u16 gMinigameDigits_Pal[];
