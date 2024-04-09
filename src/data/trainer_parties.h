@@ -4693,10 +4693,10 @@ static const struct TrainerMon sParty_Glacia[] = {
     .ev = TRAINER_PARTY_EVS( 0, 0, 4, 252, 252, 0 ),
     .lvl = 0,
     .species = SPECIES_GLALIE,
-    .ability = ABILITY_INNER_FOCUS,
+    .ability = ABILITY_SNOW_WARNING,
     .nature = NATURE_TIMID,
     .heldItem = ITEM_FOCUS_SASH,
-    .moves = { MOVE_BLIZZARD, MOVE_ICY_WIND, MOVE_HELPING_HAND, MOVE_SNOWSCAPE }
+    .moves = { MOVE_BLIZZARD, MOVE_ICY_WIND, MOVE_HELPING_HAND, MOVE_PROTECT }
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
