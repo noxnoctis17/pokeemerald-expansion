@@ -9,24 +9,24 @@ u32 GetCurrentLevelCap(void)
 {
     static const u32 sLevelCapFlagMap[][2] =
     {
-        {FLAG_DEFEATED_RIVAL_ROUTE103, 6},
-        {FLAG_COMPLETED_WALLY_TUTORIAL, 10},
-        {FLAG_BADGE01_GET, 15},
-        {FLAG_BADGE02_GET, 19},
-        {FLAG_BADGE03_GET, 24},
-        {FLAG_DEFEATED_MT_PYRE_MAXIE, 32}, //--level cap will revert to this until you set this flag on your main save
-        {FLAG_BADGE04_GET, 35}, //--29
-        {FLAG_BADGE05_GET, 38}, //--31
-        {FLAG_BADGE06_GET, 45}, //--33
-        {FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, 55},
-        {FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, 58},
-        {FLAG_BADGE07_GET, 62}, //--42
-        {FLAG_HIDE_MOSSDEEP_CITY_SCOTT, 64},
-        {FLAG_RECEIVED_HM_WATERFALL, 68},
-        {FLAG_BADGE08_GET, 70}, //--46
-        {FLAG_DEFEATED_WALLY_VICTORY_ROAD, 73},
-        {FLAG_IS_CHAMPION, 75}, //--58
-        {FLAG_REMATCHED_ALL_GYMS, 80},
+        { FLAG_DEFEATED_RIVAL_ROUTE103,             6 },
+        { FLAG_COMPLETED_WALLY_TUTORIAL,            10 },
+        { FLAG_BADGE01_GET,                         15 },
+        { FLAG_BADGE02_GET,                         19 },
+        { FLAG_BADGE03_GET,                         24 },
+        { FLAG_DEFEATED_MT_PYRE_MAXIE,              35 }, //--level cap will revert to this until you set this flag on your main save
+        { FLAG_BADGE04_GET,                         38 }, //--29
+        { FLAG_BADGE05_GET,                         45 }, //--31
+        { FLAG_BADGE06_GET,                         50 }, //--33
+        { FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT,      55 },
+        { FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE,      58 },
+        { FLAG_BADGE07_GET,                         62 }, //--42
+        { FLAG_HIDE_MOSSDEEP_CITY_SCOTT,            64 },
+        { FLAG_RECEIVED_HM_WATERFALL,               68 },
+        { FLAG_BADGE08_GET,                         70 }, //--46
+        { FLAG_DEFEATED_WALLY_VICTORY_ROAD,         73 },
+        { FLAG_IS_CHAMPION,                         75 }, //--58
+        { FLAG_REMATCHED_ALL_GYMS,                  80 },
     };
 
     u32 i;

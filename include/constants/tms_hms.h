@@ -66,7 +66,8 @@
     F(DISCHARGE) \
     F(HEAT_WAVE) \
     F(DAZZLING_GLEAM) \
-    F(HYPER_VOICE)
+    F(HYPER_VOICE) \
+    F(EXPANDING_FORCE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

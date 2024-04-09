@@ -10192,7 +10192,7 @@ const struct Item gItemsInfo[] =
         .price = 3000,
         .description = COMPOUND_STRING(
             "The user hyper\n"
-            "voices all over.\n"
+            "voices all over\n"
             "the targets."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
@@ -10201,11 +10201,14 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_HYPER_VOICE, // Todo
     },
 
-    [ITEM_TM66] =
+    [ITEM_TM_EXPANDING_FORCE] =
     {
         .name = _("TM66"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The user expands\n"
+            "their force all\n"
+            "over the targets."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
