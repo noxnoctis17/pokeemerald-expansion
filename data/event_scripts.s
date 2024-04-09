@@ -727,9 +727,9 @@ Common_EventScript_OutOfCenterPartyHeal::
 	fadescreen FADE_FROM_BLACK
 	return
 
+@	playfanfare MUS_HEAL
+@	waitfanfare
 Common_EventScript_AfterBattleHeal::
-	playfanfare MUS_HEAL
-	waitfanfare
 	special HealPlayerParty
 	return
 
