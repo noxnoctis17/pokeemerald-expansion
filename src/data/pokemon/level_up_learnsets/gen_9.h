@@ -9058,6 +9058,7 @@ static const struct LevelUpMove sBaltoyLevelUpLearnset[] = {
 
 static const struct LevelUpMove sClaydolLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_HYPER_BEAM),
+    LEVEL_UP_MOVE( 1, MOVE_TRICK_ROOM),
     LEVEL_UP_MOVE( 1, MOVE_HYPER_BEAM),
     LEVEL_UP_MOVE( 1, MOVE_TELEPORT),
     LEVEL_UP_MOVE( 1, MOVE_HARDEN),
