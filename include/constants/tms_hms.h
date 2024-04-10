@@ -67,7 +67,8 @@
     F(HEAT_WAVE) \
     F(DAZZLING_GLEAM) \
     F(HYPER_VOICE) \
-    F(EXPANDING_FORCE)
+    F(EXPANDING_FORCE) \
+    F(ROCK_SLIDE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

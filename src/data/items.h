@@ -10216,16 +10216,19 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_NONE, // Todo
     },
 
-    [ITEM_TM67] =
+    [ITEM_TM_ROCK_SLIDE] =
     {
         .name = _("TM67"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The slides rocks\n"
+            "all over the\n"
+            "targets."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_ROCK_SLIDE, // Todo
     },
 
     [ITEM_TM68] =

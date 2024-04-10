@@ -40,6 +40,7 @@ LilycoveCity_DepartmentStore_4F_Pokemart_AttackTMs:
 	.2byte ITEM_TM_ICE_FANG
 	.2byte ITEM_TM_SCALD
 	.2byte ITEM_TM_EXPANDING_FORCE
+	.2byte ITEM_TM_ROCK_SLIDE
 	.2byte ITEM_NONE
 	release
 	end
