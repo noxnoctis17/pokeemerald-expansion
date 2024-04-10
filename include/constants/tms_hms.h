@@ -68,7 +68,8 @@
     F(DAZZLING_GLEAM) \
     F(HYPER_VOICE) \
     F(EXPANDING_FORCE) \
-    F(ROCK_SLIDE)
+    F(ROCK_SLIDE) \
+    F(TAILWIND)
 
 #define FOREACH_HM(F) \
     F(CUT) \

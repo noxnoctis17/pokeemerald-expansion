@@ -10221,9 +10221,9 @@ const struct Item gItemsInfo[] =
         .name = _("TM67"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The slides rocks\n"
-            "all over the\n"
-            "targets."),
+            "The user slides\n"
+            "rocks all over\n"
+            "the targets."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10231,16 +10231,19 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_ROCK_SLIDE, // Todo
     },
 
-    [ITEM_TM68] =
+    [ITEM_TM_TAILWIND] =
     {
         .name = _("TM68"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "The user calls\n"
+            "a strong wind\n"
+            "behind its team."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_TAILWIND, // Todo
     },
 
     [ITEM_TM69] =
