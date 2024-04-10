@@ -9077,6 +9077,7 @@ static const struct LevelUpMove sClaydolLevelUpLearnset[] = {
     LEVEL_UP_MOVE(38, MOVE_POWER_SPLIT),
     LEVEL_UP_MOVE(43, MOVE_SANDSTORM),
     LEVEL_UP_MOVE(48, MOVE_EXPLOSION),
+    LEVEL_UP_MOVE(50, MOVE_TRICK_ROOM),
     LEVEL_UP_END
 };
 #endif //P_FAMILY_BALTOY
