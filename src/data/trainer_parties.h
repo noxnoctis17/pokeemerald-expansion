@@ -8590,18 +8590,18 @@ static const struct TrainerMon sParty_MayRoute119Mudkip[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
-    .ev = TRAINER_PARTY_EVS( 100, 100, 0, 52, 0, 0 ),
-    .lvl = 2,
-    .species = SPECIES_BRELOOM,
-    .ability = ABILITY_TECHNICIAN,
-    .nature = NATURE_JOLLY,
-    .heldItem = ITEM_FOCUS_SASH,
-    .moves = { MOVE_MACH_PUNCH, MOVE_SEED_BOMB, MOVE_STUN_SPORE, MOVE_PROTECT },
+    .ev = TRAINER_PARTY_EVS( 252, 0, 76, 4, 172, 4 ),
+    .lvl = 1,
+    .species = SPECIES_MILOTIC,
+    .ability = ABILITY_COMPETITIVE,
+    .nature = NATURE_CALM,
+    .heldItem = ITEM_ADRENALINE_ORB,
+    .moves = { MOVE_SCALD, MOVE_ICE_BEAM, MOVE_RECOVER, MOVE_PROTECT },
     },
     {
     .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
     .ev = TRAINER_PARTY_EVS( 12, 0, 0, 244, 252, 0 ),
-    .lvl = 1,
+    .lvl = 0,
     .species = SPECIES_GROVYLE,
     .ability = ABILITY_LIGHTNING_ROD,
     .nature = NATURE_TIMID,
@@ -8624,7 +8624,7 @@ static const struct TrainerMon sParty_MayLilycoveMudkip[] = {
     {
     .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
     .ev = TRAINER_PARTY_EVS( 12, 0, 0, 244, 252, 0 ),
-    .lvl = 1,
+    .lvl = 0,
     .species = SPECIES_GROVYLE,
     .ability = ABILITY_LIGHTNING_ROD,
     .nature = NATURE_TIMID,
@@ -8663,14 +8663,14 @@ static const struct TrainerMon sParty_MayLilycoveMudkip[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
-    .ev = TRAINER_PARTY_EVS( 100, 100, 0, 52, 0, 0 ),
-    .lvl = 2,
-    .species = SPECIES_BRELOOM,
-    .ability = ABILITY_TECHNICIAN,
-    .nature = NATURE_JOLLY,
-    .heldItem = ITEM_FOCUS_SASH,
-    .moves = { MOVE_MACH_PUNCH, MOVE_SEED_BOMB, MOVE_STUN_SPORE, MOVE_PROTECT },
-    }
+    .ev = TRAINER_PARTY_EVS( 252, 0, 76, 4, 172, 4 ),
+    .lvl = 1,
+    .species = SPECIES_MILOTIC,
+    .ability = ABILITY_COMPETITIVE,
+    .nature = NATURE_CALM,
+    .heldItem = ITEM_ADRENALINE_ORB,
+    .moves = { MOVE_SCALD, MOVE_ICE_BEAM, MOVE_RECOVER, MOVE_PROTECT },
+    },
 };
 
 static const struct TrainerMon sParty_MayRoute103Treecko[] = {
