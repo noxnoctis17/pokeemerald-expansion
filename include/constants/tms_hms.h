@@ -69,7 +69,8 @@
     F(HYPER_VOICE) \
     F(EXPANDING_FORCE) \
     F(ROCK_SLIDE) \
-    F(TAILWIND)
+    F(TAILWIND) \
+    F(ENCORE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

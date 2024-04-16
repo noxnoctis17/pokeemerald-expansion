@@ -64,6 +64,7 @@ LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
 	.2byte ITEM_TM_SWORDS_DANCE
 	.2byte ITEM_TM_HELPING_HAND
 	.2byte ITEM_TM_TAILWIND
+	.2byte ITEM_TM_ENCORE
 	.2byte ITEM_NONE
 	release
 	end
