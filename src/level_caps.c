@@ -18,10 +18,11 @@ u32 GetCurrentLevelCap(void)
         { FLAG_BADGE04_GET,                         38 }, //--29
         { FLAG_BADGE05_GET,                         45 }, //--31
         { FLAG_BADGE06_GET,                         50 }, //--33
-        { FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT,      55 },
-        { FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE,      58 },
-        { FLAG_BADGE07_GET,                         62 }, //--42
-        { FLAG_HIDE_MOSSDEEP_CITY_SCOTT,            64 },
+        { FLAG_RECEIVED_RED_OR_BLUE_ORB,            55 },
+        { FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT,      58 },
+        { FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE,      62 },
+        { FLAG_BADGE07_GET,                         64 }, //--42
+        { FLAG_HIDE_MOSSDEEP_CITY_SCOTT,            66 },
         { FLAG_RECEIVED_HM_WATERFALL,               68 },
         { FLAG_BADGE08_GET,                         70 }, //--46
         { FLAG_DEFEATED_WALLY_VICTORY_ROAD,         73 },

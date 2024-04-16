@@ -5128,7 +5128,7 @@ static const struct TrainerMon sParty_Winona1[] = {
 static const struct TrainerMon sParty_TateAndLiza1[] = {
     {
     .iv = TRAINER_PARTY_IVS( 31, 31, 31, 31, 31, 31 ),
-    .ev = TRAINER_PARTY_EVS( 252, 0, 152, 0, 100, 0 ),
+    .ev = TRAINER_PARTY_EVS( 252, 0, 152, 0, 100, 4 ),
     .lvl = 0,
     .species = SPECIES_CHIMECHO,
     .ability = ABILITY_PSYCHIC_SURGE,
