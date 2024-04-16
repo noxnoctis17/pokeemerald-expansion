@@ -29,6 +29,7 @@ LilycoveCity_DepartmentStore_3F_Pokemart_Vitamins:
 	.2byte ITEM_KINGS_ROCK
 	.2byte ITEM_LIFE_ORB
 	.2byte ITEM_LIGHT_BALL
+	.2byte ITEM_LOADED_DICE
 	.2byte ITEM_MAGNET
 	.2byte ITEM_METAL_COAT
 	.2byte ITEM_METRONOME
@@ -40,6 +41,7 @@ LilycoveCity_DepartmentStore_3F_Pokemart_Vitamins:
 	.2byte ITEM_PIXIE_PLATE
 	.2byte ITEM_POISON_BARB
 	.2byte ITEM_POWER_HERB
+	.2byte ITEM_PUNCHING_GLOVE
 	.2byte ITEM_QUICK_CLAW
 	.2byte ITEM_RAZOR_CLAW
 	.2byte ITEM_RING_TARGET
@@ -71,6 +73,7 @@ LilycoveCity_DepartmentStore_3F_EventScript_ClerkRight::
 
 	.align 2
 LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters:
+	.2byte ITEM_ABILITY_SHIELD
 	.2byte ITEM_ABSORB_BULB
 	.2byte ITEM_ADRENALINE_ORB
 	.2byte ITEM_AIR_BALLOON
@@ -79,6 +82,8 @@ LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters:
 	.2byte ITEM_BLUNDER_POLICY
 	.2byte ITEM_BRIGHT_POWDER
 	.2byte ITEM_CELL_BATTERY
+	.2byte ITEM_CLEAR_AMULET
+	.2byte ITEM_COVERT_CLOAK
 	.2byte ITEM_DAMP_ROCK
 	.2byte ITEM_EJECT_BUTTON
 	.2byte ITEM_EJECT_PACK
@@ -97,6 +102,7 @@ LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters:
 	.2byte ITEM_LUMINOUS_MOSS
 	.2byte ITEM_MENTAL_HERB
 	.2byte ITEM_METAL_POWDER
+	.2byte ITEM_MIRROR_HERB
 	.2byte ITEM_MISTY_SEED
 	.2byte ITEM_PROTECTIVE_PADS
 	.2byte ITEM_PSYCHIC_SEED
