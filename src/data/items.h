@@ -10066,7 +10066,7 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "The user attacks\n"
             "with an icy punch.\n"
-            "May inflict frostbite."),
+            "May cause frostbite."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10079,7 +10079,7 @@ const struct Item gItemsInfo[] =
         .name = _("TM57"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The user teef shocky.\n"
+            "The user teef spicy.\n"
             "May cause the target\n"
             "paralysis or to flinch.\n"),
         .importance = I_REUSABLE_TMS,
@@ -10154,9 +10154,9 @@ const struct Item gItemsInfo[] =
         .name = _("TM62"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The user strikes\n"
-            "all with electricity\n"
-            "May cause paralysis.\n"),
+            "The user zaps\n"
+            "all around it. May\n"
+            "cause paralysis.\n"),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10169,9 +10169,9 @@ const struct Item gItemsInfo[] =
         .name = _("TM63"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The user hotly waves\n"
-            "the targets. Hits all\n"
-            "foes."),
+            "The user hotly\n"
+            "waves the targets.\n"
+            "Hits all foes."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -10221,7 +10221,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_EXPANDING_FORCE, // Todo
     },
 
     [ITEM_TM_ROCK_SLIDE] =
@@ -10259,14 +10259,13 @@ const struct Item gItemsInfo[] =
         .name = _("TM69"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Every 69\n"
-            "deserves an\n"
-            "Encore."),
+            "Every 69 deserves\n"
+            "an Encore."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_ENCORE, // Todo
     },
 
     [ITEM_TM70] =
