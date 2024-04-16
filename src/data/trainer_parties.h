@@ -11681,6 +11681,7 @@ static const struct TrainerMon sParty_MaxieMagmaHideout[] = {
     .species = SPECIES_WEEZING,
     .ability = ABILITY_NEUTRALIZING_GAS,
     .nature = NATURE_BOLD,
+    .heldItem = ITEM_BLACK_SLUDGE,
     .moves = { MOVE_SLUDGE_BOMB, MOVE_WILL_O_WISP, MOVE_TAUNT, MOVE_PROTECT },
     },
     {
@@ -11710,7 +11711,7 @@ static const struct TrainerMon sParty_MaxieMagmaHideout[] = {
     .species = SPECIES_NINETALES,
     .ability = ABILITY_DROUGHT,
     .nature = NATURE_MODEST,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_LEFTOVERS,
     .moves = { MOVE_HEAT_WAVE, MOVE_CONFUSE_RAY, MOVE_WILL_O_WISP, MOVE_PROTECT },
     },
     {
@@ -11718,7 +11719,9 @@ static const struct TrainerMon sParty_MaxieMagmaHideout[] = {
     .ev = TRAINER_PARTY_EVS( 252, 0, 144, 0, 112, 0 ),
     .lvl = 0,
     .species = SPECIES_CLAYDOL,
+    .ability = ABILITY_LEVITATE,
     .nature = NATURE_BOLD,
+    .heldItem = ITEM_COVERT_CLOAK,
     .moves = { MOVE_PSYCHIC, MOVE_EARTH_POWER, MOVE_TRICK_ROOM, MOVE_PROTECT },
     },
     {
@@ -11728,9 +11731,9 @@ static const struct TrainerMon sParty_MaxieMagmaHideout[] = {
     .species = SPECIES_CAMERUPT,
     .ability = ABILITY_SOLID_ROCK,
     .nature = NATURE_MODEST,
-    .heldItem = ITEM_PASSHO_BERRY,
+    .heldItem = ITEM_LIFE_ORB,
     .moves = { MOVE_HEAT_WAVE, MOVE_EARTH_POWER, MOVE_ERUPTION, MOVE_PROTECT },
-    },
+    }
 };
 
 static const struct TrainerMon sParty_MaxieMossdeep[] = {
